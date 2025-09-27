@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Harmattan:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+body {
+  font-family: var(--font-english);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@theme {
+  --color-primary: #2957A2;
+  --color-primary-dark: #97b4e5;
+  --color-secondary: #EBC7A3;
+  --color-dark-background: #02152d;
+  --color-light-background: #f0f2f5;
+  --color-light-text: #2957A2;
+}
+
+body.light::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.light::-webkit-scrollbar-track {
+  background: #f9f9fc;
+}
+
+body.light::-webkit-scrollbar-thumb {
+  background: #2957A2;
+}
+
+body.dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark::-webkit-scrollbar-track {
+  background: #2957A2;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background: #cfd4ff;
+}
+
+
+/* Before selection - unchecked state */
+.ant-checkbox:not(.ant-checkbox-checked) .ant-checkbox-inner {
+  border: 1px solid rgba(41, 87, 162) !important;
+}
+
+
+
+/* After selection - checked state */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #2957A2 !important;
+  border-color: #2957A2 !important;
+  color: #EBC7A3 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-input {
+  background-color: #2957A2 !important;
+  color: #EBC7A3 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: #EBC7A3 !important;
+}
+
+
