@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { productCategories } from "./PromosyonItems";
 import CCard from "../../Components/CCard";
 
 const Cards: React.FC = () => {
-  const [sort, setSort] = useState("default");
-
   const allProducts = productCategories.flatMap(
     (category) => category.subcategories
   );
@@ -19,6 +17,7 @@ const Cards: React.FC = () => {
             label={product.label}
             count={product.count}
             images={product.images}
+            link={`/Promosyon/${product.id}`}
           />
         ))}
       </div>

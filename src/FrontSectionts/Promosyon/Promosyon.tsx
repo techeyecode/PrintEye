@@ -8,14 +8,11 @@ const Promosyon: React.FC = () => {
     <div className="bg-white">
       <ProjectsHeader />
 
-      {/* Main content */}
       <div className="flex flex-col lg:flex-row items-start justify-between mx-4 md:mx-10 lg:mx-20 gap-6 lg:gap-10 my-6 md:my-10">
-        {/* Sidebar */}
         <div className="w-full lg:w-1/4">
           <Sidebar />
         </div>
 
-        {/* Cards */}
         <div className="w-full lg:w-3/4">
           <Cards />
         </div>
