@@ -1,5 +1,5 @@
 import React from "react";
-import { productCategories } from "./PromosyonItems";
+import { productCategories } from "./PromotionItems";
 import CCard from "../../Components/CCard";
 
 const Cards: React.FC = () => {
@@ -9,7 +9,7 @@ const Cards: React.FC = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {allProducts.map((product) => (
           <CCard
             key={product.id}
@@ -17,7 +17,7 @@ const Cards: React.FC = () => {
             label={product.label}
             count={product.count}
             images={product.images}
-            link={`/Promosyon/${product.id}`}
+            link={`/Promotion/${product.id}`}
           />
         ))}
       </div>

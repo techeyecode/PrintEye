@@ -21,19 +21,17 @@ const CCard: React.FC<CCardProps> = ({
   className = "",
 }) => {
   const previewImage = images?.[0];
-  const linkDestination = link || `/Promosyon/${id}`;
+  const linkDestination = link || `/Promotion/${id}`;
 
   return (
     <Link
       to={linkDestination}
       className={`group block rounded-3xl bg-primary border border-gray-200 transition-all duration-300 overflow-hidden hover:shadow-lg hover:border-gray-300 ${className}`}
     >
-      {/* Image Section */}
       <div className="relative overflow-hidden w-full aspect-[3/4]">
         {previewImage ? (
           <img
             src={previewImage}
-            alt={label}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -43,24 +41,17 @@ const CCard: React.FC<CCardProps> = ({
         )}
       </div>
 
-      {/* Content Section */}
-      <div className="p-4 flex flex-col gap-2">
+      <div className="p-1 px-4 flex flex-col gap-2 ">
         <div className="flex items-center justify-between">
-          <h3 className="text-white font-medium line-clamp-2 flex-1 mr-2">
+          <h5 className="text-white font-medium line-clamp-2 flex-1 mr-2">
             {label}
-          </h3>
+          </h5>
           {count !== undefined && (
-            <span className="text-white font-medium bg-black/20 px-2 py-1 rounded-full text-sm min-w-8 text-center">
+            <span className="text-white font-medium  px-2 py-1 rounded-full text-sm min-w-8 text-center">
               {count}
             </span>
           )}
         </div>
-
-        {code && (
-          <p className="text-sm text-gray-300 bg-black/20 px-2 py-1 rounded">
-            Code: {code}
-          </p>
-        )}
       </div>
     </Link>
   );

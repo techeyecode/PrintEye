@@ -1,16 +1,17 @@
 import React from "react";
-import ProjectsHeader from "./PromosyonHeader";
+import ProjectsHeader from "./PromotionHeader";
 import Sidebar from "./Sidebar";
 import Cards from "./Cards";
+import { promotionCategories } from "./SidebarItems"; // Import the specific categories
 
-const Promosyon: React.FC = () => {
+const Promotion: React.FC = () => {
   return (
     <div className="bg-white">
       <ProjectsHeader />
 
       <div className="flex flex-col lg:flex-row items-start justify-between mx-4 md:mx-10 lg:mx-20 gap-6 lg:gap-10 my-6 md:my-10">
         <div className="w-full lg:w-1/4">
-          <Sidebar />
+          <Sidebar categories={promotionCategories} title="Promotion" />{" "}
         </div>
 
         <div className="w-full lg:w-3/4">
@@ -21,4 +22,4 @@ const Promosyon: React.FC = () => {
   );
 };
 
-export default Promosyon;
+export default Promotion;

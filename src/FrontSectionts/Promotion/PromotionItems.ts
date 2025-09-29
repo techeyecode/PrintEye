@@ -7,7 +7,7 @@ import {
   FaBook,
 } from "react-icons/fa";
 
-export interface PromosyonItems {
+export interface PromotionItems {
   id: number;
   value: string;
   label: string;
@@ -26,7 +26,7 @@ export interface ProductCategory {
   icon: any;
   description?: string;
   image?: string;
-  subcategories: PromosyonItems[];
+  subcategories: PromotionItems[];
 }
 
 // Data
@@ -53,6 +53,31 @@ export const productCategories: ProductCategory[] = [
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-L.jpg",
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-B.jpg",
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-TRK.jpg",
+          "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-T.jpg",
+        ],
+      },
+      {
+        id: 3,
+        value: "gel",
+        label: "Gel Pens",
+        code: "PEN-GEL-002",
+        count: 32,
+        description: "Bright ink gel pens for writing and drawing",
+        popularItems: ["Gel Master", "Color Gel"],
+        images: [
+          "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-K.jpg",
+          "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-K.jpg",
+        ],
+      },
+      {
+        id: 4,
+        value: "marker",
+        label: "Marker Pens",
+        code: "PEN-MARK-003",
+        count: 27,
+        description: "Permanent and dry-erase markers",
+        popularItems: ["Sharpie Marker", "Whiteboard Marker"],
+        images: [
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-T.jpg",
         ],
       },

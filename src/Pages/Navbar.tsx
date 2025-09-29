@@ -33,13 +33,13 @@ const Navbar: React.FC = () => {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
   const navLinks = [
-    { name: t("Home"), link: "/" },
-    { name: t("Promosyon"), link: "/Promosyon" },
-    { name: t("Matbaa"), link: "/Matbaa" },
-    { name: t("Uniform"), link: "/Uniform" },
-    { name: t("Ambalaj"), link: "/Ambalaj" },
-    { name: t("Cup"), link: "/Cup" },
-    { name: t("CNC"), link: "/CNC" },
+    { name: "Home", link: "/" },
+    { name: "Promotion", link: "/Promotion" },
+    { name: "Printing", link: "/Printing" },
+    { name: "Uniforms", link: "/Uniform" },
+    { name: "Packaging", link: "/Ambalaj" },
+    { name: "Cups", link: "/Cup" },
+    { name: "CNC", link: "/CNC" },
   ];
 
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;

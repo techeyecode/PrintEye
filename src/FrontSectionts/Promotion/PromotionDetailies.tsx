@@ -1,7 +1,7 @@
-// PromosyonDetailies.tsx
+// PromotionDetailies.tsx
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { productCategories } from "./PromosyonItems";
+import { productCategories } from "./PromotionItems";
 import {
   FaCode,
   FaShoppingCart,
@@ -14,7 +14,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { TiHome } from "react-icons/ti";
 
-const PromosyonDetailies: React.FC = () => {
+const PromotionDetailies: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const allProducts = productCategories.flatMap((cat) => cat.subcategories);
@@ -60,9 +60,9 @@ const PromosyonDetailies: React.FC = () => {
         </Link>
         <span className="mx-3">/</span>
 
-        <Link to="/Promosyon" className="flex items-center transition-colors">
+        <Link to="/Promotion" className="flex items-center transition-colors">
           <FaTags className="w-4 h-4 mr-1" />
-          Promosyon
+          Promotion
         </Link>
         <span className="mx-3">/</span>
         <span className="text-primary font-medium">{product.label}</span>
@@ -149,7 +149,7 @@ const PromosyonDetailies: React.FC = () => {
           <h3 className="text-2xl font-bold mb-4 text-primary">
             Other Products in {parentCategory?.label}
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
             {relatedSubcategories.map((sub) => (
               <CCard
                 key={sub.id}
@@ -166,4 +166,4 @@ const PromosyonDetailies: React.FC = () => {
   );
 };
 
-export default PromosyonDetailies;
+export default PromotionDetailies;
