@@ -67,4 +67,11 @@ body.dark::-webkit-scrollbar-thumb {
   border-color: #EBC7A3 !important;
 }
 
+.ant-input {
+  color: #fff; 
+}
 
+.ant-input::placeholder {
+  color: #fff; 
+  opacity: 1;  
+}

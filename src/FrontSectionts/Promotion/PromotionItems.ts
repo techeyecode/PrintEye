@@ -48,7 +48,7 @@ export const productCategories: ProductCategory[] = [
         description: "Smooth-writing ballpoint pens",
         popularItems: ["Classic Ballpoint", "Executive Pen"],
         images: [
-          "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-K.jpg",
+          "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-G.jpg",
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-S.jpg",
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-L.jpg",
           "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-B.jpg",

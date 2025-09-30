@@ -18,8 +18,8 @@ const BusinessCardTemplates: React.FC = () => {
         {BusinessCardTemplate.map((card, index) => (
           <BusinessCard
             key={index}
-            name={card.name}
-            price={card.price}
+            label={card.label}
+            count={card.count}
             image={card.image}
             link={card.link}
           />

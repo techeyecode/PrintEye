@@ -1,6 +1,6 @@
 import React from "react";
 import BusinessCardImg from "../../../assets/BussinessCard.jpg";
-const BusinessCardsPage: React.FC = () => {
+const BusinessCardsSection: React.FC = () => {
   return (
     <div className="bg-secondary/40">
       <main className="container mx-auto px-4 py-12">
@@ -37,4 +37,4 @@ const BusinessCardsPage: React.FC = () => {
   );
 };
 
-export default BusinessCardsPage;
+export default BusinessCardsSection;

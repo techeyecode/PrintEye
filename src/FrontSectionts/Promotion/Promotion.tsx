@@ -1,8 +1,7 @@
 import React from "react";
 import ProjectsHeader from "./PromotionHeader";
-import Sidebar from "./Sidebar";
-import Cards from "./Cards";
-import { promotionCategories } from "./SidebarItems"; // Import the specific categories
+import Cards from "./PromotionCards";
+import CSidebar from "../../Components/CSidebar";
 
 const Promotion: React.FC = () => {
   return (
@@ -11,7 +10,7 @@ const Promotion: React.FC = () => {
 
       <div className="flex flex-col lg:flex-row items-start justify-between mx-4 md:mx-10 lg:mx-20 gap-6 lg:gap-10 my-6 md:my-10">
         <div className="w-full lg:w-1/4">
-          <Sidebar categories={promotionCategories} title="Promotion" />{" "}
+          <CSidebar title="Promotions" type="Promotion" />
         </div>
 
         <div className="w-full lg:w-3/4">

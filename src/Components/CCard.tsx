@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 interface CCardProps {
@@ -6,9 +5,10 @@ interface CCardProps {
   label: string;
   code?: string;
   count?: number;
-  images?: string[];
-  link?: string;
+  image?: string;
+  navigateTo: string; // <-- made navigateTo required
   className?: string;
+  aspectRatio?: string;
 }
 
 const CCard: React.FC<CCardProps> = ({
@@ -16,22 +16,21 @@ const CCard: React.FC<CCardProps> = ({
   label,
   code,
   count,
-  images,
-  link,
+  image,
+  navigateTo, 
   className = "",
+  aspectRatio = "aspect-[3/4]",
 }) => {
-  const previewImage = images?.[0];
-  const linkDestination = link || `/Promotion/${id}`;
-
   return (
     <Link
-      to={linkDestination}
+      to={navigateTo} // <-- directly use navigateTo
       className={`group block rounded-3xl bg-primary border border-gray-200 transition-all duration-300 overflow-hidden hover:shadow-lg hover:border-gray-300 ${className}`}
     >
-      <div className="relative overflow-hidden w-full aspect-[3/4]">
-        {previewImage ? (
+      <div className={`relative overflow-hidden w-full ${aspectRatio}`}>
+        {image ? (
           <img
-            src={previewImage}
+            src={image}
+            alt={label}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -41,13 +40,13 @@ const CCard: React.FC<CCardProps> = ({
         )}
       </div>
 
-      <div className="p-1 px-4 flex flex-col gap-2 ">
+      <div className="p-1 px-4 flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h5 className="text-white font-medium line-clamp-2 flex-1 mr-2">
             {label}
           </h5>
           {count !== undefined && (
-            <span className="text-white font-medium  px-2 py-1 rounded-full text-sm min-w-8 text-center">
+            <span className="text-white font-medium px-2 py-1 rounded-full text-sm min-w-8 text-center">
               {count}
             </span>
           )}

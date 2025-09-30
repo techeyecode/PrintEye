@@ -1,4 +1,3 @@
-// SidebarItems.ts
 import {
   FaPencilAlt,
   FaMugHot,
@@ -32,19 +31,19 @@ export interface CardItem {
   link?: string;
   subcategories?: Subcategory[];
 }
-
-// Printing Categories
 export const printingCategories: CardItem[] = [
   {
     value: "business-cards",
     label: "Business Cards",
     icon: FaIdCard,
     subcategories: [
-      { value: "standard", label: "Standard", count: 34 },
-      { value: "premium", label: "Premium", count: 28 },
-      { value: "foil-printed", label: "Foil Printed", count: 15 },
-      { value: "raised-ink", label: "Raised Ink", count: 12 },
-      { value: "die-cut", label: "Die Cut", count: 18 },
+      { value: "standard", label: "Standard Card", count: 34 },
+      { value: "VIP", label: "VIP Card", count: 28 },
+      { value: "special-cut", label: "Special Cut Card", count: 15 },
+      { value: "plastic-card", label: "Plastic Card", count: 12 },
+      { value: "lable", label: "Lable Card", count: 18 },
+      { value: "smart", label: "Smart Card", count: 18 },
+      { value: "plastic", label: "Plastic Card", count: 18 },
     ],
   },
   {
@@ -160,6 +159,16 @@ export const printingCategories: CardItem[] = [
       { value: "custom-print", label: "Custom Print", count: 16 },
     ],
   },
+  {
+    value: "car-perfum",
+    label: "Car Perfum",
+    icon: FaTags,
+    subcategories: [
+      { value: "facial", label: "Facial Tissue", count: 25 },
+      { value: "packaging", label: "Packaging Tissue", count: 19 },
+      { value: "custom-print", label: "Custom Print", count: 16 },
+    ],
+  },
 ];
 
 // Promotion Categories
@@ -262,7 +271,6 @@ export const promotionCategories: CardItem[] = [
   },
 ];
 
-// Combine all categories
 export const allCategories: CardItem[] = [
   ...printingCategories,
   ...promotionCategories,
