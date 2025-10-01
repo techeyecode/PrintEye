@@ -9,14 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 @theme {
-  --color-primary: #2957A2;
+  --color-primary: #2957a2;
   --color-primary-dark: #97b4e5;
-  --color-secondary: #EBC7A3;
+  --color-secondary: #ebc7a3;
   --color-dark-background: #02152d;
   --color-light-background: #f0f2f5;
-  --color-light-text: #2957A2;
+  --color-light-text: #2957a2;
 }
 
 body.light::-webkit-scrollbar {
@@ -28,7 +27,7 @@ body.light::-webkit-scrollbar-track {
 }
 
 body.light::-webkit-scrollbar-thumb {
-  background: #2957A2;
+  background: #2957a2;
 }
 
 body.dark::-webkit-scrollbar {
@@ -36,42 +35,39 @@ body.dark::-webkit-scrollbar {
 }
 
 body.dark::-webkit-scrollbar-track {
-  background: #2957A2;
+  background: #2957a2;
 }
 
 body.dark::-webkit-scrollbar-thumb {
   background: #cfd4ff;
 }
 
-
 /* Before selection - unchecked state */
 .ant-checkbox:not(.ant-checkbox-checked) .ant-checkbox-inner {
   border: 1px solid rgba(41, 87, 162) !important;
 }
 
-
-
 /* After selection - checked state */
 .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #2957A2 !important;
-  border-color: #2957A2 !important;
-  color: #EBC7A3 !important;
+  background-color: #2957a2 !important;
+  border-color: #2957a2 !important;
+  color: #ebc7a3 !important;
 }
 
 .ant-checkbox-checked .ant-checkbox-input {
-  background-color: #2957A2 !important;
-  color: #EBC7A3 !important;
+  background-color: #2957a2 !important;
+  color: #ebc7a3 !important;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner::after {
-  border-color: #EBC7A3 !important;
+  border-color: #ebc7a3 !important;
 }
 
 .ant-input {
-  color: #fff; 
+  color: #fff;
 }
 
 .ant-input::placeholder {
-  color: #fff; 
-  opacity: 1;  
+  color: #fff;
+  opacity: 1;
 }

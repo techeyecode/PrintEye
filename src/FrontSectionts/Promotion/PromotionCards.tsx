@@ -22,7 +22,7 @@ const PromotionCards: React.FC = () => {
         ))}
       </div>
     </div>
-);
+  );
 };
 
 export default PromotionCards;

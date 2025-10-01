@@ -14,7 +14,7 @@ const PageHeader = ({
         className="relative w-full h-64 lg:h-[400px] flex items-center justify-center bg-cover bg-center bg-no-repeat text-secondary"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/40 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/50 to-black/40"></div>
 
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -inset-10 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>

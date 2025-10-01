@@ -1,37 +1,35 @@
 import React from "react";
+import { RiCheckboxBlankCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-export interface BreadcrumbItem {
+interface Breadcrumb {
   label: string;
-  link?: string; // optional, current page has no link
-  icon?: React.ReactNode; // optional icon
+  path?: string;
 }
 
 interface BreadcrumbsProps {
-  items: BreadcrumbItem[];
+  items: Breadcrumb[];
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   return (
-    <nav className="flex items-center space-x-2 text-sm mb-6 text-primary">
-      {items.map((item, idx) => (
-        <React.Fragment key={idx}>
-          {item.link ? (
+    <nav className="max-w-7xl mx-auto py-10 flex items-center font-m mb-6 text-primary">
+      {items.map((item, index) => (
+        <React.Fragment key={index}>
+          {item.path ? (
             <Link
-              to={item.link}
-              className="flex items-center gap-1 px-2 py-1 rounded  transition"
+              to={item.path}
+              className="flex items-center transition-colors"
             >
-              {item.icon && <span className="text-lg">{item.icon}</span>}
-              <span>{item.label}</span>
+              {item.label}
             </Link>
           ) : (
-            <span className="flex items-center gap-1 px-2 py-1 rounded font-medium ">
-              {item.icon && <span className="text-lg">{item.icon}</span>}
-              <span>{item.label}</span>
-            </span>
+            <span className="flex items-center">{item.label}</span>
           )}
-          {idx < items.length - 1 && (
-            <span className="mx-2 text-gray-400">/</span>
+          {index < items.length - 1 && (
+            <span className="mx-3">
+              <RiCheckboxBlankCircleFill size={10} />
+            </span>
           )}
         </React.Fragment>
       ))}

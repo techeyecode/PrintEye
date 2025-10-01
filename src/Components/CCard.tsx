@@ -12,12 +12,10 @@ interface CCardProps {
 }
 
 const CCard: React.FC<CCardProps> = ({
-  id,
   label,
-  code,
   count,
   image,
-  navigateTo, 
+  navigateTo,
   className = "",
   aspectRatio = "aspect-[3/4]",
 }) => {

@@ -1,11 +1,4 @@
-import {
-  FaPencilAlt,
-  FaMugHot,
-  FaTshirt,
-  FaBatteryFull,
-  FaShoppingBag,
-  FaBook,
-} from "react-icons/fa";
+
 
 export interface PromotionItems {
   id: number;
@@ -14,7 +7,7 @@ export interface PromotionItems {
   code: string;
   count?: number;
   description?: string;
-  images?: string[];
+  images: string[];
   popularItems?: string[];
 }
 
@@ -23,7 +16,6 @@ export interface ProductCategory {
   id: number;
   value: string;
   label: string;
-  icon: any;
   description?: string;
   image?: string;
   subcategories: PromotionItems[];
@@ -35,7 +27,6 @@ export const productCategories: ProductCategory[] = [
     id: 1,
     value: "pens",
     label: "Pens",
-    icon: FaPencilAlt,
     description: "High-quality pens for everyday use or gifting.",
     image: "https://drpromosyon.com/assets/img/katalog/urunler/Y2025-G.jpg",
     subcategories: [
@@ -136,7 +127,6 @@ export const productCategories: ProductCategory[] = [
     id: 7,
     value: "mugs",
     label: "Mugs",
-    icon: FaMugHot,
     description: "Mugs for home, office, or personalized gifts.",
     image:
       "https://drpromosyon.com/assets/img/katalog/kategoriler/set03532-2026.jpg",
@@ -196,7 +186,6 @@ export const productCategories: ProductCategory[] = [
     id: 12,
     value: "tshirts",
     label: "T-shirts",
-    icon: FaTshirt,
     description: "Comfortable and stylish t-shirts for all occasions.",
     image: "https://drpromosyon.com/assets/img/katalog/kodgrup/PWB-1070.jpg",
     subcategories: [
@@ -266,7 +255,6 @@ export const productCategories: ProductCategory[] = [
     id: 18,
     value: "powerbanks",
     label: "Powerbanks",
-    icon: FaBatteryFull,
     description: "Portable chargers to keep your devices powered.",
     image: "https://drpromosyon.com/assets/img/katalog/kodgrup/PWB-10.jpg",
     subcategories: [
@@ -288,7 +276,6 @@ export const productCategories: ProductCategory[] = [
     id: 20,
     value: "bags",
     label: "Bags",
-    icon: FaShoppingBag,
     description: "Stylish and functional bags for everyday use.",
     image: "https://drpromosyon.com/assets/img/katalog/urunler/SPK.jpg",
     subcategories: [
@@ -348,7 +335,6 @@ export const productCategories: ProductCategory[] = [
     id: 26,
     value: "notebooks",
     label: "Notebooks",
-    icon: FaBook,
     description: "Notebooks for study, work, and journaling.",
     image: "https://drpromosyon.com/assets/img/katalog/urunler/RSA-471-B.jpg",
     subcategories: [
