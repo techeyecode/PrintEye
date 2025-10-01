@@ -1,4 +1,4 @@
-// BrochurePage.tsx
+// BrochureSection.tsx
 import React from "react";
 
 interface Brochure {
@@ -53,7 +53,7 @@ const brochures: Brochure[] = [
   },
 ];
 
-const BrochurePage: React.FC = () => {
+const BrochureSection: React.FC = () => {
   return (
     <div className="container mx-auto text-center py-10">
       <div className="mb-6">
@@ -83,4 +83,4 @@ const BrochurePage: React.FC = () => {
   );
 };
 
-export default BrochurePage;
+export default BrochureSection;

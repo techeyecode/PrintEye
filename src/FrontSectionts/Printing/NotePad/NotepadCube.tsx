@@ -1,24 +1,25 @@
 import React from "react";
-import BrochureCard from "./BrochureCard";
-import { standardBrochures } from "./BrochuresIteams";
+import { Cube } from "./NotPad";
+import NotePadCard from "./NotePadCard";
 
-const StandardBrochure: React.FC = () => {
+const NotepadCube: React.FC = () => {
   return (
     <div className="container mx-auto text-center py-10">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-primary">Shop By Shape</h2>
+        <h2 className="text-2xl font-bold text-primary">Notepad Cube</h2>
         <p className="text-primary">
           Design a stunning card that perfectly captures your brand.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
-        {standardBrochures.map((card, index) => (
-          <BrochureCard
+        {Cube.map((card, index) => (
+          <NotePadCard
             key={index}
-            title={card.title}
+            label={card.label}
+            count={card.count}
             image={card.image}
-            id={card.id}
+            link={card.link}
           />
         ))}
       </div>
@@ -26,4 +27,4 @@ const StandardBrochure: React.FC = () => {
   );
 };
 
-export default StandardBrochure;
+export default NotepadCube;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import {
   FaCode,
   FaShoppingCart,
-  FaMoneyBill,
   FaAngleDoubleRight,
   FaTags,
 } from "react-icons/fa";
@@ -86,19 +85,6 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
   return (
     <section className="max-w-7xl mx-auto p-4">
       {/* Breadcrumb */}
-      <nav className="flex items-center space-x-2 text-sm mb-6 text-primary">
-        <Link to="/" className="flex items-center transition-colors">
-          <TiHome className="w-4 h-4 mr-1" />
-          Home
-        </Link>
-        <span className="mx-3">/</span>
-        <Link to="/Promotion" className="flex items-center transition-colors">
-          <FaTags className="w-4 h-4 mr-1" />
-          Promotion
-        </Link>
-        <span className="mx-3">/</span>
-        <span className="text-primary font-medium">{product.label}</span>
-      </nav>
 
       {/* Product Details */}
       <div className="flex flex-col lg:flex-row gap-6">

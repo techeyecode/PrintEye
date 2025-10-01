@@ -24,13 +24,13 @@ const helpers = {
       { value: "door-brochure", label: "doorBrochure" },
     ] as Item[],
 
-    Notpad: [
-      { value: "all", label: "all" },
-      { value: "spiral-notpad", label: "spiralNotpad" },
-      { value: "notpad-with-cover", label: "notpadWithCover" },
-      { value: "notpad-without-cover", label: "notpadWithoutCover" },
-      { value: "notpad-cube", label: "notpadCube" },
-      { value: "footed-notpad", label: "footedNotpad" },
+    Notepad: [
+      { value: "all", label: "all", link: "/NotePad" },
+      { value: "spiral-notepad", label: "spiralNotepad" },
+      { value: "notepad-with-cover", label: "notepadWithCover" },
+      { value: "notepad-without-cover", label: "notepadWithoutCover" },
+      { value: "notepad-cube", label: "notepadCube" },
+      { value: "footed-notepad", label: "footedNotepad" },
     ] as Item[],
 
     Catalog: [

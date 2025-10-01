@@ -19,6 +19,7 @@ const PopularBusinessCards: React.FC = () => {
           <BusinessCard
             key={index}
             label={card.label}
+            id={card.id}
             count={card.count}
             image={card.image}
             link={card.link}

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-interface BusinessCardProps {
+interface NotePadCardProps {
   label: string;
   count: string;
   image: string;
   id: string;
 }
 
-const BusinessCard: React.FC<BusinessCardProps> = ({
+const NotePadCard: React.FC<NotePadCardProps> = ({
   label,
   count,
   image,
@@ -15,7 +15,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
 }) => {
   return (
     <Link
-      to={`/business/${id}`}
+      to={`${id}`}
       className="relative block overflow-hidden rounded-2xl shadow transition"
     >
       <div className="absolute inset-0 bg-primary/5 opacity-0 hover:opacity-100 transition"></div>
@@ -28,4 +28,4 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
   );
 };
 
-export default BusinessCard;
+export default NotePadCard;
