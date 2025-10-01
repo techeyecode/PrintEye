@@ -1,18 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-interface NotePadCardProps {
+interface BagCardProps {
   label: string;
   count: string;
   image: string;
   id: string;
 }
 
-const NotePadCard: React.FC<NotePadCardProps> = ({
-  label,
-  count,
-  image,
-  id,
-}) => {
+const BagCard: React.FC<BagCardProps> = ({ label, count, image, id }) => {
   return (
     <Link
       to={`${id}`}
@@ -28,4 +23,4 @@ const NotePadCard: React.FC<NotePadCardProps> = ({
   );
 };
 
-export default NotePadCard;
+export default BagCard;

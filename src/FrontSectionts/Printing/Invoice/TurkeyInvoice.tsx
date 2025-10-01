@@ -1,21 +1,22 @@
 import React from "react";
-import { NotepadCover } from "./NotPad";
-import NotePadCard from "./NotePadCard";
+import { TurkeyInvoices } from "./Invoice";
+import InvoiceCard from "./InvoiceCard";
 
-const NotepadWithCover: React.FC = () => {
+const TurkeyInvoice: React.FC = () => {
   return (
     <div className="container mx-auto text-center py-10">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-primary">Notepad with Cover</h2>
+        <h2 className="text-2xl font-bold text-primary">Turkey Invoice</h2>
         <p className="text-primary">
           Design a stunning card that perfectly captures your brand.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
-        {NotepadCover.map((card, index) => (
-          <NotePadCard
+        {TurkeyInvoices.map((card, index) => (
+          <InvoiceCard
             key={index}
+            id={card.id}
             label={card.label}
             count={card.count}
             image={card.image}
@@ -27,4 +28,4 @@ const NotepadWithCover: React.FC = () => {
   );
 };
 
-export default NotepadWithCover;
+export default TurkeyInvoice;

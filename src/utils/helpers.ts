@@ -34,34 +34,37 @@ const helpers = {
     ] as Item[],
 
     Catalog: [
-      { value: "all", label: "all" },
       { value: "american-plant-catalog", label: "americanPlantCatalog" },
       { value: "saddle-stitched-catalog", label: "saddleStitchedCatalog" },
       { value: "spiral-catalog", label: "spiralCatalog" },
       { value: "hard-cover-catalog", label: "hardCoverCatalog" },
     ] as Item[],
 
+    LetterHead: [
+      { value: "laser-invoice", label: "fantasyPaper" },
+      { value: "normal-invoice", label: "artPaper" },
+      { value: "turkey-invoice", label: "hamurPaper" },
+    ] as Item[],
+
     Invoice: [
-      { value: "all", label: "all" },
+      { value: "all", label: "all", link: "/Invoices" },
       { value: "laser-invoice", label: "laserInvoice" },
       { value: "normal-invoice", label: "normalInvoice" },
       { value: "turkey-invoice", label: "turkeyInvoice" },
     ] as Item[],
 
-    UnderFooter: [
-      { value: "all", label: "all" },
+    UnderFoot: [
       { value: "craft-paper-underfoot", label: "craftPaperUnderfoot" },
       { value: "art-paper-underfoot", label: "artPaperUnderfoot" },
     ] as Item[],
 
     Calendar: [
-      { value: "all", label: "all" },
       { value: "table-calendar", label: "tableCalendar" },
       { value: "wall-calendar", label: "wallCalendar" },
     ] as Item[],
 
-    PaperBag: [
-      { value: "all", label: "all" },
+    Bag: [
+      { value: "all", label: "all", link: "/Bag" },
       { value: "carton-bag", label: "cartonBag" },
       { value: "craft-bag", label: "craftBag" },
       { value: "xray-bag", label: "xrayBag" },
@@ -91,6 +94,20 @@ const helpers = {
     ] as Item[],
 
     SpecialOffers: [
+      { value: "vip-offer", label: "VIP Offer" },
+      { value: "bundle-offer", label: "Bundle Offer" },
+    ] as Item[],
+  },
+
+  Uniform: {
+    Hospital: [
+      { value: "discount-campaign", label: "Discount Campaign" },
+      { value: "seasonal-offer", label: "Seasonal Offer" },
+      { value: "buy-one-get-one", label: "Buy One Get One" },
+      { value: "clearance-sale", label: "Clearance Sale" },
+    ] as Item[],
+
+    School: [
       { value: "vip-offer", label: "VIP Offer" },
       { value: "bundle-offer", label: "Bundle Offer" },
     ] as Item[],

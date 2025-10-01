@@ -24,7 +24,7 @@ interface CSidebarProps {
   isOpen?: boolean;
   onClose?: () => void;
   title?: string;
-  type?: "Printing" | "Promotion";
+  type?: "Printing" | "Promotion" | "Uniform";
 }
 
 interface FilterState {
@@ -75,6 +75,15 @@ const CSidebar: React.FC<CSidebarProps> = ({
         label: catKey,
         subcategories:
           helpers.Promotion[catKey as keyof typeof helpers.Promotion],
+      });
+    });
+  }
+  if (!type || type === "Uniform") {
+    Object.keys(helpers.Uniform).forEach((catKey) => {
+      categories.push({
+        value: `Uniform-${catKey}`,
+        label: catKey,
+        subcategories: helpers.Uniform[catKey as keyof typeof helpers.Uniform],
       });
     });
   }

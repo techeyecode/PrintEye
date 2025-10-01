@@ -1,25 +1,25 @@
 import React from "react";
-import { SpiralNotepad } from "./NotPad";
-import NotePadCard from "./NotePadCard";
+import { NormalInvoices } from "./Invoice";
+import InvoiceCard from "./InvoiceCard";
 
-const SpiralNotepads: React.FC = () => {
+const NormalInvoice: React.FC = () => {
   return (
     <div className="container mx-auto text-center py-10">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-primary">Spiral Notepads</h2>
+        <h2 className="text-2xl font-bold text-primary">Normal Invoice</h2>
         <p className="text-primary">
           Design a stunning card that perfectly captures your brand.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
-        {SpiralNotepad.map((card, index) => (
-          <NotePadCard
+        {NormalInvoices.map((card, index) => (
+          <InvoiceCard
             key={index}
+            id={card.id}
             label={card.label}
             count={card.count}
             image={card.image}
-            id={card.id}
             link={card.link}
           />
         ))}
@@ -28,4 +28,4 @@ const SpiralNotepads: React.FC = () => {
   );
 };
 
-export default SpiralNotepads;
+export default NormalInvoice;

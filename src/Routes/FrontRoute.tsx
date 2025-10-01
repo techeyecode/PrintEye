@@ -15,13 +15,15 @@ import Business from "../FrontSectionts/Printing/Business/Business";
 import BusinessDetailies from "../FrontSectionts/Printing/Business/BusinessDetailies";
 import Brochures from "../FrontSectionts/Printing/Brochures/Brochures";
 import BrochuresDetailies from "../FrontSectionts/Printing/Brochures/BrochuresDetailies";
-import NotePad from "../FrontSectionts/Printing/NotePad/NotePad";
-import NotePadDetailies from "../FrontSectionts/Printing/NotePad/NotePadDetailies";
+import Bag from "../FrontSectionts/Printing/Bags/Bag";
+import BagDetailies from "../FrontSectionts/Printing/Bags/BagDetailies";
 
 // Uniform
 import Uniform from "../FrontSectionts/Uniform/Uniform";
 import UniformType from "../FrontSectionts/Uniform/UniformType";
 import UniformDetailies from "../FrontSectionts/Uniform/UniformDetailies";
+import Invoices from "../FrontSectionts/Printing/Invoice/Invoices";
+import InvoiceDetailies from "../FrontSectionts/Printing/Invoice/InvoiceDetailies";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
@@ -45,16 +47,22 @@ export const FrontRoute = (
       <Route path=":id" element={<BusinessDetailies />} />
     </Route>
 
-    {/* NotePad Routes */}
-    <Route path="NotePad">
-      <Route index element={<NotePad />} />
-      <Route path=":id" element={<NotePadDetailies />} />
-    </Route>
-
     {/* Brochures Routes */}
     <Route path="Brochures">
       <Route index element={<Brochures />} />
       <Route path=":id" element={<BrochuresDetailies />} />
+    </Route>
+
+    {/* Bag Routes */}
+    <Route path="Bag">
+      <Route index element={<Bag />} />
+      <Route path=":id" element={<BagDetailies />} />
+    </Route>
+
+    {/* Invoice Routes */}
+    <Route path="Invoices">
+      <Route index element={<Invoices />} />
+      <Route path=":id" element={<InvoiceDetailies />} />
     </Route>
 
     {/* Uniform Routes */}

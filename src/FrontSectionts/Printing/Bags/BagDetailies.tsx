@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { AllNotepads } from "./NotPad";
+import { AllBags } from "./Bags";
 import CDetailies from "../../../Components/CDetailies";
 import { TiHome } from "react-icons/ti";
 import { IoIosPrint } from "react-icons/io";
 import { FaCreditCard } from "react-icons/fa";
 
-const NotePadDetailies: React.FC = () => {
+const BagDetailies: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
@@ -26,14 +26,14 @@ const NotePadDetailies: React.FC = () => {
           Printing
         </Link>
         <span className="mx-3">/</span>
-        <Link to="/Business" className="flex items-center transition-colors">
+        <Link to="/Bag" className="flex items-center transition-colors">
           <FaCreditCard className="w-4 h-4 mr-1" />
-          Business Cards
+          Bag
         </Link>
       </nav>
-      <CDetailies id={id} items={AllNotepads} />
+      <CDetailies id={id} items={AllBags} />
     </div>
   );
 };
 
-export default NotePadDetailies;
+export default BagDetailies;
