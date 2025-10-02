@@ -1,9 +1,9 @@
 import React from "react";
-import { productCategories } from "./PromotionItems";
+import { cupCategories } from "./CupItem";
 import CCard from "../../Components/CCard";
 
-const PromotionCards: React.FC = () => {
-  const allProducts = productCategories.flatMap(
+const CupCards: React.FC = () => {
+  const allProducts = cupCategories.flatMap(
     (category) => category.subcategories
   );
 
@@ -17,7 +17,7 @@ const PromotionCards: React.FC = () => {
             label={product.label}
             count={product.count}
             image={product.images[0]}
-            navigateTo={`/Promotion/${product.id}`}
+            navigateTo={`/Cup/${product.id}`}
           />
         ))}
       </div>
@@ -25,4 +25,4 @@ const PromotionCards: React.FC = () => {
   );
 };
 
-export default PromotionCards;
+export default CupCards;

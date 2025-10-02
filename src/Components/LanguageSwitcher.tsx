@@ -32,7 +32,7 @@ const LanguageSwitcher: React.FC<{
     return isActive
       ? isDarkMode
         ? "text-primary-dark"
-        : "text-orange-700"
+        : "text-secondary"
       : isDarkMode
       ? "hover:border-red-400"
       : "hover:border-secondary";

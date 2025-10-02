@@ -1,5 +1,5 @@
 import React from "react";
-import FancyButton from "../Components/BorderButton";
+import CButton from "../Components/CButton";
 
 interface HomeHeaderProps {
   title: string;
@@ -15,12 +15,12 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({
   buttonLink = "#",
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-center text-primary !space-y-2 lg:!space-y-4">
+    <div className="flex flex-col items-center justify-center text-center text-primary !space-y-5 lg:!space-y-4">
       <h1 className="font-bold text-2xl md:text-2xl ">{title}</h1>
       <p className="">{description}</p>
-      <FancyButton onClick={() => (window.location.href = buttonLink)}>
+      <CButton onClick={() => (window.location.href = buttonLink)}>
         {buttonText}
-      </FancyButton>
+      </CButton>
     </div>
   );
 };

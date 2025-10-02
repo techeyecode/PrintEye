@@ -65,10 +65,10 @@ const CollectionSlider: React.FC = () => {
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
         <div className="w-full lg:w-1/4">
           <HomeHeader
-            title="Beautifully Branded Company Merch"
+            title="Beautifully Branded EyePrint"
             description="We expertly curate remarkable products, from emerging brands to household names, that are thoughtful and long-lasting."
             buttonText="See All"
-            buttonLink="#"
+            buttonLink="/Promotion"
           />
         </div>
 

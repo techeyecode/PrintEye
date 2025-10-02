@@ -11,8 +11,8 @@ body {
 
 @theme {
   --color-primary: #2957a2;
-  --color-primary-dark: #97b4e5;
-  --color-secondary: #ebc7a3;
+  --color-secondary: #e0a973;
+  --color-tertiary: #ebc7a3;
   --color-dark-background: #02152d;
   --color-light-background: #f0f2f5;
   --color-light-text: #2957a2;
@@ -71,3 +71,4 @@ body.dark::-webkit-scrollbar-thumb {
   color: #fff;
   opacity: 1;
 }
+

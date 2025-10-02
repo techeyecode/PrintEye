@@ -13,7 +13,7 @@ const FeatureSupplier: React.FC = () => {
             to help you bring your thoughtful corporate gifts to life, and our
             dedicated managers guide you through the process every step of the
             way."
-            buttonText="Our Services"
+            buttonText="About Us"
             buttonLink="#"
           />
         </div>

@@ -17,13 +17,20 @@ import Brochures from "../FrontSectionts/Printing/Brochures/Brochures";
 import BrochuresDetailies from "../FrontSectionts/Printing/Brochures/BrochuresDetailies";
 import Bag from "../FrontSectionts/Printing/Bags/Bag";
 import BagDetailies from "../FrontSectionts/Printing/Bags/BagDetailies";
-
-// Uniform
-import Uniform from "../FrontSectionts/Uniform/Uniform";
-import UniformType from "../FrontSectionts/Uniform/UniformType";
-import UniformDetailies from "../FrontSectionts/Uniform/UniformDetailies";
 import Invoices from "../FrontSectionts/Printing/Invoice/Invoices";
 import InvoiceDetailies from "../FrontSectionts/Printing/Invoice/InvoiceDetailies";
+
+// Uniform
+import Uniform from "../FrontSectionts/Uniforms/Uniform";
+import UniformDetailies from "../FrontSectionts/Uniforms/UniformDetailies";
+
+// Packaging
+import Packaging from "../FrontSectionts/Packaging/Packaging";
+import PackagingDetailies from "../FrontSectionts/Packaging/PackagingDetailies";
+import Sign from "../FrontSectionts/Sign/Sign";
+import SignDetailies from "../FrontSectionts/Sign/SignDetailies";
+import CupDetailies from "../FrontSectionts/Cups/CupDetailies";
+import Cup from "../FrontSectionts/Cups/Cup";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
@@ -68,8 +75,25 @@ export const FrontRoute = (
     {/* Uniform Routes */}
     <Route path="Uniform">
       <Route index element={<Uniform />} />
-      <Route path=":id" element={<UniformType />} />
-      <Route path="Type/:id" element={<UniformDetailies />} />
+      <Route path=":id" element={<UniformDetailies />} />
+    </Route>
+
+    {/* Packaging Routes */}
+    <Route path="Packaging">
+      <Route index element={<Packaging />} />
+      <Route path=":id" element={<PackagingDetailies />} />
+    </Route>
+
+    {/* Sign Routes */}
+    <Route path="Sign">
+      <Route index element={<Sign />} />
+      <Route path=":id" element={<SignDetailies />} />
+    </Route>
+
+    {/* Cup Routes */}
+    <Route path="Cup">
+      <Route index element={<Cup />} />
+      <Route path=":id" element={<CupDetailies />} />
     </Route>
   </Route>
 );
