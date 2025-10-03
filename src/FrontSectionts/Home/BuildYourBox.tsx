@@ -3,7 +3,7 @@ import HomeHeader from "../../Components/HomeHeader";
 
 const BuildYourBox: React.FC = () => {
   return (
-    <section className="w-full bg-secondary/50 py-8">
+    <section className="w-full bg-primary/20 py-8">
       <div className=" mx-auto flex flex-col lg:flex-row items-center">
         <div className="w-full lg:w-1/2 p-4 flex justify-center">
           <div

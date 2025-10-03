@@ -45,7 +45,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-10 py-16 sm:py-20 flex flex-col justify-center h-full w-full lg:w-1/2">
         <div className="max-w-2xl lg:max-w-none">
-          <h1 className="text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-white lg:text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4">
+          <h1 className="text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4">
             Better Corporate Gifts for a Better Planet
           </h1>
           <p className="text-white lg:text-primary text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6">

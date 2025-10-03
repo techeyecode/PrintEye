@@ -12,8 +12,8 @@ const Home = () => {
       <CollectionSlider />
       <FeatureSupplier />
       <GiftSectionPage />
-      <StatusPage />
       <BuildYourBox />
+      <StatusPage />
     </div>
   );
 };
