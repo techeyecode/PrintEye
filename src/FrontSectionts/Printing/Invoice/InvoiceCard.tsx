@@ -1,18 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 interface InvoiceCardProps {
-  label: string;
-  count: string;
   image: string;
-  id: string;
+  id: number;
 }
 
-const InvoiceCard: React.FC<InvoiceCardProps> = ({
-  label,
-  count,
-  image,
-  id,
-}) => {
+const InvoiceCard: React.FC<InvoiceCardProps> = ({ image, id }) => {
   return (
     <Link
       to={`${id}`}

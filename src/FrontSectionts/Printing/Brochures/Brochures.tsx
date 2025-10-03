@@ -1,4 +1,3 @@
-import React from "react";
 import StandardBrochure from "./StandardBrochure";
 import DoorBrochure from "./DoorBrochure";
 import FoldBrochure from "./FoldBrochure";

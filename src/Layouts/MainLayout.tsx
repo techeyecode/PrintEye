@@ -1,39 +1,45 @@
 import React from "react";
-import {
-  Outlet,
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 export default function MainLayout() {
-  const url = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
 
   React.useEffect(() => {
-    const removeNullQueryParams = () => {
-      const searchParams = new URLSearchParams(window.location.search);
-      const keysToDelete = Array.from(searchParams.entries())
-        .filter(
-          ([key, value]) =>
-            value === "" ||
-            value === null ||
-            value === undefined ||
-            value === "null" ||
-            value === "undefined"
-        )
-        .map(([key]) => key);
+    const cleanSearchParams = () => {
+      const currentParams = new URLSearchParams(location.search);
+      let hasChanges = false;
 
-      keysToDelete.forEach((key) => searchParams.delete(key));
-      setSearchParams(searchParams);
+      for (const [key, value] of currentParams.entries()) {
+        if (
+          value === "" ||
+          value === null ||
+          value === undefined ||
+          value === "null" ||
+          value === "undefined"
+        ) {
+          currentParams.delete(key);
+          hasChanges = true;
+        }
+      }
+
+      if (hasChanges) {
+        const newSearchString = currentParams.toString();
+        const newUrl = newSearchString
+          ? `${location.pathname}?${newSearchString}`
+          : location.pathname;
+
+        navigate(newUrl, { replace: true });
+      }
     };
 
-    removeNullQueryParams();
+    cleanSearchParams();
 
-    if (url.pathname !== "/") {
+    // Scroll to top on route change (excluding root path)
+    if (location.pathname !== "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [url.pathname, url.search, navigate, setSearchParams]);
+  }, [location.pathname, location.search, navigate]);
+
   return <Outlet />;
 }

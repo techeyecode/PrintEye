@@ -21,7 +21,6 @@ const CartonBag: React.FC = () => {
             label={card.label}
             count={card.count}
             image={card.image}
-            link={card.link}
           />
         ))}
       </div>

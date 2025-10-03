@@ -8,7 +8,7 @@ interface GiftItem {
   id: number;
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: React.ComponentType<{ className?: string }>;
   buttonText: string;
   buttonLink: string;
 }
@@ -20,7 +20,7 @@ const GiftSectionPage: React.FC = () => {
       title: "Custom Corporate Gift Boxes",
       description:
         "Every custom gift box is carefully curated with hand-selected items, blending elegance and purpose to leave a lasting impression on your recipients",
-      icon: <TbGiftFilled className="w-16 h-16 text-primary" />,
+      icon: TbGiftFilled,
       buttonText: "Shop Pre-Built Gift Boxes",
       buttonLink: "/collections/kits",
     },
@@ -29,7 +29,7 @@ const GiftSectionPage: React.FC = () => {
       title: "Delivered Directly to Recipients",
       description:
         "Our dedicated fulfillment team expertly builds, packages, and delivers each gift, ensuring it arrives beautifully presented and directly in the hands of your recipients.",
-      icon: <FaTruckFront className="w-16 h-16 text-primary" />,
+      icon: FaTruckFront,
       buttonText: "Get Started",
       buttonLink: "/pages/contact",
     },
@@ -38,7 +38,7 @@ const GiftSectionPage: React.FC = () => {
       title: "Onsite Gifting Experiences",
       description:
         "We specialize in curating unique corporate gift experiences that leave a lasting impression on your guests and elevate your events",
-      icon: <MdSunny className="w-16 h-16 text-primary" />,
+      icon: MdSunny,
       buttonText: "Book Now",
       buttonLink: "/pages/onsite-gifting",
     },
@@ -52,8 +52,10 @@ const GiftSectionPage: React.FC = () => {
             key={item.id}
             className="flex flex-col items-center text-center p-6 rounded-lg transition text-primary"
           >
-            {/* Icon */}
-            <div className="mb-4">{item.icon}</div>
+            {/* Icon - Now render as component */}
+            <div className="mb-4">
+              <item.icon className="w-16 h-16 text-primary" />
+            </div>
 
             {/* Reuse your HomeHeader */}
             <HomeHeader

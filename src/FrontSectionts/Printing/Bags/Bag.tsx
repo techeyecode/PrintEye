@@ -1,4 +1,3 @@
-import React from "react";
 import CartonBag from "./CartonBag";
 import CraftBag from "./CraftBag";
 import XrayBag from "./XrayBag";

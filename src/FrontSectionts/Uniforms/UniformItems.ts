@@ -128,7 +128,7 @@ export const uniformCategories: UniformCategory[] = [
         ],
       },
 
-      ,
+      
     ],
   },
   {

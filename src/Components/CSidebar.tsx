@@ -5,12 +5,11 @@ import {
   MdSearch,
   MdExpandLess,
   MdExpandMore,
-  MdMenu,
 } from "react-icons/md";
 import { Input, Checkbox, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../Context/ThemeContext";
+// import { useTheme } from "../Context/ThemeContext";
 import helpers from "../utils/helpers";
 import CButton from "./CButton";
 
@@ -233,17 +232,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
   // Show as button on mobile/tablet when sidebar is closed
   if (shouldShowAsButton && !sidebarOpen) {
     return (
-      <CButton
-        type="primary"
-        isFullWidth
-        icon={<MdMenu size={20} />}
-        onClick={handleOpenSidebar}
-        className={`fixed top-4 left-4 z-40 shadow-lg !w-full ${
-          isDarkMode
-            ? "bg-gray-800 border-gray-700"
-            : "bg-white border-gray-200"
-        }`}
-      >
+      <CButton variant="primary" isFullWidth onClick={handleOpenSidebar}>
         {t("Categories")}
       </CButton>
     );

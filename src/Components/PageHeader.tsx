@@ -2,7 +2,19 @@ import React from "react";
 import { TiHome } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
-const PageHeader = ({
+interface Breadcrumb {
+  label: string;
+  path?: string;
+}
+
+interface PageHeaderProps {
+  title?: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  breadcrumbs?: Breadcrumb[];
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({
   title = "Page Title",
   subtitle = "",
   backgroundImage,

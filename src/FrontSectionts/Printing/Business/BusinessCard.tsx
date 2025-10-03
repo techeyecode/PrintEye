@@ -5,6 +5,7 @@ interface BusinessCardProps {
   count: string;
   image: string;
   id: string;
+  link?: string;
 }
 
 const BusinessCard: React.FC<BusinessCardProps> = ({

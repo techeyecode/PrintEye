@@ -3,6 +3,7 @@
 export interface BrochureItem {
   id: number;
   title: string;
+  
   image: string;
   link: string;
   grams: string[];
@@ -10,6 +11,7 @@ export interface BrochureItem {
   printSides: string[];
   finish: string[];
   effects: string[];
+  
 }
 
 // Standard Brochures

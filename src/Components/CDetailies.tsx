@@ -1,28 +1,28 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  FaCode,
-  FaShoppingCart,
-  FaAngleDoubleRight,
-  FaTags,
-} from "react-icons/fa";
+import { FaCode, FaShoppingCart, FaAngleDoubleRight } from "react-icons/fa";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
-import { TiHome } from "react-icons/ti";
 import CCard from "./CCard";
 
 // Unified Product type
+// In your CDetailies component or types file
 export interface ProductType {
   id: number | string;
   label: string;
-  count?: string | number;
+  count?: number | string; // Allow both number and string
   image?: string;
   images?: string[];
   description?: string | string[];
   category?: string;
+  link?: string; // Add this if needed
 }
 
 export interface CategoryType {
+  id: number | string;
+  label: string;
+  subcategories: ProductType[];
+}
+export interface CardItem {
   id: number | string;
   label: string;
   subcategories: ProductType[];
@@ -31,10 +31,13 @@ export interface CategoryType {
 // Props: items can be flat or nested
 interface CDetailiesProps {
   id: string | number;
-  items: ProductType[] | CategoryType[];
+  items: ProductType[] | CategoryType[] | CardItem[];
 }
 
 const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
+  // This line should now work without red underline
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
   // Flatten all products if nested
   const allProducts: ProductType[] =
     "subcategories" in (items[0] || {})
@@ -48,6 +51,7 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
       <div className="p-4 text-red-500 text-center">Product not found</div>
     );
 
+  // Rest of your component code remains the same...
   // Find parent category if nested
   const parentCategory =
     "subcategories" in (items[0] || {})
@@ -69,8 +73,6 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
     ? [product.image]
     : ["/placeholder.png"];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
   const handlePrev = () =>
     setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const handleNext = () =>
@@ -84,8 +86,6 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
 
   return (
     <section className="max-w-7xl mx-auto p-4">
-      {/* Breadcrumb */}
-
       {/* Product Details */}
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="w-full lg:w-7/12 relative">
@@ -171,6 +171,7 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
                 label={sub.label}
                 count={sub.count}
                 image={sub.images?.[0] || sub.image || "/placeholder.png"}
+                navigateTo={``}
               />
             ))}
           </div>

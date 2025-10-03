@@ -4,7 +4,7 @@ interface BagCardProps {
   label: string;
   count: string;
   image: string;
-  id: string;
+  id: number;
 }
 
 const BagCard: React.FC<BagCardProps> = ({ label, count, image, id }) => {

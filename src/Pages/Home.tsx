@@ -1,4 +1,3 @@
-import React from "react";
 import HeroSection from "../FrontSectionts/Home/HeroSection";
 import CollectionSlider from "../FrontSectionts/Home/CollectionSlider";
 import FeatureSupplier from "../FrontSectionts/Home/FeatureSupplier";

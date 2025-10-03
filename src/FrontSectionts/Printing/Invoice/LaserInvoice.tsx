@@ -14,14 +14,7 @@ const LaserInvoice: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
         {LaserInvoices.map((card, index) => (
-          <InvoiceCard
-            key={index}
-            id={card.id}
-            label={card.label}
-            count={card.count}
-            image={card.image}
-            link={card.link}
-          />
+          <InvoiceCard key={index} id={card.id} image={card.image} />
         ))}
       </div>
     </div>

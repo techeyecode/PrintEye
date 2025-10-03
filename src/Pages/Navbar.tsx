@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import "../Style/App.css";
 
-import { FaTimes, FaBars, FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { FaTimes, FaBars, FaChevronDown } from "react-icons/fa";
 
 import LightMode from "../assets/EyePrintLogo.png";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 
 const Navbar: React.FC = () => {
-  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [printingDropdownOpen, setPrintingDropdownOpen] = useState(false);
@@ -17,7 +15,6 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileDropdownRef = useRef<HTMLDivElement>(null);
-  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -92,14 +89,12 @@ const Navbar: React.FC = () => {
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;
 
   const handleMouseEnter = () => {
-    if (closeTimeout.current) clearTimeout(closeTimeout.current);
     setPrintingDropdownOpen(true);
   };
 
   const handleMouseLeave = () => {
-    closeTimeout.current = setTimeout(() => {
-      setPrintingDropdownOpen(false);
-    }, 200);
+    // Use immediate close instead of timeout
+    setPrintingDropdownOpen(false);
   };
 
   return (

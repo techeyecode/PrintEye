@@ -1,13 +1,11 @@
 import React from "react";
 import { useTheme } from "../Context/ThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
-import { useTranslation } from "react-i18next";
 
 const ThemeSwitcher: React.FC<{ isMobile?: boolean }> = ({
   isMobile = false,
 }) => {
   const { isDarkMode, toggleTheme } = useTheme();
-  const { t } = useTranslation();
 
   return (
     <button
