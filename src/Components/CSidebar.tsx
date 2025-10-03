@@ -9,7 +9,6 @@ import {
 import { Input, Checkbox, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-// import { useTheme } from "../Context/ThemeContext";
 import helpers from "../utils/helpers";
 import CButton from "./CButton";
 

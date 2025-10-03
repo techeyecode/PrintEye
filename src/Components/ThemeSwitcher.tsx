@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "../Context/ThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const ThemeSwitcher: React.FC<{ isMobile?: boolean }> = ({
