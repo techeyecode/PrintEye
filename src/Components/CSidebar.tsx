@@ -1,11 +1,6 @@
 // CSidebar.tsx
 import React, { useState, useEffect } from "react";
-import {
-  MdClose,
-  MdSearch,
-  MdExpandLess,
-  MdExpandMore,
-} from "react-icons/md";
+import { MdClose, MdSearch, MdExpandLess, MdExpandMore } from "react-icons/md";
 import { Input, Checkbox, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -49,7 +44,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
   type,
 }) => {
   const { t } = useTranslation();
-  const { isDarkMode } = useTheme();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -249,9 +243,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
 
       {/* Sidebar */}
       <div
-        className={`flex flex-col min-h-screen transition-all duration-300 ${
-          isDarkMode ? "bg-gray-900 text-white" : "bg-white"
-        } ${
+        className={`flex flex-col min-h-screen transition-all duration-300  bg-white  ${
           shouldShowAsButton
             ? `fixed inset-y-0 left-0 z-50 w-full ${
                 sidebarOpen
@@ -269,9 +261,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
               type="text"
               icon={<MdClose size={22} />}
               onClick={handleCloseSidebar}
-              className={`rounded-full p-2 ${
-                isDarkMode ? "text-blue-400" : "text-primary"
-              }`}
+              className={`rounded-full p-2 text-primary `}
             />
           )}
         </div>
@@ -298,9 +288,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
             return (
               <div key={cat.value}>
                 <div
-                  className={`flex items-center justify-between p-3 rounded-full cursor-pointer ${
-                    isDarkMode ? "hover:bg-gray-800" : "hover:bg-gray-50"
-                  } border border-primary/20 hover:border-primary/30 transform hover:scale-[1.03]`}
+                  className={`flex items-center justify-between p-3 rounded-full cursor-pointer  hover:bg-gray-50 border border-primary/20 hover:border-primary/30 transform hover:scale-[1.03]`}
                   onClick={() => toggleExpand(cat.value)}
                 >
                   <div className="flex items-center gap-3">

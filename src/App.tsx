@@ -10,7 +10,6 @@ import { useTranslation } from "react-i18next";
 import "./Style/App.css";
 import { useEffect } from "react";
 import "../src/i18next/i18n";
-import { ThemeProvider } from "./Context/ThemeContext";
 import { NotificationProvider } from "./Context/NotificationContext";
 // import AuthProvider from "./Hooks/AuthProvider";
 
@@ -32,9 +31,7 @@ function App() {
   return (
     // <AuthProvider>
     <NotificationProvider>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <RouterProvider router={router} />
     </NotificationProvider>
     // </AuthProvider>
   );

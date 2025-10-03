@@ -18,7 +18,6 @@ const LanguageSwitcher: React.FC<{
   onSelect?: () => void;
 }> = ({ isMobile = false, onSelect }) => {
   const { i18n } = useTranslation();
-  const { isDarkMode } = useTheme();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -28,13 +27,7 @@ const LanguageSwitcher: React.FC<{
 
   const getActiveLanguageClass = (lang: string) => {
     const isActive = i18n.language === lang;
-    return isActive
-      ? isDarkMode
-        ? "text-primary-dark"
-        : "text-secondary"
-      : isDarkMode
-      ? "hover:border-red-400"
-      : "hover:border-secondary";
+    return isActive ? "text-secondary" : "hover:border-secondary";
   };
 
   return (
