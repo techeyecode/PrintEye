@@ -41,6 +41,7 @@ const Navbar: React.FC = () => {
     { name: "Packaging", link: "/Packaging" },
     { name: "Sign", link: "/Sign" },
     { name: "Cup", link: "/Cup" },
+    { name: "Catalog", link: "/Catalog" },
   ];
 
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;

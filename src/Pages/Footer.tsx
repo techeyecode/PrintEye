@@ -31,7 +31,6 @@ const Footer: React.FC = () => {
     { name: "Terms of Service", link: "/terms" },
   ];
 
-  // Modern hover effects configuration
   const hoverEffects = {
     link: {
       base: "transition-all duration-500 transform hover:translate-x-2 relative",
@@ -47,7 +46,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-primary text-white border-t border-gray-200 mt-20">
+    <footer className="bg-primary text-white border-t border-gray-200 mt-14 m-6 rounded-3xl">
       {/* Main Footer Content */}
       <div className="py-8 px-4 md:px-14 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

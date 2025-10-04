@@ -25,7 +25,6 @@ const helpers = {
     ] as Item[],
 
     Notepad: [
-      { value: "all", label: "all", link: "/NotePad" },
       { value: "spiral-notepad", label: "spiralNotepad" },
       { value: "notepad-with-cover", label: "notepadWithCover" },
       { value: "notepad-without-cover", label: "notepadWithoutCover" },

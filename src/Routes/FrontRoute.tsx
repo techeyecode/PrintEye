@@ -1,8 +1,9 @@
-import { Route } from "react-router-dom";
 import FrontLayout from "../Layouts/FrontLayout";
+import { Route } from "react-router-dom";
 
 // Pages
 import Home from "../Pages/Home";
+import Catalog from "../Pages/Catalog";
 
 // Promotion
 import Promotion from "../FrontSectionts/Promotion/Promotion";
@@ -27,14 +28,19 @@ import UniformDetailies from "../FrontSectionts/Uniforms/UniformDetailies";
 // Packaging
 import Packaging from "../FrontSectionts/Packaging/Packaging";
 import PackagingDetailies from "../FrontSectionts/Packaging/PackagingDetailies";
+
+// Sign
 import Sign from "../FrontSectionts/Sign/Sign";
 import SignDetailies from "../FrontSectionts/Sign/SignDetailies";
+
+// Cup
 import CupDetailies from "../FrontSectionts/Cups/CupDetailies";
 import Cup from "../FrontSectionts/Cups/Cup";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
     <Route index element={<Home />} />
+    <Route path="Catalog" element={<Catalog />} />
 
     {/* Promotion Routes */}
     <Route path="Promotion">

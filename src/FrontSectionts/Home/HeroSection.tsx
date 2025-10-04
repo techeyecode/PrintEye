@@ -45,7 +45,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-10 py-16 sm:py-20 flex flex-col justify-center h-full w-full lg:w-1/2">
         <div className="max-w-2xl lg:max-w-none">
-          <h1 className="text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4">
+          <h1 className="text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-secondary lg:text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4">
             Better Corporate Gifts for a Better Planet
           </h1>
           <p className="text-white lg:text-primary text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6">
@@ -53,7 +53,7 @@ const HeroSection = () => {
             selection of sustainable gifts that leave a lasting impression.
           </p>
 
-          <div className="flex flex-col xs:flex-row items-start xs:items-center gap-3 sm:gap-4 mt-6 sm:mt-8 lg:mt-10 w-1/3 lg:w-1/3 xl:w-1/5">
+          <div className="flex flex-col xs:flex-row items-start mt-6 sm:mt-8 lg:mt-10">
             <CButton variant={isLarge ? "primary" : "secondary"}>
               Shop All
             </CButton>
