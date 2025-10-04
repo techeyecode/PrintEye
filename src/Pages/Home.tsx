@@ -1,9 +1,9 @@
 import HeroSection from "../FrontSectionts/Home/HeroSection";
 import CollectionSlider from "../FrontSectionts/Home/CollectionSlider";
 import FeatureSupplier from "../FrontSectionts/Home/FeatureSupplier";
-import GiftSectionPage from "../FrontSectionts/Home/GiftSectionPage";
 import BuildYourBox from "../FrontSectionts/Home/BuildYourBox";
 import StatusPage from "../FrontSectionts/Home/StatusPage";
+import Client from "./Client";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <HeroSection />
       <CollectionSlider />
       <FeatureSupplier />
-      <GiftSectionPage />
+      <Client />
       <BuildYourBox />
       <StatusPage />
     </div>

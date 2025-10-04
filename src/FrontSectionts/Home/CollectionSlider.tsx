@@ -68,7 +68,7 @@ const CollectionSlider: React.FC = () => {
             title="Beautifully Branded EyePrint"
             description="We expertly curate remarkable products, from emerging brands to household names, that are thoughtful and long-lasting."
             buttonText="See All"
-            buttonLink="/Promotion"
+            buttonLink="/Printing"
           />
         </div>
 

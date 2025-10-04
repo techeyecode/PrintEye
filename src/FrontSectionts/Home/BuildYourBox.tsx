@@ -24,7 +24,7 @@ const BuildYourBox: React.FC = () => {
               you the freedom to easily select everything from custom packaging
               to products to packing materials."
             buttonText="Build Your Own Box"
-            buttonLink="#"
+            buttonLink="Promotion"
           />
         </div>
       </div>

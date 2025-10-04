@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
 
   const companyLinks = [
     { name: "About Us", link: "/about" },
-    { name: "Contact", link: "/contact" },
+    { name: "Contact", link: "/Contact" },
     { name: "Privacy Policy", link: "/privacy" },
     { name: "Terms of Service", link: "/terms" },
   ];

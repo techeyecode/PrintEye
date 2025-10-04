@@ -14,7 +14,7 @@ const FeatureSupplier: React.FC = () => {
             dedicated managers guide you through the process every step of the
             way."
             buttonText="About Us"
-            buttonLink="#"
+            buttonLink="/about"
           />
         </div>
 

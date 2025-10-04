@@ -139,15 +139,16 @@ const helpers = {
   Promotion: {
     GiftSets: [{ value: "gift-sets", label: "giftSets" }] as Item[],
 
-    VictoriasJournalsProducts: [
+    Agendas: [
       {
         value: "victorias-journals-products",
         label: "victoriasJournalsProducts",
       },
+      { value: "agendas", label: "agendas" },
+      { value: "Organizers", label: "Organizers" },
     ] as Item[],
-    Agendas: [{ value: "agendas", label: "agendas" }] as Item[],
     Notebooks: [{ value: "notebooks", label: "notebooks" }] as Item[],
-    PowerbankAndUSBMemory: [
+    Electronic: [
       { value: "powerbank", label: "powerbank" },
       { value: "USB-Memory", label: "USBMemory" },
       { value: "technological-products", label: "technologicalProducts" },
@@ -159,7 +160,6 @@ const helpers = {
       { value: "porcelain-mugs", label: "porcelainMugs" },
       { value: "glass-cups", label: "glassCups" },
       { value: "sublimated-mugs", label: "sublimatedMugs" },
-      { value: "pen-sets", label: "pen-Sets" },
     ] as Item[],
     PenSet: [{ value: "pen-sets", label: "pen-Sets" }] as Item[],
     Pens: [
@@ -291,64 +291,18 @@ const helpers = {
   },
 
   Cup: {
-    Disposable: [
-      { value: "paper-cup", label: "paperCup" },
-      { value: "plastic-cup", label: "plasticCup" },
-      { value: "foam-cup", label: "foamCup" },
-      { value: "biodegradable-cup", label: "biodegradableCup" },
-    ] as Item[],
+    SingleWall: [{ value: "single-wall", label: "singleWall" }] as Item[],
 
-    Reusable: [
-      { value: "ceramic-mug", label: "ceramicMug" },
-      { value: "porcelain-mug", label: "porcelainMug" },
-      { value: "glass-cup", label: "glassCup" },
-      { value: "stainless-steel", label: "stainlessSteel" },
-      { value: "travel-mug", label: "travelMug" },
-    ] as Item[],
+    DoubleWall: [{ value: "double-wall", label: "doubleWall" }] as Item[],
 
-    Promotional: [
-      { value: "printed-cup", label: "printedCup" },
-      { value: "logo-cup", label: "logoCup" },
-      { value: "custom-cup", label: "customCup" },
-      { value: "event-cup", label: "eventCup" },
-    ] as Item[],
+    Craft: [{ value: "craft", label: "craft" }] as Item[],
 
-    Specialized: [
-      { value: "espresso-cup", label: "espressoCup" },
-      { value: "cappuccino-cup", label: "cappuccinoCup" },
-      { value: "tea-cup", label: "teaCup" },
-      { value: "soup-cup", label: "soupCup" },
-      { value: "measuring-cup", label: "measuringCup" },
-    ] as Item[],
+    petGlass: [{ value: "pet-glass", label: "petGlass" }] as Item[],
 
-    // Additional cup types
-    Thermal: [
-      { value: "vacuum-flask", label: "vacuumFlask" },
-      { value: "double-wall-cup", label: "doubleWallCup" },
-      { value: "insulated-tumbler", label: "insulatedTumbler" },
-      { value: "thermal-mug", label: "thermalMug" },
-    ] as Item[],
-
-    Sports: [
-      { value: "sports-bottle", label: "sportsBottle" },
-      { value: "shaker-cup", label: "shakerCup" },
-      { value: "hydration-flask", label: "hydrationFlask" },
-      { value: "gym-bottle", label: "gymBottle" },
-    ] as Item[],
-
-    Children: [
-      { value: "sippy-cup", label: "sippyCup" },
-      { value: "training-cup", label: "trainingCup" },
-      { value: "kids-tumbler", label: "kidsTumbler" },
-      { value: "character-cup", label: "characterCup" },
-    ] as Item[],
-
-    EcoFriendly: [
-      { value: "bamboo-cup", label: "bambooCup" },
-      { value: "wheat-straw-cup", label: "wheatStrawCup" },
-      { value: "cornstarch-cup", label: "cornstarchCup" },
-      { value: "recycled-plastic-cup", label: "recycledPlasticCup" },
-    ] as Item[],
+    IceCreamCup: [{ value: "ice-cream-cup", label: "iceCreamCup" }] as Item[],
+    Lid: [{ value: "lid", label: "lid" }] as Item[],
+    Stand: [{ value: "stand", label: "stand" }] as Item[],
+    Pipette: [{ value: "pipette", label: "pipette" }] as Item[],
   },
 };
 

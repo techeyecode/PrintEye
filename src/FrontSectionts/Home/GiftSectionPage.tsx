@@ -1,5 +1,4 @@
 import React from "react";
-import HomeHeader from "../../Components/HomeHeader";
 import { TbGiftFilled } from "react-icons/tb";
 import { FaTruckFront } from "react-icons/fa6";
 import { MdSunny } from "react-icons/md";
@@ -9,8 +8,6 @@ interface GiftItem {
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
-  buttonText: string;
-  buttonLink: string;
 }
 
 const GiftSectionPage: React.FC = () => {
@@ -21,8 +18,6 @@ const GiftSectionPage: React.FC = () => {
       description:
         "Every custom gift box is carefully curated with hand-selected items, blending elegance and purpose to leave a lasting impression on your recipients",
       icon: TbGiftFilled,
-      buttonText: "Shop Pre-Built Gift Boxes",
-      buttonLink: "/collections/kits",
     },
     {
       id: 2,
@@ -30,8 +25,6 @@ const GiftSectionPage: React.FC = () => {
       description:
         "Our dedicated fulfillment team expertly builds, packages, and delivers each gift, ensuring it arrives beautifully presented and directly in the hands of your recipients.",
       icon: FaTruckFront,
-      buttonText: "Get Started",
-      buttonLink: "/pages/contact",
     },
     {
       id: 3,
@@ -39,8 +32,6 @@ const GiftSectionPage: React.FC = () => {
       description:
         "We specialize in curating unique corporate gift experiences that leave a lasting impression on your guests and elevate your events",
       icon: MdSunny,
-      buttonText: "Book Now",
-      buttonLink: "/pages/onsite-gifting",
     },
   ];
 
@@ -52,18 +43,11 @@ const GiftSectionPage: React.FC = () => {
             key={item.id}
             className="flex flex-col items-center text-center p-6 rounded-lg transition text-primary"
           >
-            {/* Icon - Now render as component */}
             <div className="mb-4">
               <item.icon className="w-16 h-16 text-primary" />
             </div>
-
-            {/* Reuse your HomeHeader */}
-            <HomeHeader
-              title={item.title}
-              description={item.description}
-              buttonText={item.buttonText}
-              buttonLink={item.buttonLink}
-            />
+            <h1 className="font-bold mb-4">{item.title}</h1>
+            <p>{item.description}</p>
           </div>
         ))}
       </div>

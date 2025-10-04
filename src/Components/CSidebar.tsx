@@ -300,7 +300,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
                       onClick={(e) => e.stopPropagation()}
                     />
                     <span className="font-semibold text-primary">
-                      {cat.label}
+                      {t(`${cat.label}`)}
                     </span>
                   </div>
                   <div
@@ -334,7 +334,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
                               className="text-primary font-medium block"
                               onClick={handleCloseSidebar}
                             >
-                              {sub.label}
+                              {t(sub.label)}
                             </Link>
                           ) : (
                             <Checkbox
@@ -349,7 +349,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
                               }
                             >
                               <span className="text-sm font-medium text-primary">
-                                {sub.label}
+                                {t(sub.label)}
                               </span>
                             </Checkbox>
                           )}

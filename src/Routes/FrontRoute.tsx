@@ -36,11 +36,15 @@ import SignDetailies from "../FrontSectionts/Sign/SignDetailies";
 // Cup
 import CupDetailies from "../FrontSectionts/Cups/CupDetailies";
 import Cup from "../FrontSectionts/Cups/Cup";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
     <Route index element={<Home />} />
     <Route path="Catalog" element={<Catalog />} />
+    <Route path="about" element={<About />} />
+    <Route path="Contact" element={<Contact />} />
 
     {/* Promotion Routes */}
     <Route path="Promotion">
