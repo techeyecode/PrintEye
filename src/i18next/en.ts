@@ -251,6 +251,98 @@ const en = {
     enterEmailAddress: "Enter email address",
     enterSubject: "Enter Subject",
     enterYourMessage: "Enter Your Message ...",
+    address: "Erbil - Sultan Muzaffar - Asad Mall",
+    footerDescription:
+      "Your trusted partner for high-quality printing solutions. We bring creativity and precision to every project with exceptional service and results.",
+    ourServices: "Our Services",
+    company: "Company",
+    contactUs: "Contact Us",
+    home: "Home",
+    promotion: "Promotion",
+    printing: "Printing",
+    uniform: "Uniform",
+    packaging: "Packaging",
+    sign: "Sign",
+    cup: "Cup",
+    aboutUs: "About Us",
+    contact: "Contact",
+    privacyPolicy: "Privacy Policy",
+    privacyPolicyTitle: "Privacy Policy for Eyeprint",
+    effectiveDate: "Effective Date",
+    lastUpdated: "Last Updated",
+    date: "October 5, 2025",
+    welcomeToEyePrint: `Welcome to Eyeprint (referred to as “Eyeprint,” “we,” “our,” or “us”). This Privacy Policy explains how we collect, use, disclose, and protect information when you visit our website, view our products, or interact with our content. By using our website, you agree to this Privacy Policy. If you do not agree, please do not use our website.`,
+
+    informationWeCollect: "Information We Collect",
+    informationWeCollectSubtext:
+      "We collect limited information voluntarily provided by visitors or automatically collected for technical purposes.",
+    informationWeCollectList: [
+      "Information You Provide Voluntarily: when you contact us via email or phone, submit a quotation or design inquiry, or provide feedback through a contact form. This may include your name, email address, phone number, or other details you choose to share.",
+      "Information Collected Automatically: such as your IP address, browser type, device information, pages visited, time spent, country or city (based on IP), and referring website. This helps us understand site usage and improve our services.",
+    ],
+
+    useOfInformation: "Use of Information",
+    useOfInformationSubtext:
+      "We do not sell, rent, or trade user data. All information collected is used solely to improve your experience on our site.",
+    useOfInformationList: [
+      "To maintain, operate, and improve our website.",
+      "To display our products and services effectively.",
+      "To analyze website traffic and user behavior.",
+      "To respond to customer inquiries or requests.",
+      "To ensure website security and prevent abuse.",
+    ],
+
+    cookiesAndTrackingTechnologies: "Cookies and Tracking Technologies",
+    cookiesAndTrackingTechnologiesSubtext:
+      "We may use cookies or similar technologies (like analytics tools) to enhance your browsing experience.",
+    cookiesAndTrackingTechnologiesList: [
+      "Remember your preferences (such as language or region).",
+      "Understand how users interact with our website.",
+      "Improve design, layout, and performance.",
+      "You can disable cookies anytime through your browser settings. Note that disabling cookies may affect certain website features.",
+    ],
+
+    sharingOfInformation: "Sharing of Information",
+    sharingOfInformationSubtext:
+      "We never share or sell user information for advertising or marketing without consent.",
+    sharingOfInformationList: [
+      "Service Providers: We may use trusted third-party providers for hosting, analytics, or security, who must keep information confidential.",
+      "Legal Requirements: We may disclose information if required by law or government request, or to protect our rights and prevent fraud.",
+      "Business Operations: In case of business restructuring or migration, anonymous data may be transferred to continue service operations.",
+    ],
+
+    dataSecurity: "Data Security",
+    dataSecuritySubtext:
+      "While we take precautions, no online system is 100% secure. By using our website, you accept this risk.",
+    dataSecurityList: [
+      "Our website uses secure hosting and encryption technologies where possible.",
+      "We limit access to collected information to authorized personnel only.",
+      "We review our systems regularly to prevent unauthorized access or misuse.",
+    ],
+
+    linksToOtherWebsites: "Links to Other Websites",
+    linksToOtherWebsitesSubtext:
+      "Our website may include links to third-party websites (e.g., material suppliers, design inspirations, or social media). Eyeprint is not responsible for their privacy practices or content. Please review their policies before sharing information.",
+
+    childrensPrivacy: "Children’s Privacy",
+    childrensPrivacySubtext:
+      "Our website is not intended for children under 13 years old, and we do not knowingly collect data from them. If such data is collected unintentionally, we will delete it immediately.",
+
+    yourRightsAndChoices: "Your Rights and Choices",
+    yourRightsAndChoicesSubtext:
+      "Since we do not maintain user accounts, your rights are limited. However, if you have contacted us and wish to access, correct, or delete your information, you may contact us directly.",
+
+    contactUsSubtext:
+      "If you have questions or concerns about this Privacy Policy, please contact us:",
+    contactUsList: [
+      "Email: eyeprint.info@gmail.com",
+      "Address: Erbil - Sultan Muzaffar - Asad Mall",
+      "Phone: 07507177656",
+    ],
+
+    updatesToPrivacyPolicy: "Updates to This Privacy Policy",
+    updatesToPrivacyPolicySubtext:
+      "We may update this Privacy Policy occasionally to reflect business or legal changes. The 'Effective Date' will be updated with each change. Please review this page periodically to stay informed.",
   },
 };
 

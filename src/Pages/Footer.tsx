@@ -1,33 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 import Logo from "../assets/EyePrintLogoDarkMode.png";
+
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const footerLinks = [
-    { name: "Home", link: "/" },
-    { name: "Promotion", link: "/Promotion" },
-    { name: "Printing", link: "/Printing" },
+    { name: "home", link: "/" },
+    { name: "promotion", link: "/Promotion" },
+    { name: "printing", link: "/Printing" },
     { name: "Uniform", link: "/Uniform" },
-    { name: "Packaging", link: "/Packaging" },
-    { name: "Sign", link: "/Sign" },
-    { name: "Cup", link: "/Cup" },
+    { name: "packaging", link: "/Packaging" },
+    { name: "sign", link: "/Sign" },
+    { name: "cup", link: "/Cup" },
   ];
 
   const companyLinks = [
-    { name: "About Us", link: "/about" },
-    { name: "Contact", link: "/Contact" },
-    { name: "Privacy Policy", link: "/privacy" },
+    { name: "aboutUs", link: "/about" },
+    { name: "contact", link: "/Contact" },
+    { name: "privacyPolicy", link: "/PrivacyPolicy" },
   ];
 
   const hoverEffects = {
@@ -35,7 +30,7 @@ const Footer: React.FC = () => {
       base: "transition-all duration-500 transform hover:translate-x-2 relative",
       hover: "text-secondary font-semibold",
       underline:
-        "absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent transition-all duration-500 group-hover:w-full",
+        "absolute bottom-0 left-0 w-0 h-0.5  transition-all duration-500 group-hover:w-full",
     },
     contact: {
       base: "transition-all duration-500 transform hover:translate-x-1",
@@ -46,48 +41,41 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-primary text-white border-t border-gray-200 mt-14 m-6 rounded-3xl">
-      {/* Main Footer Content */}
       <div className="py-8 px-4 md:px-14 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img
                 src={Logo}
-                className="w-auto h-7 md:h-8 lg:h-9 xl:h-10  object-contain"
-              ></img>
+                className="w-auto h-7 md:h-8 lg:h-9 xl:h-10 object-contain"
+              />
             </div>
-            <p className="text-white mb-6 leading-relaxed text-sm hover:text-gray-200 transition-colors duration-500">
-              Your trusted partner for high-quality printing solutions. We bring
-              creativity and precision to every project with exceptional service
-              and results.
+            <p className="text-white mb-6 font-medium  leading-relaxed hover:text-gray-200 transition-colors duration-500">
+              {t("footerDescription")}
             </p>
           </div>
 
-          {/* Services Links */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
-              Our Services
+              {t("ourServices")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.slice(1).map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.link}
-                    className={`group ${hoverEffects.link.base} text-white text-sm`}
+                    className={`group ${hoverEffects.link.base} text-white`}
                     onMouseEnter={() => setHoveredItem(`service-${index}`)}
                     onMouseLeave={() => setHoveredItem(null)}
                   >
                     <span
-                      className={`
-                      ${
+                      className={`${
                         hoveredItem === `service-${index}`
                           ? hoverEffects.link.hover
                           : ""
-                      }
-                    `}
+                      }`}
                     >
-                      {link.name}
+                      {t(link.name)}
                     </span>
                     <div className={hoverEffects.link.underline} />
                   </Link>
@@ -96,30 +84,27 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Company Links */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
-              Company
+              {t("company")}
             </h3>
             <ul className="space-y-3">
               {companyLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.link}
-                    className={`group ${hoverEffects.link.base} text-white text-sm`}
+                    className={`group ${hoverEffects.link.base} text-white`}
                     onMouseEnter={() => setHoveredItem(`company-${index}`)}
                     onMouseLeave={() => setHoveredItem(null)}
                   >
                     <span
-                      className={`
-                      ${
+                      className={`${
                         hoveredItem === `company-${index}`
                           ? hoverEffects.link.hover
                           : ""
-                      }
-                    `}
+                      }`}
                     >
-                      {link.name}
+                      {t(link.name, link.name)}
                     </span>
                     <div className={hoverEffects.link.underline} />
                   </Link>
@@ -128,36 +113,33 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
-              Contact Us
+              {t("contactUs")}
             </h3>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3">
               <div
                 className={`flex items-start gap-3 text-white ${hoverEffects.contact.base}`}
                 onMouseEnter={() => setHoveredItem("contact-phone")}
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaPhone
-                  className={`
-                  w-4 h-4 mt-0.5 transition-all duration-500
-                  ${
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
                     hoveredItem === "contact-phone"
                       ? "text-secondary scale-125"
                       : "text-secondary"
-                  }
-                `}
+                  }`}
                 />
-                <span
-                  className={
+                <a
+                  href="tel:07507177656"
+                  className={`${
                     hoveredItem === "contact-phone"
                       ? hoverEffects.contact.hover
                       : ""
-                  }
+                  }`}
                 >
-                  +1 (555) 123-4567
-                </span>
+                  07507177656
+                </a>
               </div>
               <div
                 className={`flex items-start gap-3 text-white ${hoverEffects.contact.base}`}
@@ -165,24 +147,22 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaEnvelope
-                  className={`
-                  w-4 h-4 mt-0.5 transition-all duration-500
-                  ${
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
                     hoveredItem === "contact-email"
                       ? "text-secondary scale-125"
                       : "text-secondary"
-                  }
-                `}
+                  }`}
                 />
-                <span
-                  className={
+                <a
+                  href="mailto:info@eyeprint.com"
+                  className={`${
                     hoveredItem === "contact-email"
                       ? hoverEffects.contact.hover
                       : ""
-                  }
+                  }`}
                 >
                   info@eyeprint.com
-                </span>
+                </a>
               </div>
               <div
                 className={`flex items-start gap-3 text-white ${hoverEffects.contact.base}`}
@@ -190,23 +170,20 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaMapMarkerAlt
-                  className={`
-                  w-4 h-4 mt-0.5 transition-all duration-500
-                  ${
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
                     hoveredItem === "contact-address"
                       ? "text-secondary scale-125"
                       : "text-secondary"
-                  }
-                `}
+                  }`}
                 />
                 <span
-                  className={
+                  className={`${
                     hoveredItem === "contact-address"
                       ? hoverEffects.contact.hover
                       : ""
-                  }
+                  }`}
                 >
-                  123 Print Street, City, State 12345
+                  {t("address")}
                 </span>
               </div>
             </div>

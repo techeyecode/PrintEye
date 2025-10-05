@@ -40,74 +40,65 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Gallary from "../FrontSectionts/Gallary/Gallary";
 import GallaryDetailies from "../FrontSectionts/Gallary/GallaryDetailies";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
     <Route index element={<Home />} />
     <Route path="Catalog" element={<Catalog />} />
     <Route path="about" element={<About />} />
-    <Route path="Contact" element={<Contact />} />
-
+    <Route path="Contact" element={<Contact />} />\
+    <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
     {/* Promotion Routes */}
     <Route path="Promotion">
       <Route index element={<Promotion />} />
       <Route path=":id" element={<PromotionDetailies />} />
     </Route>
-
     {/* Printing Routes */}
     <Route path="Printing">
       <Route index element={<Printing />} />
       <Route path=":id" element={<PrintingDetailies />} />
     </Route>
-
     {/* Business Routes */}
     <Route path="Business">
       <Route index element={<Business />} />
       <Route path=":id" element={<BusinessDetailies />} />
     </Route>
-
     {/* Brochures Routes */}
     <Route path="Brochures">
       <Route index element={<Brochures />} />
       <Route path=":id" element={<BrochuresDetailies />} />
     </Route>
-
     {/* Bag Routes */}
     <Route path="Bag">
       <Route index element={<Bag />} />
       <Route path=":id" element={<BagDetailies />} />
     </Route>
-
     {/* Invoice Routes */}
     <Route path="Invoices">
       <Route index element={<Invoices />} />
       <Route path=":id" element={<InvoiceDetailies />} />
     </Route>
-
     {/* Uniform Routes */}
     <Route path="Uniform">
       <Route index element={<Uniform />} />
       <Route path=":id" element={<UniformDetailies />} />
     </Route>
-
     {/* Packaging Routes */}
     <Route path="Packaging">
       <Route index element={<Packaging />} />
       <Route path=":id" element={<PackagingDetailies />} />
     </Route>
-
     {/* Sign Routes */}
     <Route path="Sign">
       <Route index element={<Sign />} />
       <Route path=":id" element={<SignDetailies />} />
     </Route>
-
     {/* Cup Routes */}
     <Route path="Cup">
       <Route index element={<Cup />} />
       <Route path=":id" element={<CupDetailies />} />
     </Route>
-
     {/* Gallary Routes */}
     <Route path="Gallary">
       <Route index element={<Gallary />} />

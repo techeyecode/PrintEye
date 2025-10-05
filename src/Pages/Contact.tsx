@@ -16,9 +16,9 @@ const Contact = () => {
   const { t } = useTranslation();
 
   const contactInfo = {
-    address: "Sultan Muzafar Street",
-    city: "Kurdistan, Erbil",
-    phone: "+964 0750 123 4455",
+    address: "Sultan Muzaffar - Asad Mall",
+    city: "Iraq, Erbil",
+    phone: "07507177656",
     email: "info@eyeprint.com",
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26772.083474534348!2d44.0022428!3d36.1874049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400721ad41fcb2b9%3A0x19a15e05893b0b1d!2s52Q3%2BH3W%2C%20Sultan%20Muthafar%2C%20Erbil%2C%20Erbil%20Governorate!5e0!3m2!1sen!2siq!4v1728035532000!5m2!1sen!2siq",
@@ -51,7 +51,6 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-8">
-          {/* Left Column */}
           <div className="w-full lg:w-1/3 flex flex-col">
             <div className="flex flex-col space-y-6 bg-white rounded-xl p-6 h-full">
               <div className="flex items-center gap-4 text-primary">
