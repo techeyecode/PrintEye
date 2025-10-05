@@ -40,8 +40,8 @@ const LanguageSwitcher: React.FC<{
         <button
           key={lang.value}
           onClick={() => changeLanguage(lang.value)}
-          className={`mx-2 font-medium transition-colors cursor-pointer  ${
-            i18n.language === "en" ? "py-1 text-base" : " text-base"
+          className={`mx-2 font-semibold transition-colors cursor-pointer  ${
+            i18n.language === "en" ? "py-1 text-sm" : " text-sm"
           } ${getActiveLanguageClass(lang.value)}`}
         >
           {lang.name}

@@ -38,6 +38,8 @@ import CupDetailies from "../FrontSectionts/Cups/CupDetailies";
 import Cup from "../FrontSectionts/Cups/Cup";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
+import Gallary from "../FrontSectionts/Gallary/Gallary";
+import GallaryDetailies from "../FrontSectionts/Gallary/GallaryDetailies";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
@@ -104,6 +106,12 @@ export const FrontRoute = (
     <Route path="Cup">
       <Route index element={<Cup />} />
       <Route path=":id" element={<CupDetailies />} />
+    </Route>
+
+    {/* Gallary Routes */}
+    <Route path="Gallary">
+      <Route index element={<Gallary />} />
+      <Route path=":id" element={<GallaryDetailies />} />
     </Route>
   </Route>
 );

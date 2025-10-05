@@ -26,7 +26,14 @@ interface CSidebarProps {
   onClose?: () => void;
   onOpen?: () => void;
   title?: string;
-  type?: "Printing" | "Promotion" | "Uniform" | "Packaging" | "Cup" | "Sign";
+  type?:
+    | "Printing"
+    | "Promotion"
+    | "Uniform"
+    | "Packaging"
+    | "Cup"
+    | "Sign"
+    | "Gallary";
 }
 
 interface FilterState {
@@ -184,6 +191,16 @@ const CSidebar: React.FC<CSidebarProps> = ({
         value: `Sign-${catKey}`,
         label: catKey,
         subcategories: helpers.Sign[catKey as keyof typeof helpers.Sign],
+      });
+    });
+  }
+
+  if (!type || type === "Gallary") {
+    Object.keys(helpers.Gallary).forEach((catKey) => {
+      categories.push({
+        value: `Gallary-${catKey}`,
+        label: catKey,
+        subcategories: helpers.Gallary[catKey as keyof typeof helpers.Gallary],
       });
     });
   }

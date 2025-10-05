@@ -292,17 +292,22 @@ const helpers = {
 
   Cup: {
     SingleWall: [{ value: "single-wall", label: "singleWall" }] as Item[],
-
     DoubleWall: [{ value: "double-wall", label: "doubleWall" }] as Item[],
-
     Craft: [{ value: "craft", label: "craft" }] as Item[],
-
     petGlass: [{ value: "pet-glass", label: "petGlass" }] as Item[],
-
     IceCreamCup: [{ value: "ice-cream-cup", label: "iceCreamCup" }] as Item[],
     Lid: [{ value: "lid", label: "lid" }] as Item[],
     Stand: [{ value: "stand", label: "stand" }] as Item[],
     Pipette: [{ value: "pipette", label: "pipette" }] as Item[],
+  },
+
+  Gallary: {
+    Promition: [{ value: "promition", label: "promition" }] as Item[],
+    Printing: [{ value: "printing", label: "printing" }] as Item[],
+    Uniform: [{ value: "uniform", label: "uniform" }] as Item[],
+    Packaging: [{ value: "packaging", label: "packaging" }] as Item[],
+    Sign: [{ value: "sign", label: "sign" }] as Item[],
+    Cup: [{ value: "cup", label: "cup" }] as Item[],
   },
 };
 

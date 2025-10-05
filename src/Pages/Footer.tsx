@@ -28,7 +28,6 @@ const Footer: React.FC = () => {
     { name: "About Us", link: "/about" },
     { name: "Contact", link: "/Contact" },
     { name: "Privacy Policy", link: "/privacy" },
-    { name: "Terms of Service", link: "/terms" },
   ];
 
   const hoverEffects = {

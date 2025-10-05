@@ -41,6 +41,7 @@ const Navbar: React.FC = () => {
     { name: "Packaging", link: "/Packaging" },
     { name: "Sign", link: "/Sign" },
     { name: "Cup", link: "/Cup" },
+    { name: "Gallary", link: "/Gallary" },
     { name: "Catalog", link: "/Catalog" },
   ];
 
@@ -48,23 +49,23 @@ const Navbar: React.FC = () => {
 
   return (
     <header>
-      <div className={`py-2 text-light-text bg-white`}>
-        <div className="flex justify-between items-center py-2 px-4 md:px-14 lg:px-20">
+      <div className={`py-4 text-light-text bg-white`}>
+        <div className="container mx-auto flex justify-between items-center ">
           <div className="flex items-center gap-5">
             <Link to="/" className="flex items-center">
               <img
                 src={LightMode}
-                className="w-auto h-7 md:h-8 lg:h-9 xl:h-10  object-contain"
+                className="w-auto h-7 md:h-8 lg:h-7 xl:h-10  object-contain"
               />
             </Link>
 
             {!isMobileView && (
-              <nav className="flex items-center gap-2">
+              <nav className="flex items-center text-base xl:text-base lg:text-sm">
                 {navLinks.map((link, index) => (
-                  <div key={index} className="relative group">
+                  <div key={index} className="relative group ">
                     <Link
                       to={link.link}
-                      className={`relative px-4 py-2 font-medium rounded-xl overflow-hidden transition-all duration-300 flex items-center gap-1 ${
+                      className={`relative px-4 py-2 font-semibold rounded-xl overflow-hidden transition-all duration-300 flex items-center gap-1 ${
                         isLinkActive(link.link)
                           ? "text-secondary"
                           : "text-primary"
@@ -94,7 +95,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
         {isMobileView && mobileMenuOpen && (
           <div className="lg:hidden">
             <div
@@ -102,21 +102,18 @@ const Navbar: React.FC = () => {
               onClick={closeMobileMenu}
             />
 
-            {/* Mobile Menu Panel - Now opens from left */}
             <div className="fixed top-0 left-0 h-full w-3/4 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out text-primary">
               <div className="flex flex-col h-full">
-                {/* Header */}
                 <div className="flex justify-between items-center mx-4 py-2 border-b border-primary/50">
                   <span className="text-lg font-semibold">EyePrint</span>
                   <button
                     onClick={closeMobileMenu}
-                    className="p-2  transition-colors"
+                    className="p-2 transition-colors"
                   >
                     <FaTimes size={20} />
                   </button>
                 </div>
 
-                {/* Navigation Links */}
                 <nav className="flex-1 overflow-y-auto px-4 py-2">
                   {navLinks.map((link, index) => (
                     <Link

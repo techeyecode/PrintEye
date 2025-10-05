@@ -4,7 +4,6 @@ import Catalog3 from "../assets/DRSaat.pdf";
 import CatalogImg1 from "../assets/Catagore1.png";
 import CatalogImg2 from "../assets/Catagore2.png";
 import CatalogImg3 from "../assets/Catagore3.png";
-import Logo from "../assets/EyePrintLogo.png";
 import { FaEye } from "react-icons/fa";
 import { MdCloudDownload } from "react-icons/md";
 import PageHeader from "../Components/PageHeader";
