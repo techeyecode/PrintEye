@@ -6,7 +6,7 @@ import Home from "../Pages/Home";
 import Catalog from "../Pages/Catalog";
 
 // Promotion
-import Promotion from "../FrontSectionts/Promotion/Promotion";
+import Promotion from "../Pages/Promotion";
 import PromotionDetailies from "../FrontSectionts/Promotion/PromotionDetailies";
 
 // Printing
@@ -22,23 +22,24 @@ import Invoices from "../FrontSectionts/Printing/Invoice/Invoices";
 import InvoiceDetailies from "../FrontSectionts/Printing/Invoice/InvoiceDetailies";
 
 // Uniform
-import Uniform from "../FrontSectionts/Uniforms/Uniform";
+import Uniform from "../Pages/Uniform";
 import UniformDetailies from "../FrontSectionts/Uniforms/UniformDetailies";
 
 // Packaging
-import Packaging from "../FrontSectionts/Packaging/Packaging";
+import Packaging from "../Pages/Packaging";
 import PackagingDetailies from "../FrontSectionts/Packaging/PackagingDetailies";
 
 // Sign
-import Sign from "../FrontSectionts/Sign/Sign";
+import Sign from "../Pages/Sign";
+
 import SignDetailies from "../FrontSectionts/Sign/SignDetailies";
 
 // Cup
 import CupDetailies from "../FrontSectionts/Cups/CupDetailies";
-import Cup from "../FrontSectionts/Cups/Cup";
+import Cup from "../Pages/Cup";
 import About from "../Pages/About";
+import Gallary from "../Pages/Gallary";
 import Contact from "../Pages/Contact";
-import Gallary from "../FrontSectionts/Gallary/Gallary";
 import GallaryDetailies from "../FrontSectionts/Gallary/GallaryDetailies";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
 
@@ -47,7 +48,7 @@ export const FrontRoute = (
     <Route index element={<Home />} />
     <Route path="Catalog" element={<Catalog />} />
     <Route path="about" element={<About />} />
-    <Route path="Contact" element={<Contact />} />\
+    <Route path="Contact" element={<Contact />} />
     <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
     {/* Promotion Routes */}
     <Route path="Promotion">

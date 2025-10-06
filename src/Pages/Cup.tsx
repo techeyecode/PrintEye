@@ -1,20 +1,19 @@
 import React from "react";
-import PageHeader from "../../Components/PageHeader";
-import CSidebar from "../../Components/CSidebar";
-import CupCards from "./CupCards";
+import PageHeader from "../Components/PageHeader";
+import CSidebar from "../Components/CSidebar";
+import CupCards from "../FrontSectionts/Cups/CupCards";
 
 const Cup: React.FC = () => {
   return (
     <div className="bg-white ">
-      
       <PageHeader
-        title="All Items"
-        subtitle="There's no such thing as too many options"
+        title="customCups"
+        subtitle="customCupsSubtitle"
         backgroundImage="https://about.starbucks.com/uploads/2025/08/Starbucks-Reserve-Fall-Menu_PSLSociety-Merch.jpg"
         breadcrumbs={[{ label: "Home", path: "/" }, { label: "Cup" }]}
       />
 
-      <div className="flex flex-col lg:flex-row items-start justify-between mx-4 md:mx-10 lg:mx-20 gap-6 lg:gap-10 my-6 md:my-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start justify-between  gap-6 my-6 md:my-10">
         <div className="w-full lg:w-1/4">
           <CSidebar title="Cups" type="Cup" />
         </div>

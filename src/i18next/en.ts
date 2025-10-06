@@ -343,6 +343,43 @@ const en = {
     updatesToPrivacyPolicy: "Updates to This Privacy Policy",
     updatesToPrivacyPolicySubtext:
       "We may update this Privacy Policy occasionally to reflect business or legal changes. The 'Effective Date' will be updated with each change. Please review this page periodically to stay informed.",
+    heroTitle: "Promotions that Leave a Lasting Impression",
+    heroSubTitle:
+      "Elevate your marketing with high-quality, sustainable promotional gifts that make an impact",
+    shopNow: "Shop Now",
+    beautifullyBrandedByEyePrint: "Beautifully Branded By EyePrint",
+    beautifullyBrandedByEyePrintkDescripion:
+      "We curate remarkable, lasting products, from innovative newcomers to trusted brands, designed to make your company stand out with purpose",
+    seeAll: "See All",
+    packagingMadeSimple: "Packaging Made Simple",
+    packagingMadeSimpleDescription:
+      "We make your packaging process fun and easy! Explore ready-to-use designs, customize your boxes and bags, and get expert tips along the way to make your products look amazing.",
+    thoughtfulCorporateGiftsMadeSimple:
+      "Thoughtful Corporate Gifts Made Simple",
+    yourPerfectGiftJustAClickAwayDescripion:
+      "From products to packaging, we make it easy to create thoughtful, high-quality gifts that leave a lasting impression, delight your clients, inspire your team, and elevate your brand with every package.",
+    buildYourOwnBox: "Build Your Own Box",
+    newProducts: "New Products",
+    newProductsSubtext:
+      "Discover the latest arrivals designed to delight and inspire",
+    exploreOurPromotions: "Our Promotions",
+    productionSubtitle: "Products designed to impress and delight",
+    organizers: "Organizers",
+    search: "Search categories...",
+    printCollection: "Print Collection",
+    printCollectionSubtitle:
+      "Explore a variety of products to showcase your brand beautifully",
+    printingCategories: "Printing Categories",
+    teamUniforms: "Team Uniforms",
+    teamUniformsSubtitle:
+      "Practical and polished uniforms that reflect your brand",
+    allPackaging: "All Packaging",
+    allPackagingSubtitle: "Endless options to protect, present, and impress",
+    signCollection: "Sign Collection",
+    signCollectionSubtitle: "So many choices, every message can shine",
+    customCups: "Custom Cups",
+    customCupsSubtitle:
+      "So many choices, every cup can tell your brand’s story",
   },
 };
 

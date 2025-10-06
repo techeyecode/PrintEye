@@ -1,9 +1,4 @@
-import { useState, useEffect } from "react";
-import { Row, Col } from "antd";
-
 const Client = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const clients = [
     {
       id: 1,
@@ -37,41 +32,34 @@ const Client = () => {
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % clients.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [clients.length]);
-
-  const getVisibleClients = () => {
-    const visible = [];
-    const slidesToShow = 6;
-
-    for (let i = 0; i < slidesToShow; i++) {
-      const index = (currentIndex + i) % clients.length;
-      visible.push(clients[index]);
-    }
-    return visible;
-  };
+  const duplicatedClients = [...clients, ...clients];
 
   return (
-    <div className="overflow-hidden mx-10">
-      <Row gutter={[10, 10]} justify="center" align="middle">
-        {getVisibleClients().map((client, index) => (
-          <Col
+    <div className="overflow-hidden w-full">
+      <div className="flex animate-scroll space-x-10 whitespace-nowrap">
+        {duplicatedClients.map((client, index) => (
+          <div
             key={`${client.id}-${index}`}
-            xs={12}
-            sm={8}
-            md={6}
-            lg={4}
-            xl={4}
+            className="flex-shrink-0 w-40 h-24 flex items-center justify-center"
           >
-            <img src={client.image} />
-          </Col>
+            <img
+              src={client.image}
+              className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              loading="lazy"
+            />
+          </div>
         ))}
-      </Row>
+      </div>
+
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };

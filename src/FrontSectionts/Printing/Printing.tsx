@@ -7,14 +7,14 @@ const Printing: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       <PageHeader
-        title="All Items"
-        subtitle="There's no such thing as too many options"
+        title="printCollection"
+        subtitle="printCollectionSubtitle"
         backgroundImage="https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,w_800/legacy_dam/en-us/S001906182/NPIB48366-Brochures-GBB-bi-fold-001"
-        breadcrumbs={[{ label: "Home", path: "/" }, { label: "Printing" }]}
+        breadcrumbs={[{ label: "home", path: "/" }, { label: "printing" }]}
       />
-      <div className="flex flex-col lg:flex-row items-start justify-between mx-4 md:mx-10 lg:mx-20 gap-6 lg:gap-10 my-6 md:my-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start justify-between  gap-6 my-6 md:my-10">
         <div className="w-full lg:w-1/4">
-          <CSidebar title="Printing Categories" type="Printing" />
+          <CSidebar title="printingCategories" type="Printing" />
         </div>
 
         <div className="w-full lg:w-3/4">

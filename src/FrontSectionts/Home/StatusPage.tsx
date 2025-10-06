@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface ImageItem {
   url: string;
@@ -7,8 +8,8 @@ interface ImageItem {
 }
 
 const StatusPage: React.FC = () => {
+  const { t } = useTranslation();
   const images: ImageItem[] = [
-    // Row 1
     {
       url: "//www.cloveandtwine.com/cdn/shop/files/1_c50f67dc-c87e-4fcf-a096-87f9cff4b34b_1500x.jpg?v=1738512385",
       colSpan: "lg:col-span-2",
@@ -19,7 +20,6 @@ const StatusPage: React.FC = () => {
       height: "h-[300px] lg:h-[500px]",
     },
 
-    // Row 2
     {
       url: "//www.cloveandtwine.com/cdn/shop/files/Caistravelkit-3_54d5987d-bd3c-4129-9374-77cd0448021e_1500x.jpg?v=1738515590",
       height: "h-[250px] lg:h-[350px]",
@@ -37,17 +37,16 @@ const StatusPage: React.FC = () => {
   return (
     <section className="w-full bg-white">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-            Reject the Status Quo
+            {t("newProducts")}
           </h2>
           <p className="text-lg text-primary">
-            Give better corporate gifts for a better future.
+            {t("newProductsSubtext")}
+            
           </p>
         </div>
 
-        {/* Image Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {images.map((img, index) => (
             <div

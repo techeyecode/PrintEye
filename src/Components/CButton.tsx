@@ -1,11 +1,12 @@
-// CButton.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface CButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   variant?: "primary" | "secondary";
   isFullWidth?: boolean;
+  link?: string;
 }
 
 const CButton: React.FC<CButtonProps> = ({
@@ -13,6 +14,7 @@ const CButton: React.FC<CButtonProps> = ({
   onClick,
   variant = "primary",
   isFullWidth = false,
+  link,
 }) => {
   const variantClasses =
     variant === "primary"
@@ -27,13 +29,31 @@ const CButton: React.FC<CButtonProps> = ({
           front: "bg-secondary text-primary",
         };
 
-  return (
-    <button
-      onClick={onClick}
-      className={`relative group bg-transparent p-0 border-none cursor-pointer outline-offset-1 transition duration-200 ${
-        isFullWidth ? "w-full" : ""
-      }`}
-    >
+  const baseClasses = `relative group bg-transparent p-0 border-none cursor-pointer outline-offset-1 transition duration-200 ${
+    isFullWidth ? "w-full" : ""
+  }`;
+
+  return link ? (
+    <Link to={link} onClick={onClick} className={baseClasses}>
+      {/* Shadow */}
+      <span
+        className={`absolute top-0 left-0 w-full h-full rounded-full filter blur-sm transform translate-y-[2px] transition-transform duration-300 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-[4px] group-active:translate-y-[1px] ${variantClasses.shadow}`}
+      ></span>
+
+      {/* Edge */}
+      <span
+        className={`absolute top-0 left-0 w-full h-full rounded-full ${variantClasses.edge}`}
+      ></span>
+
+      {/* Front */}
+      <span
+        className={`relative block rounded-full font-bold uppercase tracking-wider text-sm px-8 py-3 transform -translate-y-1 transition-transform duration-300 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-active:-translate-y-0.5 ${variantClasses.front}`}
+      >
+        {children}
+      </span>
+    </Link>
+  ) : (
+    <button onClick={onClick} className={baseClasses}>
       {/* Shadow */}
       <span
         className={`absolute top-0 left-0 w-full h-full rounded-full filter blur-sm transform translate-y-[2px] transition-transform duration-300 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-[4px] group-active:translate-y-[1px] ${variantClasses.shadow}`}

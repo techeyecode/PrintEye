@@ -15,7 +15,6 @@ const PrintingCards: React.FC = () => {
             count={print.count}
             image={print.image}
             navigateTo={`/Printing/${print.id}`}
-            aspectRatio="aspect-[4/4]"
           />
         ))}
       </div>

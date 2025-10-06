@@ -86,7 +86,6 @@ const helpers = {
 
   Sign: {
     HarfBarz: [
-      { value: "all", label: "all", link: "/HarfBarz" },
       { value: "metal-harfbarz", label: "metalHarfbarz" },
       { value: "acrylic-harfbarz", label: "acrylicHarfbarz" },
       { value: "led-harfbarz", label: "ledHarfbarz" },
@@ -145,7 +144,7 @@ const helpers = {
         label: "victoriasJournalsProducts",
       },
       { value: "agendas", label: "agendas" },
-      { value: "Organizers", label: "Organizers" },
+      { value: "Organizers", label: "organizers" },
     ] as Item[],
     Notebooks: [{ value: "notebooks", label: "notebooks" }] as Item[],
     Electronic: [
@@ -161,8 +160,8 @@ const helpers = {
       { value: "glass-cups", label: "glassCups" },
       { value: "sublimated-mugs", label: "sublimatedMugs" },
     ] as Item[],
-    PenSet: [{ value: "pen-sets", label: "pen-Sets" }] as Item[],
     Pens: [
+      { value: "pen-sets", label: "penSets" },
       { value: "metal-pens", label: "metalPens" },
       { value: "plastic-pens", label: "plasticPens" },
       { value: "recycling-items", label: "recyclingItems" },
@@ -193,9 +192,7 @@ const helpers = {
       { value: "pocketKnives-and-lanterns", label: "PocketKnivesAndLanterns" },
     ] as Item[],
     Lighters: [{ value: "lighters", label: "lighters" }] as Item[],
-    TextileProducts: [
-      { value: "textile-products", label: "textileProducts" },
-    ] as Item[],
+
     Umbrellas: [{ value: "umbrellas", label: "umbrellas" }] as Item[],
     MiscellaneousAndPlasticProducts: [
       {
@@ -203,53 +200,36 @@ const helpers = {
         label: "miscellaneousAndPlasticProducts",
       },
     ] as Item[],
-    CardboardAndToteBags: [
-      { value: "cardboard-and-tote-bags", label: "cardboardAndToteBags" },
-    ] as Item[],
-    Calendars: [{ value: "calendars", label: "calendars" }] as Item[],
-    PaperProducts: [
-      { value: "paper-products", label: "paperProducts" },
-    ] as Item[],
+
     Plaques: [{ value: "plaques", label: "plaques" }] as Item[],
   },
 
   Uniform: {
-    Hospital: [
-      { value: "doctor-coat", label: "doctorCoat" },
-      { value: "nurse-uniform", label: "nurseUniform" },
-      { value: "surgeon-scrub", label: "surgeonScrub" },
-      { value: "hospital-staff", label: "hospitalStaff" },
-      { value: "lab-coat", label: "labCoat" },
+    TShirt: [
+      { value: "long-sleeved", label: "longSleeved" },
+      { value: "short-sleeved", label: "shortSleeved" },
+      { value: "shirt-neck", label: "shirtNeck" },
+      { value: "shirt-circle", label: "shirtCircle" },
+      { value: "polyester", label: "polyester" },
+      { value: "cotton", label: "cotton" },
     ] as Item[],
 
-    School: [
-      { value: "student-uniform", label: "studentUniform" },
-      { value: "teacher-uniform", label: "teacherUniform" },
-      { value: "sports-uniform", label: "sportsUniform" },
-      { value: "winter-uniform", label: "winterUniform" },
-      { value: "summer-uniform", label: "summerUniform" },
+    Hood: [{ value: "hood", label: "hood" }] as Item[],
+
+    School: [{ value: "school", label: "school" }] as Item[],
+    Sport: [{ value: "sport", label: "sport" }] as Item[],
+    Hospital: [{ value: "hospital", label: "hospital" }] as Item[],
+    Restaurant: [{ value: "restaurant", label: "restaurant" }] as Item[],
+    Hotel: [{ value: "hotel", label: "hotel" }] as Item[],
+    Suit: [{ value: "suit", label: "suit" }] as Item[],
+
+    Jacket: [
+      { value: "long-sleeved-jacket", label: "longSleevedJacket" },
+      { value: "sleeveless-jacket", label: "sleevelessJacket" },
     ] as Item[],
 
-    Corporate: [
-      { value: "executive-suit", label: "executiveSuit" },
-      { value: "office-uniform", label: "officeUniform" },
-      { value: "security-uniform", label: "securityUniform" },
-      { value: "cleaner-uniform", label: "cleanerUniform" },
-    ] as Item[],
-
-    Industrial: [
-      { value: "safety-overall", label: "safetyOverall" },
-      { value: "factory-uniform", label: "factoryUniform" },
-      { value: "high-visibility", label: "highVisibility" },
-      { value: "protective-gear", label: "protectiveGear" },
-    ] as Item[],
-
-    Hospitality: [
-      { value: "chef-uniform", label: "chefUniform" },
-      { value: "waiter-uniform", label: "waiterUniform" },
-      { value: "hotel-staff", label: "hotelStaff" },
-      { value: "reception-uniform", label: "receptionUniform" },
-    ] as Item[],
+    Eleg: [{ value: "eleg", label: "eleg" }] as Item[],
+    Logo: [{ value: "logo", label: "logo" }] as Item[],
   },
 
   Packaging: {
@@ -294,11 +274,17 @@ const helpers = {
     SingleWall: [{ value: "single-wall", label: "singleWall" }] as Item[],
     DoubleWall: [{ value: "double-wall", label: "doubleWall" }] as Item[],
     Craft: [{ value: "craft", label: "craft" }] as Item[],
-    petGlass: [{ value: "pet-glass", label: "petGlass" }] as Item[],
-    IceCreamCup: [{ value: "ice-cream-cup", label: "iceCreamCup" }] as Item[],
-    Lid: [{ value: "lid", label: "lid" }] as Item[],
-    Stand: [{ value: "stand", label: "stand" }] as Item[],
-    Pipette: [{ value: "pipette", label: "pipette" }] as Item[],
+    petGlass: [{ value: "emboss", label: "emboss" }] as Item[],
+    IceCreamCup: [{ value: "plastic", label: "plastic" }] as Item[],
+    Lid: [{ value: "ice-cream-cup", label: "iceCreamCup" }] as Item[],
+    Stand: [{ value: "lid", label: "lid" }] as Item[],
+    Pipette: [{ value: "stand", label: "stand" }] as Item[],
+    sleeve: [{ value: "sleeve", label: "sleeve" }] as Item[],
+    pipette: [{ value: "pipette", label: "pipette" }] as Item[],
+    toothpickFlag: [
+      { value: "toothpick-flag", label: "toothpickFlag" },
+    ] as Item[],
+    Wipes: [{ value: "wipes", label: "wipes" }] as Item[],
   },
 
   Gallary: {

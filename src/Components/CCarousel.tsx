@@ -90,7 +90,7 @@ const CCarousel: React.FC<CCarouselProps> = ({
               <Link
                 key={slide.id}
                 to={`/Uniform/${slide.id}`}
-                className="group relative overflow-hidden flex-1 h-[400px] lg:h-[500px] transform transition-transform duration-500 hover:scale-105"
+                className="group relative overflow-hidden flex-1 h-[300px] lg:h-[400px] transform transition-transform duration-500 hover:scale-105"
               >
                 <img
                   src={slide.image}

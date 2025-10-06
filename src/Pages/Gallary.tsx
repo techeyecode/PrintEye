@@ -1,6 +1,6 @@
 import React from "react";
-import GallaryCards from "./GallaryCards.tsx";
-import PageHeader from "../../Components/PageHeader";
+import PageHeader from "../Components/PageHeader";
+import GallaryCards from "../FrontSectionts/Gallary/GallaryDetailies";
 
 const Gallary: React.FC = () => {
   return (

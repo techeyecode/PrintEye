@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
 import CCarousel from "../../Components/CCarousel";
 import HomeHeader from "../../Components/HomeHeader";
 
 const CollectionSlider: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
+
   const slides = [
     {
       id: 1,
@@ -63,16 +67,16 @@ const CollectionSlider: React.FC = () => {
   return (
     <section className="mx-auto px-4 lg:px-10">
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
-        <div className="w-full lg:w-1/4">
+        <div className="w-full lg:w-1/3">
           <HomeHeader
-            title="Beautifully Branded EyePrint"
-            description="We expertly curate remarkable products, from emerging brands to household names, that are thoughtful and long-lasting."
-            buttonText="See All"
+            title="beautifullyBrandedByEyePrint"
+            description="beautifullyBrandedByEyePrintkDescripion"
+            buttonText="seeAll"
             buttonLink="/Printing"
           />
         </div>
 
-        <div className="w-full lg:w-3/4">
+        <div className="w-full lg:w-2/3">
           <CCarousel slides={slides} />
         </div>
       </div>

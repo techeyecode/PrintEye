@@ -18,13 +18,10 @@ const BuildYourBox: React.FC = () => {
 
         <div className="relative w-full lg:w-1/2 p-6 flex flex-col justify-center">
           <HomeHeader
-            title="Easily Build Your Gift Kits"
-            description="Our KitBuilder platform allows you to click-and-build your
-              corporate gift boxes. This simple gift box building tool will give
-              you the freedom to easily select everything from custom packaging
-              to products to packing materials."
-            buttonText="Build Your Own Box"
-            buttonLink="Promotion"
+            title="thoughtfulCorporateGiftsMadeSimple"
+            description="yourPerfectGiftJustAClickAwayDescripion"
+            buttonText="buildYourOwnBox"
+            buttonLink="/Promotion"
           />
         </div>
       </div>

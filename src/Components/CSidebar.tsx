@@ -86,7 +86,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
     setSidebarOpen(isOpen);
   }, [isOpen]);
 
-  // ✅ Sync filters with URL on mount / URL change
   useEffect(() => {
     const params = new URLSearchParams(location.search);
 
@@ -100,7 +99,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
     setFilters({ categories, subcategories });
   }, [location.search]);
 
-  // ✅ Helper to update URL
   const updateURL = (newFilters: FilterState) => {
     const params = new URLSearchParams(location.search);
 
@@ -129,7 +127,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
     onClose?.();
   };
 
-  // Build categories from helpers
   const categories: Category[] = [];
 
   if (!type || type === "Printing") {
@@ -239,7 +236,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
       )
   );
 
-  // Show as button on mobile/tablet when sidebar is closed
   if (shouldShowAsButton && !sidebarOpen) {
     return (
       <CButton variant="primary" isFullWidth onClick={handleOpenSidebar}>
@@ -250,7 +246,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
 
   return (
     <>
-      {/* Overlay for mobile/tablet */}
       {shouldShowAsButton && sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -258,7 +253,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
         />
       )}
 
-      {/* Sidebar */}
       <div
         className={`flex flex-col min-h-screen transition-all duration-300  bg-white  ${
           shouldShowAsButton
@@ -270,7 +264,6 @@ const CSidebar: React.FC<CSidebarProps> = ({
             : "relative "
         }`}
       >
-        {/* Header */}
         <div className="relative p-4 flex items-center justify-between">
           <h2 className="text-xl font-bold text-primary">{t(title)}</h2>
           {(shouldShowAsButton || isMobile) && (
@@ -283,16 +276,15 @@ const CSidebar: React.FC<CSidebarProps> = ({
           )}
         </div>
 
-        {/* Search */}
         <div className="relative mx-4 p-0.5 rounded-full bg-gradient-to-tr from-primary/50 to-primary mt-1">
           <div className="relative flex items-center rounded-full p-1">
             <MdSearch className="pr-1 text-white border-2 border-y-0 border-l-0 border-r-2 rounded-full w-6 h-6 ml-2 pointer-events-none" />
             <Input
-              placeholder="Search categories..."
+              placeholder={t("search")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               bordered={false}
-              className="ml-3 w-full bg-transparent text-white placeholder-white focus:outline-none text-lg"
+              className="sidebar ml-3 w-full bg-transparent text-white placeholder-white focus:outline-none text-lg"
             />
           </div>
         </div>
@@ -305,17 +297,10 @@ const CSidebar: React.FC<CSidebarProps> = ({
             return (
               <div key={cat.value}>
                 <div
-                  className={`flex items-center justify-between p-3 rounded-full cursor-pointer  hover:bg-gray-50 border border-primary/20 hover:border-primary/30 transform hover:scale-[1.03]`}
+                  className={`flex items-center justify-between px-4 py-2 rounded-full cursor-pointer  hover:bg-gray-50 border border-primary/20 hover:border-primary/30 transform hover:scale-[1.03]`}
                   onClick={() => toggleExpand(cat.value)}
                 >
-                  <div className="flex items-center gap-3">
-                    <Checkbox
-                      checked={filters.categories.includes(cat.value)}
-                      onChange={(e) =>
-                        handleCategoryChange(cat.value, e.target.checked)
-                      }
-                      onClick={(e) => e.stopPropagation()}
-                    />
+                  <div className="flex items-center gap-3 ">
                     <span className="font-semibold text-primary">
                       {t(`${cat.label}`)}
                     </span>
@@ -339,7 +324,7 @@ const CSidebar: React.FC<CSidebarProps> = ({
                       isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="ml-8 mt-2 space-y-2 pl-2 border-l-2 border-secondary">
+                    <div className="ml-8 mt-2 space-y-2 pl-2 border-l-2 border-secondary font-semibold">
                       {cat.subcategories.map((sub) => (
                         <div
                           key={sub.value}

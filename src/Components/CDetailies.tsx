@@ -152,7 +152,7 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
             </div>
           )}
 
-          <button className="bg-secondary text-primary font-semibold py-2 rounded-full mt-2">
+          <button className="bg-primary text-white font-semibold py-2 rounded-full mt-2">
             Get Quote
           </button>
         </div>

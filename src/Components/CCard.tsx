@@ -8,7 +8,6 @@ interface CCardProps {
   image?: string;
   navigateTo: string; // <-- made navigateTo required
   className?: string;
-  aspectRatio?: string;
 }
 
 const CCard: React.FC<CCardProps> = ({
@@ -17,14 +16,13 @@ const CCard: React.FC<CCardProps> = ({
   image,
   navigateTo,
   className = "",
-  aspectRatio = "aspect-[3/4]",
 }) => {
   return (
     <Link
       to={navigateTo} // <-- directly use navigateTo
       className={`group block rounded-3xl bg-primary border border-gray-200 transition-all duration-300 overflow-hidden hover:shadow-lg hover:border-gray-300 ${className}`}
     >
-      <div className={`relative overflow-hidden w-full ${aspectRatio}`}>
+      <div className={`relative overflow-hidden w-full aspect-[4/4]`}>
         {image ? (
           <img
             src={image}

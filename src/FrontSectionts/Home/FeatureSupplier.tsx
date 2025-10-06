@@ -7,14 +7,10 @@ const FeatureSupplier: React.FC = () => {
       <div className="flex flex-col lg:flex-row-reverse items-start lg:items-center gap-8">
         <div className="w-full lg:w-1/2">
           <HomeHeader
-            title="Corporate Gifting Made Easy"
-            description=" Our gifting methodology makes your job as simple as possible. We
-            developed easy-to-browse categories, pre-built kits, and KitBuilder
-            to help you bring your thoughtful corporate gifts to life, and our
-            dedicated managers guide you through the process every step of the
-            way."
-            buttonText="About Us"
-            buttonLink="/about"
+            title="packagingMadeSimple"
+            description="packagingMadeSimpleDescription"
+            buttonText="Packaging"
+            buttonLink="/Packaging"
           />
         </div>
 
