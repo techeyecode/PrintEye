@@ -15,7 +15,7 @@ const Packaging: React.FC = () => {
 
       <div className="container mx-auto flex flex-col lg:flex-row items-start justify-between  gap-6 my-6 md:my-10">
         <div className="w-full lg:w-1/4">
-          <CSidebar title="Packaging" type="Packaging" />
+          <CSidebar title="packaging" type="Packaging" />
         </div>
 
         <div className="w-full lg:w-3/4">

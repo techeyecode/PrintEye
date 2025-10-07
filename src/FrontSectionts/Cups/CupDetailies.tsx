@@ -14,9 +14,8 @@ const CupDetailies: React.FC = () => {
     <div>
       <Breadcrumbs
         items={[
-          { label: "Home", path: "/" },
-          { label: "Cup", path: "/Cup" },
-          { label: "Details" },
+          { label: "home", path: "/" },
+          { label: "cup", path: "/Cup" },
         ]}
       />
 

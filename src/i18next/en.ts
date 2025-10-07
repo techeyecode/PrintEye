@@ -380,6 +380,108 @@ const en = {
     customCups: "Custom Cups",
     customCupsSubtitle:
       "So many choices, every cup can tell your brand’s story",
+    // today
+    gallary: "Gallary",
+    TShirt: "T-Shirt",
+
+    longSleeved: "Long Sleeved",
+    shortSleeved: "Short Sleeved",
+
+    shirtNeck: "Shirt Neck",
+    shirtCircle: "Shirt Circle",
+
+    polyester: "Polyester",
+
+    cotton: "Cotton",
+    Hood: "Hood",
+
+    school: "School",
+    sport: "Sport",
+    restaurant: "Restaurant",
+    hotel: "Hotel",
+    suit: "suit",
+    Jacket: "Jacket",
+    longSleevedJacket: "Long Sleeved Jacket",
+
+    sleevelessJacket: "Sleeve less Jacket",
+    eleg: "Eleg",
+    logo: "Logo",
+    TableItems: "Table Items",
+    americanService: "American Service",
+
+    knivesForksSpoons: "knives, Forks, Spoons",
+
+    sugarSaltSpices: "Sugar, Salt, Spices",
+    CardboardBoxes: "Cardboard Boxes",
+
+    thinBox: "Thin Box",
+
+    thickBox: "Thick Box",
+
+    pizzaBox: "Pizza Box",
+
+    burgerBox: "Burger Box",
+
+    cakeBox: "Cake Box",
+
+    cookiesBox: "Coolies Box",
+    fingerBowl: "Finger Bowl",
+
+    craftEnvelope: "Craft Envelope",
+    nenoEnvelope: "Neno Envelope",
+    clothEnvelope: "Cloth Envelope",
+    clenx: "Clenx",
+    harfBarz: "Harf Barz",
+    neon: "Neon",
+    lightbox: "Light box",
+    flex: "Flex",
+    stickers: "Stickers",
+    flags: "Flags",
+    electronicScreen: "Electronic Screen",
+    exhibitionBooth: "Exhibition Booth",
+    emboss: "Emboss",
+
+    plastic: "Plastic",
+    sleeve: "Sleeve",
+    toothpickFlag: "Toothpick Flag",
+    wipes: "Wipes",
+    AllItems: "All Items",
+    AllItemsSubtitle: "There's no such thing as too many options",
+    EyePrintCatalog: "EyePrint Catalog",
+    productDescription: "Product Description",
+    code: "Code ",
+    Quantity: "Quantity ",
+    MeetEyePrint: "Meet EyePrint",
+    aboutEyePrint: "About EyePrint",
+    MeetEyePrintSubtext:
+      "The promotional experts for all your online printing needs",
+    customCorporateGiftBoxes: "Custom Corporate Gift Boxes",
+    customCorporateGiftBoxesSubtext:
+      "Every custom gift box is carefully curated with hand-selected items, blending elegance and purpose to leave a lasting impression on your recipients",
+    deliveredDirectlytoRecipients: "Delivered Directly to Recipients",
+    deliveredDirectlytoRecipientsSubtext:
+      "Our dedicated fulfillment team expertly builds, packages, and delivers each gift, ensuring it arrives beautifully presented and directly in the hands of your recipients.",
+    onsiteGiftingExperiences: "Onsite Gifting Experiences",
+    onsiteGiftingExperiencesSubtext:
+      "We specialize in curating unique corporate gift experiences that leave a lasting impression on your guests and elevate your events",
+    Contact: "Contact",
+    ContactSubtext:
+      "The promotional experts for all your online printing needs",
+    CountryCity: "Iraq, Erbil",
+    sendUsYourQueryAnytime: "Send us your query anytime!",
+    SaturdayThursday: "Saturday - Thursday",
+    sendMessage: "Send Message",
+
+    fullName: "Full Name",
+    pleaseEnterYourName: "Please Enter Your Full Name",
+    email: "Email",
+    pleaseEnterYourEmail: "Please Enter Your Email",
+    Subject: "Subject",
+    pleaseEnterSubject: "Please Enter Subject",
+    message: "Message",
+    pleaseEnterMessage: "Please Enter Message",
+    facebook: "Facebook",
+    instagram: "Instagram",
   },
 };
 

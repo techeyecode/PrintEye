@@ -3,6 +3,8 @@ import { FaCode, FaShoppingCart, FaAngleDoubleRight } from "react-icons/fa";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import CCard from "./CCard";
+import { useTranslation } from "react-i18next";
+import CButton from "./CButton";
 
 // Unified Product type
 // In your CDetailies component or types file
@@ -51,8 +53,6 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
       <div className="p-4 text-red-500 text-center">Product not found</div>
     );
 
-  // Rest of your component code remains the same...
-  // Find parent category if nested
   const parentCategory =
     "subcategories" in (items[0] || {})
       ? (items as CategoryType[]).find((cat) =>
@@ -83,6 +83,7 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
     : product.description
     ? [product.description]
     : [];
+  const { t } = useTranslation();
 
   return (
     <section className="max-w-7xl mx-auto p-4">
@@ -130,17 +131,17 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
           <h2 className="text-2xl font-semibold">{product.label}</h2>
           {product.id && (
             <p className="flex items-center gap-2">
-              <FaCode /> ID: {product.id}
+              <FaCode />
+              {t("code")} {product.id}
             </p>
           )}
           <p className="flex items-center gap-2">
-            <FaShoppingCart /> Quantity: {product.count || "N/A"}
+            <FaShoppingCart /> {t("Quantity")} {product.count || "N/A"}
           </p>
-
           {descriptionArray.length > 0 && (
             <div className="mt-3">
               <h3 className="text-xl font-semibold mb-2">
-                Product Description
+                {t("productDescription")}
               </h3>
               <ul className="list-disc list-inside flex flex-col gap-1">
                 {descriptionArray.map((item, idx) => (
@@ -151,10 +152,6 @@ const CDetailies: React.FC<CDetailiesProps> = ({ id, items }) => {
               </ul>
             </div>
           )}
-
-          <button className="bg-primary text-white font-semibold py-2 rounded-full mt-2">
-            Get Quote
-          </button>
         </div>
       </div>
 

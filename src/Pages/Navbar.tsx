@@ -6,11 +6,13 @@ import { FaTimes, FaBars } from "react-icons/fa";
 
 import LightMode from "../assets/EyePrintLogo.png";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,15 +36,14 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "Promotion", link: "/Promotion" },
-    { name: "Printing", link: "/Printing" },
-    { name: "Uniform", link: "/Uniform" },
-    { name: "Packaging", link: "/Packaging" },
-    { name: "Sign", link: "/Sign" },
-    { name: "Cup", link: "/Cup" },
-    { name: "Gallary", link: "/Gallary" },
-    { name: "Catalog", link: "/Catalog" },
+    { name: "home", link: "/" },
+    { name: "promotion", link: "/Promotion" },
+    { name: "printing", link: "/Printing" },
+    { name: "uniform", link: "/Uniform" },
+    { name: "packaging", link: "/Packaging" },
+    { name: "sign", link: "/Sign" },
+    { name: "cup", link: "/Cup" },
+    { name: "gallary", link: "/Gallary" },
   ];
 
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;
@@ -71,7 +72,7 @@ const Navbar: React.FC = () => {
                           : "text-primary"
                       } `}
                     >
-                      <span className="relative z-10">{link.name}</span>
+                      <span className="relative z-10">{t(link.name)}</span>
                     </Link>
                   </div>
                 ))}
@@ -80,6 +81,17 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            {!isMobileView && (
+              <Link
+                to="/Catalog"
+                className={`relative px-4 py-2 font-semibold rounded-xl overflow-hidden transition-all duration-300 flex items-center gap-1 ${
+                  isLinkActive("/Catalog") ? "text-secondary" : "text-primary"
+                }`}
+              >
+                <span className="relative z-10">{t("Catalog")}</span>
+              </Link>
+            )}
+
             <LanguageSwitcher />
 
             {isMobileView && (
@@ -126,9 +138,21 @@ const Navbar: React.FC = () => {
                       }`}
                       onClick={closeMobileMenu}
                     >
-                      {link.name}
+                      {t(link.name)}
                     </Link>
                   ))}
+                  {/* Catalog link in mobile menu */}
+                  <Link
+                    to="/Catalog"
+                    className={`block font-medium px-3 py-2 rounded-lg transition-all duration-200 mb-2 ${
+                      isLinkActive("/Catalog")
+                        ? "text-secondary"
+                        : "text-primary"
+                    }`}
+                    onClick={closeMobileMenu}
+                  >
+                    Catalog
+                  </Link>
                 </nav>
               </div>
             </div>

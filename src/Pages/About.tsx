@@ -9,13 +9,10 @@ const About = () => {
   return (
     <div className="!space-y-10">
       <PageHeader
-        title="Meet EyePrint"
-        subtitle="The promotional experts for all your online printing needs"
+        title="MeetEyePrint"
+        subtitle="MeetEyePrintSubtext"
         backgroundImage="https://static.gotprint.com/tl/en_US/company/about-us/images/about_us_hero_banner.png"
-        breadcrumbs={[
-          { label: "Home", path: "/" },
-          { label: "About EyePrint" },
-        ]}
+        breadcrumbs={[{ label: "home", path: "/" }, { label: "aboutEyePrint" }]}
       />
       <AboutEyePrint />
       <PricingSection />

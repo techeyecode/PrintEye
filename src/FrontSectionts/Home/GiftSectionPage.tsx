@@ -2,6 +2,7 @@ import React from "react";
 import { TbGiftFilled } from "react-icons/tb";
 import { FaTruckFront } from "react-icons/fa6";
 import { MdSunny } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 interface GiftItem {
   id: number;
@@ -14,26 +15,24 @@ const GiftSectionPage: React.FC = () => {
   const giftItems: GiftItem[] = [
     {
       id: 1,
-      title: "Custom Corporate Gift Boxes",
-      description:
-        "Every custom gift box is carefully curated with hand-selected items, blending elegance and purpose to leave a lasting impression on your recipients",
+      title: "customCorporateGiftBoxes",
+      description: "customCorporateGiftBoxesSubtext",
       icon: TbGiftFilled,
     },
     {
       id: 2,
-      title: "Delivered Directly to Recipients",
-      description:
-        "Our dedicated fulfillment team expertly builds, packages, and delivers each gift, ensuring it arrives beautifully presented and directly in the hands of your recipients.",
+      title: "deliveredDirectlytoRecipients",
+      description: "deliveredDirectlytoRecipientsSubtext",
       icon: FaTruckFront,
     },
     {
       id: 3,
-      title: "Onsite Gifting Experiences",
-      description:
-        "We specialize in curating unique corporate gift experiences that leave a lasting impression on your guests and elevate your events",
+      title: "onsiteGiftingExperiences",
+      description: "onsiteGiftingExperiencesSubtext",
       icon: MdSunny,
     },
   ];
+  const { t } = useTranslation();
 
   return (
     <section className="w-full bg-gray-100 py-12">
@@ -46,8 +45,8 @@ const GiftSectionPage: React.FC = () => {
             <div className="mb-4">
               <item.icon className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-bold mb-4">{item.title}</h1>
-            <p>{item.description}</p>
+            <h1 className="font-bold mb-4">{t(item.title)}</h1>
+            <p>{t(item.description)}</p>
           </div>
         ))}
       </div>

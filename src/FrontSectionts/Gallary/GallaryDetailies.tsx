@@ -1,36 +1,35 @@
 import React, { useState } from "react";
 import { companies } from "./GallaryItems";
-import Prev from "../../assets/Prev.svg";
-import Next from "../../assets/Next.svg";
-import PrevBeforeHover from "../../assets/PrevAfterHover.svg";
-import NextBeforeHover from "../../assets/NextBeforeHover.svg";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface HoverImageButtonProps {
-  defaultImage: string;
-  hoverImage: string;
+  Icon: React.ReactElement;
   onClick: () => void;
 }
 
 const HoverImageButton: React.FC<HoverImageButtonProps> = ({
-  defaultImage,
-  hoverImage,
+  Icon,
   onClick,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
     <button
-      className="cursor-pointer"
+      className="cursor-pointer p-2 text-xl text-primary transition-colors duration-200 hover:text-secondary"
       onClick={onClick}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <img src={isHover ? defaultImage : hoverImage} />
+      {Icon}
     </button>
   );
 };
 
-const GallaryCards: React.FC = () => {
+interface GallaryCardsProps {
+  rtl?: boolean;
+}
+
+const GallaryCards: React.FC<GallaryCardsProps> = ({ rtl = false }) => {
   const [companyIndex, setCompanyIndex] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const IMAGES_PER_PAGE = 6;
@@ -52,12 +51,11 @@ const GallaryCards: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl xl:mx-auto p-6 mt-10 ">
+    <div className={`max-w-7xl mx-auto p-6 mt-10 ${rtl ? "rtl" : "ltr"}`}>
       <div className="hidden md:flex md:flex-col items-center mb-6 text-primary">
-        <div className="flex items-center justify-center gap-14 w-full ">
+        <div className="flex items-center justify-center gap-14 w-full">
           <HoverImageButton
-            defaultImage={Prev}
-            hoverImage={PrevBeforeHover}
+            Icon={rtl ? <FaArrowRight /> : <FaArrowLeft />}
             onClick={prevImages}
           />
 
@@ -66,8 +64,7 @@ const GallaryCards: React.FC = () => {
           </h2>
 
           <HoverImageButton
-            defaultImage={Next}
-            hoverImage={NextBeforeHover}
+            Icon={rtl ? <FaArrowLeft /> : <FaArrowRight />}
             onClick={nextImages}
           />
         </div>
@@ -78,16 +75,15 @@ const GallaryCards: React.FC = () => {
           BC, which discusses ethics.
         </p>
       </div>
-      <div className="flex flex-col md:hidden  items-center  text-primary">
-        <div className="flex items-center justify-center mb-6 gap-14 w-full ">
+
+      <div className="flex flex-col md:hidden items-center text-primary">
+        <div className="flex items-center justify-center mb-6 gap-14 w-full">
           <HoverImageButton
-            defaultImage={Prev}
-            hoverImage={PrevBeforeHover}
+            Icon={rtl ? <FaArrowRight /> : <FaArrowLeft />}
             onClick={prevImages}
           />
           <HoverImageButton
-            defaultImage={Next}
-            hoverImage={NextBeforeHover}
+            Icon={rtl ? <FaArrowLeft /> : <FaArrowRight />}
             onClick={nextImages}
           />
         </div>

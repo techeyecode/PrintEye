@@ -85,54 +85,62 @@ const helpers = {
   },
 
   Sign: {
-    HarfBarz: [
-      { value: "metal-harfbarz", label: "metalHarfbarz" },
-      { value: "acrylic-harfbarz", label: "acrylicHarfbarz" },
-      { value: "led-harfbarz", label: "ledHarfbarz" },
-      { value: "outdoor-harfbarz", label: "outdoorHarfbarz" },
+    harfBarz: [
+      { value: "harf-barz", label: "harfBarz" },
+      // { value: "metal-harfbarz", label: "metalHarfbarz" },
+      // { value: "acrylic-harfbarz", label: "acrylicHarfbarz" },
+      // { value: "led-harfbarz", label: "ledHarfbarz" },
+      // { value: "outdoor-harfbarz", label: "outdoorHarfbarz" },
     ] as Item[],
 
-    Neon: [
-      { value: "all", label: "all", link: "/Neon" },
-      { value: "glass-neon", label: "glassNeon" },
-      { value: "led-neon", label: "ledNeon" },
-      { value: "custom-neon", label: "customNeon" },
-      { value: "rgb-neon", label: "rgbNeon" },
+    neon: [
+      { value: "neon", label: "neon" },
+      // { value: "glass-neon", label: "glassNeon" },
+      // { value: "led-neon", label: "ledNeon" },
+      // { value: "custom-neon", label: "customNeon" },
+      // { value: "rgb-neon", label: "rgbNeon" },
     ] as Item[],
 
-    LightBox: [
-      { value: "all", label: "all", link: "/LightBox" },
-      { value: "acrylic-lightbox", label: "acrylicLightbox" },
-      { value: "aluminum-lightbox", label: "aluminumLightbox" },
-      { value: "ultra-thin-lightbox", label: "ultraThinLightbox" },
-      { value: "custom-lightbox", label: "customLightbox" },
+    lightbox: [
+      { value: "lightbox", label: "lightbox" },
+      // { value: "acrylic-lightbox", label: "acrylicLightbox" },
+      // { value: "aluminum-lightbox", label: "aluminumLightbox" },
+      // { value: "ultra-thin-lightbox", label: "ultraThinLightbox" },
+      // { value: "custom-lightbox", label: "customLightbox" },
     ] as Item[],
 
-    Flex: [
-      { value: "all", label: "all", link: "/Flex" },
-      { value: "frontlit-flex", label: "frontlitFlex" },
-      { value: "backlit-flex", label: "backlitFlex" },
-      { value: "mesh-flex", label: "meshFlex" },
-      { value: "blockout-flex", label: "blockoutFlex" },
+    flex: [
+      { value: "flex", label: "flex" },
+      // { value: "frontlit-flex", label: "frontlitFlex" },
+      // { value: "backlit-flex", label: "backlitFlex" },
+      // { value: "mesh-flex", label: "meshFlex" },
+      // { value: "blockout-flex", label: "blockoutFlex" },
     ] as Item[],
 
-    Stickers: [
-      { value: "all", label: "all", link: "/Stickers" },
-      { value: "vinyl-stickers", label: "vinylStickers" },
-      { value: "bumper-stickers", label: "bumperStickers" },
-      { value: "clear-stickers", label: "clearStickers" },
-      { value: "die-cut-stickers", label: "dieCutStickers" },
-      { value: "kiss-cut-stickers", label: "kissCutStickers" },
+    stickers: [
+      { value: "stickers", label: "stickers" },
+      // { value: "vinyl-stickers", label: "vinylStickers" },
+      // { value: "bumper-stickers", label: "bumperStickers" },
+      // { value: "clear-stickers", label: "clearStickers" },
+      // { value: "die-cut-stickers", label: "dieCutStickers" },
+      // { value: "kiss-cut-stickers", label: "kissCutStickers" },
     ] as Item[],
 
-    Flag: [
-      { value: "all", label: "all", link: "/Flag" },
-      { value: "feather-flags", label: "featherFlags" },
-      { value: "teardrop-flags", label: "teardropFlags" },
-      { value: "rectangle-flags", label: "rectangleFlags" },
-      { value: "custom-flags", label: "customFlags" },
-      { value: "event-flags", label: "eventFlags" },
+    flags: [
+      { value: "flags", label: "flags" },
+      // { value: "feather-flags", label: "featherFlags" },
+      // { value: "teardrop-flags", label: "teardropFlags" },
+      // { value: "rectangle-flags", label: "rectangleFlags" },
+      // { value: "custom-flags", label: "customFlags" },
+      // { value: "event-flags", label: "eventFlags" },
     ] as Item[],
+    electronicScreen: [
+      { value: "electronic-screen", label: "electronicScreen" },
+    ] as Item[],
+    exhibitionBooth: [
+      { value: "exhibition-booth", label: "exhibitionBooth" },
+    ] as Item[],
+    Stand: [{ value: "Stand", label: "Stand" }] as Item[],
   },
 
   Promotion: {
@@ -214,60 +222,52 @@ const helpers = {
       { value: "cotton", label: "cotton" },
     ] as Item[],
 
-    Hood: [{ value: "hood", label: "hood" }] as Item[],
+    hood: [{ value: "hood", label: "hood" }] as Item[],
 
-    School: [{ value: "school", label: "school" }] as Item[],
-    Sport: [{ value: "sport", label: "sport" }] as Item[],
+    school: [{ value: "school", label: "school" }] as Item[],
+    sport: [{ value: "sport", label: "sport" }] as Item[],
     Hospital: [{ value: "hospital", label: "hospital" }] as Item[],
-    Restaurant: [{ value: "restaurant", label: "restaurant" }] as Item[],
-    Hotel: [{ value: "hotel", label: "hotel" }] as Item[],
-    Suit: [{ value: "suit", label: "suit" }] as Item[],
+    restaurant: [{ value: "restaurant", label: "restaurant" }] as Item[],
+    hotel: [{ value: "hotel", label: "hotel" }] as Item[],
+    suit: [{ value: "suit", label: "suit" }] as Item[],
 
     Jacket: [
       { value: "long-sleeved-jacket", label: "longSleevedJacket" },
       { value: "sleeveless-jacket", label: "sleevelessJacket" },
     ] as Item[],
 
-    Eleg: [{ value: "eleg", label: "eleg" }] as Item[],
-    Logo: [{ value: "logo", label: "logo" }] as Item[],
+    eleg: [{ value: "eleg", label: "eleg" }] as Item[],
+
+    logo: [{ value: "logo", label: "logo" }] as Item[],
   },
 
   Packaging: {
-    Boxes: [
-      { value: "cardboard-box", label: "cardboardBox" },
-      { value: "corrugated-box", label: "corrugatedBox" },
-      { value: "gift-box", label: "giftBox" },
-      { value: "display-box", label: "displayBox" },
-      { value: "folding-box", label: "foldingBox" },
+    TableItems: [
+      { value: "american-service", label: "americanService" },
+      { value: "knives-forks-spoons", label: "knivesForksSpoons" },
+      { value: "sugar-salt-spices", label: "sugarSaltSpices" },
     ] as Item[],
 
-    Bags: [
-      { value: "paper-bag", label: "paperBag" },
-      { value: "plastic-bag", label: "plasticBag" },
-      { value: "zipper-bag", label: "zipperBag" },
-      { value: "standup-pouch", label: "standupPouch" },
+    CardboardBoxes: [
+      { value: "thin-box", label: "thinBox" },
+      { value: "thick-box", label: "thickBox" },
+      { value: "pizza-box", label: "pizzaBox" },
+      { value: "burger-box", label: "burgerBox" },
+      { value: "cake-box", label: "cakeBox" },
+      { value: "cookies-box", label: "cookiesBox" },
     ] as Item[],
 
-    Containers: [
-      { value: "plastic-container", label: "plasticContainer" },
-      { value: "glass-container", label: "glassContainer" },
-      { value: "metal-container", label: "metalContainer" },
-      { value: "cosmetic-container", label: "cosmeticContainer" },
+    fingerBowl: [{ value: "finger-bowl", label: "fingerBowl" }] as Item[],
+
+    craftEnvelope: [
+      { value: "craft-envelope", label: "craftEnvelope" },
     ] as Item[],
 
-    Labels: [
-      { value: "product-label", label: "productLabel" },
-      { value: "barcode-label", label: "barcodeLabel" },
-      { value: "warning-label", label: "warningLabel" },
-      { value: "instruction-label", label: "instructionLabel" },
+    nenoEnvelope: [{ value: "neno-envelope", label: "nenoEnvelope" }] as Item[],
+    clothEnvelope: [
+      { value: "cloth-envelope", label: "clothEnvelope" },
     ] as Item[],
-
-    Wraps: [
-      { value: "shrink-wrap", label: "shrinkWrap" },
-      { value: "stretch-wrap", label: "stretchWrap" },
-      { value: "bubble-wrap", label: "bubbleWrap" },
-      { value: "foil-wrap", label: "foilWrap" },
-    ] as Item[],
+    clenx: [{ value: "clenx", label: "clenx" }] as Item[],
   },
 
   Cup: {
@@ -284,7 +284,7 @@ const helpers = {
     toothpickFlag: [
       { value: "toothpick-flag", label: "toothpickFlag" },
     ] as Item[],
-    Wipes: [{ value: "wipes", label: "wipes" }] as Item[],
+    wipes: [{ value: "wipes", label: "wipes" }] as Item[],
   },
 
   Gallary: {

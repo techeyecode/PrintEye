@@ -56,8 +56,8 @@ const Catalog = () => {
   return (
     <div className="bg-white">
       <PageHeader
-        title="EyePrint Catalog"
-        subtitle="There's no such thing as too many options"
+        title="EyePrintCatalog"
+        subtitle="AllItemsSubtitle"
         backgroundImage="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&auto=format&fit=crop&q=80"
         breadcrumbs={[{ label: "Home", path: "/" }, { label: "Catalog" }]}
       />

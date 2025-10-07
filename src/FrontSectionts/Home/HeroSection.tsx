@@ -76,9 +76,7 @@ const HeroSection = () => {
           </p>
 
           <div
-            className={`flex flex-col xs:flex-row mt-6 sm:mt-8 lg:mt-10 ${
-              isRTL ? "items-end justify-end" : "items-start"
-            }`}
+            className={`flex flex-col xs:flex-row mt-6 sm:mt-8 lg:mt-10  w-fit`}
           >
             <CButton
               variant={isLarge ? "primary" : "secondary"}

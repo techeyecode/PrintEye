@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaInstagram,
+} from "react-icons/fa";
 
 import Logo from "../assets/EyePrintLogoDarkMode.png";
+import footerBg from "../assets/footer.jpg";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -13,7 +20,7 @@ const Footer: React.FC = () => {
     { name: "home", link: "/" },
     { name: "promotion", link: "/Promotion" },
     { name: "printing", link: "/Printing" },
-    { name: "Uniform", link: "/Uniform" },
+    { name: "uniform", link: "/Uniform" },
     { name: "packaging", link: "/Packaging" },
     { name: "sign", link: "/Sign" },
     { name: "cup", link: "/Cup" },
@@ -30,7 +37,7 @@ const Footer: React.FC = () => {
       base: "transition-all duration-500 transform hover:translate-x-2 relative",
       hover: "text-secondary font-semibold",
       underline:
-        "absolute bottom-0 left-0 w-0 h-0.5  transition-all duration-500 group-hover:w-full",
+        "absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-500 group-hover:w-full",
     },
     contact: {
       base: "transition-all duration-500 transform hover:translate-x-1",
@@ -40,9 +47,16 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-primary text-white border-t border-gray-200 mt-14 m-6 rounded-3xl">
+    <footer
+      className="relative bg-primary text-white border-t border-gray-200 mt-14 m-6 rounded-3xl bg-contain bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${footerBg})`,
+        backgroundSize: "100% 100%",
+      }}
+    >
       <div className="py-8 px-4 md:px-14 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* --- Left Column --- */}
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img
@@ -50,11 +64,32 @@ const Footer: React.FC = () => {
                 className="w-auto h-7 md:h-8 lg:h-9 xl:h-10 object-contain"
               />
             </div>
-            <p className="text-white mb-6 font-medium  leading-relaxed hover:text-gray-200 transition-colors duration-500">
+            <p className="text-white mb-6 font-medium leading-relaxed hover:text-gray-200 transition-colors duration-500">
               {t("footerDescription")}
             </p>
+
+            {/* --- Social Media --- */}
+            <div className="flex items-center gap-5 mt-4">
+              <a
+                href="https://www.facebook.com/share/1CYGDbeJy4/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-secondary transition-colors duration-500"
+              >
+                <FaFacebookF size={22} />
+              </a>
+              <a
+                href="https://www.instagram.com/eye.print1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-secondary transition-colors duration-500"
+              >
+                <FaInstagram size={22} />
+              </a>
+            </div>
           </div>
 
+          {/* --- Services --- */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("ourServices")}
@@ -84,6 +119,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* --- Company --- */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("company")}
@@ -113,6 +149,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* --- Contact --- */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("contactUs")}

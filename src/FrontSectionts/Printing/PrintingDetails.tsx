@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { AllBusinessCards } from "./CardItem";
 import CDetailies from "../../Components/CDetailies";
+import Breadcrumbs from "../../Components/CBreadcrumb";
 
 const PrintingDetailies: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -12,6 +13,12 @@ const PrintingDetailies: React.FC = () => {
 
   return (
     <div>
+      <Breadcrumbs
+        items={[
+          { label: "home", path: "/" },
+          { label: "printing", path: "/printing" },
+        ]}
+      />
       <CDetailies id={id} items={AllBusinessCards} />
     </div>
   );
