@@ -13,12 +13,12 @@ const Promotion: React.FC = () => {
         breadcrumbs={[{ label: "home", path: "/" }, { label: "promotion" }]}
       />
 
-      <div className="container mx-auto flex flex-col lg:flex-row items-start justify-between  gap-6 my-6 md:my-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 my-6 md:my-10 px-4 md:px-2">
         <div className="w-full lg:w-1/4">
           <CSidebar title="promotion" type="Promotion" />
         </div>
 
-        <div className="w-full lg:w-3/4">
+        <div className="w-full lg:w-3/4 ">
           <PromotionCards />
         </div>
       </div>

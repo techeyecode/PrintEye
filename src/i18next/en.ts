@@ -237,13 +237,13 @@ const en = {
 
     aboutTheCompany: "About The Company",
     aboutSubtext:
-      "In 2001, EyePrint started out as a small family-run business in Toluca Lake, California, with a goal that would soon become a tradition: to provide fast, economical, and convenient service without sacrificing quality. In no time at all, this steadfast tradition helped us evolve into a continually growing and dependable company. Today, EyePrint's headquarters are located in Burbank, California, where four buildings, encompassing about 110,000 square feet, support various departments including Customer Service, Accounting, Processing, Pre-Press, Press, Bindery, Quality Control, Direct Marketing, Mailing and Graphic Design.",
+      "It specializes in printing and providing all advertising materials such as: printing gift items, paper items, restaurant items and travel glass items, printing on clothes and printing flags, stickers, flexes and bold letters for trademarks.",
     pricingTitle: "Maintaining Our Low & Honest Pricing",
     pricingSubtext:
       "At EyePrint, we aim to put our customers' needs first. We strive to have the best and lowest pricing in the market, all without sacrificing the quality and integrity of our products. Wondering how we keep our prices so low? We can confidently share that as a 100% family owned & operated private company, we are not backed by investors or a board of directors, with no one to report to but ourselves and you, our valued customer.",
     ourMission: "Our Mission",
     missionSubtext:
-      "As a family-owned business, we understand what it takes to build a company. We'll work with you to develop, promote, and grow your brand by offering high-quality products that meet your needs and provide great value.",
+      "With our strong experience and expertise, we work diligently to improve all areas of printing and meet the needs of our customers and deliver their products to the highest level of standard and quality.",
     ourVision: "Our Vision",
     visionSubtext:
       "Create innovative print and marketing solutions that are accessible to all",
@@ -251,7 +251,7 @@ const en = {
     enterEmailAddress: "Enter email address",
     enterSubject: "Enter Subject",
     enterYourMessage: "Enter Your Message ...",
-    address: "Erbil - Sultan Muzaffar - Asad Mall",
+    address: "Italian Village 1 number 267",
     footerDescription:
       "Your trusted partner for high-quality printing solutions. We bring creativity and precision to every project with exceptional service and results.",
     ourServices: "Our Services",
@@ -259,7 +259,7 @@ const en = {
     contactUs: "Contact Us",
     home: "Home",
     promotion: "Promotion",
-    printing: "Printing",
+    printing: "Paper Print",
     uniform: "Uniform",
     packaging: "Packaging",
     sign: "Sign",

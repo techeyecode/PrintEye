@@ -15,9 +15,7 @@ const About = () => {
         breadcrumbs={[{ label: "home", path: "/" }, { label: "aboutEyePrint" }]}
       />
       <AboutEyePrint />
-      <PricingSection />
       <OurVisionMission />
-      <WhatWeOffer />
       <GiftSectionPage />
     </div>
   );

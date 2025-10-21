@@ -35,7 +35,12 @@ const Client = () => {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <div className="overflow-hidden w-full">
+    <div
+      className="overflow-hidden w-full"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-delay="100"
+    >
       <div className="flex animate-scroll space-x-10 whitespace-nowrap">
         {duplicatedClients.map((client, index) => (
           <div

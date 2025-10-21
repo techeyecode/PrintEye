@@ -1,21 +1,67 @@
 import { useTranslation } from "react-i18next";
+import {
+  FaTshirt,
+  FaGift,
+  FaClipboard,
+  FaUtensils,
+  FaGlassMartiniAlt,
+  FaFlag,
+  FaStickyNote,
+  FaBold,
+} from "react-icons/fa";
+
+const services = [
+  {
+    icon: <FaGift className="text-primary w-6 h-6" />,
+    text: "Printing gift items",
+  },
+  {
+    icon: <FaClipboard className="text-primary w-6 h-6" />,
+    text: "Paper items",
+  },
+  {
+    icon: <FaUtensils className="text-primary w-6 h-6" />,
+    text: "Restaurant items",
+  },
+  {
+    icon: <FaGlassMartiniAlt className="text-primary w-6 h-6" />,
+    text: "Travel glass items",
+  },
+  {
+    icon: <FaTshirt className="text-primary w-6 h-6" />,
+    text: "Printing on clothes",
+  },
+  { icon: <FaFlag className="text-primary w-6 h-6" />, text: "Printing flags" },
+  { icon: <FaStickyNote className="text-primary w-6 h-6" />, text: "Stickers" },
+  {
+    icon: <FaBold className="text-primary w-6 h-6" />,
+    text: "Flexes and bold letters for trademarks",
+  },
+];
 
 const AboutEyePrint = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-primary space-y-4">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center sm:text-left">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-primary">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center sm:text-left mb-6 ">
         {t("aboutTheCompany")}
       </h1>
-      <p className="text-sm sm:text-base md:text-lg text-justify">
+      <p className="text-sm sm:text-base md:text-lg text-justify mb-8">
         {t("aboutSubtext")}
       </p>
-      <img
-        src="https://static.gotprint.com/tl/en_US/company/about-us/images/20th_anniversary_about_us_banner.jpg"
-        className="w-full max-w-full h-auto rounded-lg shadow-md"
-        alt="About EyePrint"
-      />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="flex items-start space-x-4  rounded-lg transition"
+          >
+            <div className="mt-1">{service.icon}</div>
+            <p className="text-sm sm:text-base md:text-lg">{service.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

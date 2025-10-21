@@ -238,9 +238,11 @@ const CSidebar: React.FC<CSidebarProps> = ({
 
   if (shouldShowAsButton && !sidebarOpen) {
     return (
-      <CButton variant="primary" isFullWidth onClick={handleOpenSidebar}>
-        {t("Categories")}
-      </CButton>
+      <div className="flex justify-center">
+        <CButton variant="primary" onClick={handleOpenSidebar}>
+          {t("Categories")}
+        </CButton>
+      </div>
     );
   }
 

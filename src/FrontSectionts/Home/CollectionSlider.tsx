@@ -65,9 +65,14 @@ const CollectionSlider: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto px-4 lg:px-10">
+    <section className="overflow-hidden mx-auto px-4 lg:px-10">
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
-        <div className="w-full lg:w-1/3">
+        <div
+          className="w-full lg:w-1/3"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
           <HomeHeader
             title="beautifullyBrandedByEyePrint"
             description="beautifullyBrandedByEyePrintkDescripion"
@@ -76,7 +81,12 @@ const CollectionSlider: React.FC = () => {
           />
         </div>
 
-        <div className="w-full lg:w-2/3">
+        <div
+          className="w-full lg:w-2/3"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
           <CCarousel slides={slides} />
         </div>
       </div>

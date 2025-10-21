@@ -7,29 +7,69 @@ import {
   FaMapMarkerAlt,
   FaFacebookF,
   FaInstagram,
+  FaHome,
+  FaShoppingCart,
+  FaPrint,
+  FaTshirt,
+  FaBoxOpen,
+  FaSign,
+  FaCoffee,
+  FaInfoCircle,
+  FaUser,
+  FaFileContract,
+  FaTiktok,
 } from "react-icons/fa";
+import footerBg from "../assets/footer.jpg";
 
 import Logo from "../assets/EyePrintLogoDarkMode.png";
-import footerBg from "../assets/footer.jpg";
+import SocialIcon from "../Components/SocialIcon";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const footerLinks = [
-    { name: "home", link: "/" },
-    { name: "promotion", link: "/Promotion" },
-    { name: "printing", link: "/Printing" },
-    { name: "uniform", link: "/Uniform" },
-    { name: "packaging", link: "/Packaging" },
-    { name: "sign", link: "/Sign" },
-    { name: "cup", link: "/Cup" },
+    { name: "home", link: "/", icon: <FaHome className="inline mr-2" /> },
+    {
+      name: "promotion",
+      link: "/Promotion",
+      icon: <FaShoppingCart className="inline mr-2" />,
+    },
+    {
+      name: "printing",
+      link: "/Printing",
+      icon: <FaPrint className="inline mr-2" />,
+    },
+    {
+      name: "uniform",
+      link: "/Uniform",
+      icon: <FaTshirt className="inline mr-2" />,
+    },
+    {
+      name: "packaging",
+      link: "/Packaging",
+      icon: <FaBoxOpen className="inline mr-2" />,
+    },
+    { name: "sign", link: "/Sign", icon: <FaSign className="inline mr-2" /> },
+    { name: "cup", link: "/Cup", icon: <FaCoffee className="inline mr-2" /> },
   ];
 
   const companyLinks = [
-    { name: "aboutUs", link: "/about" },
-    { name: "contact", link: "/Contact" },
-    { name: "privacyPolicy", link: "/PrivacyPolicy" },
+    {
+      name: "aboutUs",
+      link: "/about",
+      icon: <FaInfoCircle className="inline mr-2" />,
+    },
+    {
+      name: "contact",
+      link: "/Contact",
+      icon: <FaUser className="inline mr-2" />,
+    },
+    {
+      name: "privacyPolicy",
+      link: "/PrivacyPolicy",
+      icon: <FaFileContract className="inline mr-2" />,
+    },
   ];
 
   const hoverEffects = {
@@ -53,10 +93,13 @@ const Footer: React.FC = () => {
         backgroundImage: `url(${footerBg})`,
         backgroundSize: "100% 100%",
       }}
+      data-aos="fade-dowm"
+      data-aos-duration="1000"
+      data-aos-delay="100"
     >
       <div className="py-8 px-4 md:px-14 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* --- Left Column --- */}
+          {/* Left Column */}
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img
@@ -67,29 +110,26 @@ const Footer: React.FC = () => {
             <p className="text-white mb-6 font-medium leading-relaxed hover:text-gray-200 transition-colors duration-500">
               {t("footerDescription")}
             </p>
-
-            {/* --- Social Media --- */}
             <div className="flex items-center gap-5 mt-4">
-              <a
+              <SocialIcon
                 href="https://www.facebook.com/share/1CYGDbeJy4/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-secondary transition-colors duration-500"
-              >
-                <FaFacebookF size={22} />
-              </a>
-              <a
-                href="https://www.instagram.com/eye.print1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-secondary transition-colors duration-500"
-              >
-                <FaInstagram size={22} />
-              </a>
+                icon={<FaFacebookF />}
+                color="#3b5999"
+              />
+              <SocialIcon
+                href="https://www.instagram.com/eyeprint.iq?igsh=cmZmcTBndnRvdXps&utm_source=qr"
+                icon={<FaInstagram />}
+                color="linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4)"
+              />
+              <SocialIcon
+                href="https://www.tiktok.com/@eyeprint.iq?_t=ZS-90jbeGha7iy&_r=1"
+                icon={<FaTiktok />}
+                color="#000000"
+              />
             </div>
           </div>
 
-          {/* --- Services --- */}
+          {/* Services */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("ourServices")}
@@ -110,7 +150,7 @@ const Footer: React.FC = () => {
                           : ""
                       }`}
                     >
-                      {t(link.name)}
+                      {link.icon} {t(link.name)}
                     </span>
                     <div className={hoverEffects.link.underline} />
                   </Link>
@@ -119,7 +159,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* --- Company --- */}
+          {/* Company */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("company")}
@@ -140,7 +180,7 @@ const Footer: React.FC = () => {
                           : ""
                       }`}
                     >
-                      {t(link.name, link.name)}
+                      {link.icon} {t(link.name, link.name)}
                     </span>
                     <div className={hoverEffects.link.underline} />
                   </Link>
@@ -149,7 +189,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* --- Contact --- */}
+          {/* Contact */}
+          {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("contactUs")}
@@ -161,21 +202,18 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaPhone
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
-                    hoveredItem === "contact-phone"
-                      ? "text-secondary scale-125"
-                      : "text-secondary"
-                  }`}
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
                 />
                 <a
-                  href="tel:07507177656"
+                  href="https://wa.me/9647507177656"
+                  target="_blank"
                   className={`${
                     hoveredItem === "contact-phone"
                       ? hoverEffects.contact.hover
                       : ""
                   }`}
                 >
-                  07507177656
+                  +964 750 717 7656
                 </a>
               </div>
               <div
@@ -184,11 +222,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaEnvelope
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
-                    hoveredItem === "contact-email"
-                      ? "text-secondary scale-125"
-                      : "text-secondary"
-                  }`}
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
                 />
                 <a
                   href="mailto:info@eyeprint.com"
@@ -207,13 +241,11 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaMapMarkerAlt
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${
-                    hoveredItem === "contact-address"
-                      ? "text-secondary scale-125"
-                      : "text-secondary"
-                  }`}
+                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
                 />
-                <span
+                <a
+                  href="https://www.google.com/maps/place/267,+1+Italian+Village+Rd,+Erbil,+Erbil+Governorate/@36.186402,43.9685383,16.5z/data=!4m5!3m4!1s0x400722bff537d893:0x6ce0485b72caba3f!8m2!3d36.1871608!4d43.96997?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
                   className={`${
                     hoveredItem === "contact-address"
                       ? hoverEffects.contact.hover
@@ -221,7 +253,7 @@ const Footer: React.FC = () => {
                   }`}
                 >
                   {t("address")}
-                </span>
+                </a>
               </div>
             </div>
           </div>

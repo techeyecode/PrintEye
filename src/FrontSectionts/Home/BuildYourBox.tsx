@@ -3,9 +3,14 @@ import HomeHeader from "../../Components/HomeHeader";
 
 const BuildYourBox: React.FC = () => {
   return (
-    <section className="w-full bg-secondary/50 py-8">
+    <section className="w-full bg-secondary/50 py-8 overflow-hidden">
       <div className=" mx-auto flex flex-col lg:flex-row items-center">
-        <div className="w-full lg:w-1/2 p-4 flex justify-center">
+        <div
+          className="w-full lg:w-1/2 p-4 flex justify-center"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
           <div
             className="w-full rounded-lg bg-center bg-cover"
             style={{
@@ -16,7 +21,12 @@ const BuildYourBox: React.FC = () => {
           />
         </div>
 
-        <div className="relative w-full lg:w-1/2 p-6 flex flex-col justify-center">
+        <div
+          className="relative w-full lg:w-1/2 p-6 flex flex-col justify-center"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
           <HomeHeader
             title="thoughtfulCorporateGiftsMadeSimple"
             description="yourPerfectGiftJustAClickAwayDescripion"

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ImageItem {
   url: string;
@@ -9,6 +11,15 @@ interface ImageItem {
 
 const StatusPage: React.FC = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out", // smooth motion
+      once: true,
+    });
+  }, []);
+
   const images: ImageItem[] = [
     {
       url: "//www.cloveandtwine.com/cdn/shop/files/1_c50f67dc-c87e-4fcf-a096-87f9cff4b34b_1500x.jpg?v=1738512385",
@@ -19,7 +30,6 @@ const StatusPage: React.FC = () => {
       url: "//www.cloveandtwine.com/cdn/shop/files/CustomThera-2_1500x.jpg?v=1738561440",
       height: "h-[300px] lg:h-[500px]",
     },
-
     {
       url: "//www.cloveandtwine.com/cdn/shop/files/Caistravelkit-3_54d5987d-bd3c-4129-9374-77cd0448021e_1500x.jpg?v=1738515590",
       height: "h-[250px] lg:h-[350px]",
@@ -37,25 +47,28 @@ const StatusPage: React.FC = () => {
   return (
     <section className="w-full bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-10">
+        <div
+          className="text-center mb-10"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+        >
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-2">
             {t("newProducts")}
           </h2>
-          <p className="text-lg text-primary">
-            {t("newProductsSubtext")}
-            
-          </p>
+          <p className="text-lg text-primary">{t("newProductsSubtext")}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {images.map((img, index) => (
             <div
               key={index}
-              className={`bg-center bg-cover rounded-lg shadow-md ${
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
+              className={`bg-center bg-cover rounded-lg shadow-md transform transition-transform duration-700 ${
                 img.colSpan || "col-span-1"
               } ${img.height}`}
               style={{ backgroundImage: `url(${img.url})` }}
-            />
+            ></div>
           ))}
         </div>
       </div>
