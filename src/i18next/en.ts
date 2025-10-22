@@ -482,6 +482,8 @@ const en = {
     pleaseEnterMessage: "Please Enter Message",
     facebook: "Facebook",
     instagram: "Instagram",
+    allProducts: "All Products",
+    featuredProducts: "Feature Products",
   },
 };
 

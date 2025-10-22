@@ -88,11 +88,11 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative bg-primary text-white border-t border-gray-200 mt-14 m-6 rounded-3xl bg-contain bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${footerBg})`,
-        backgroundSize: "100% 100%",
-      }}
+      className="relative bg-gradient-to-br from-primary to-dark-background text-white border-t border-gray-200 mt-14 m-6 rounded-3xl bg-contain bg-center bg-no-repeat"
+      // style={{
+      //   backgroundImage: `url(${footerBg})`,
+      //   backgroundSize: "100% 100%",
+      // }}
       data-aos="fade-dowm"
       data-aos-duration="1000"
       data-aos-delay="100"

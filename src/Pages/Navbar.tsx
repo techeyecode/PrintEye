@@ -1,161 +1,385 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../Style/App.css";
-
 import { FaTimes, FaBars } from "react-icons/fa";
-
 import LightMode from "../assets/EyePrintLogo.png";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import helpers from "../utils/helpers";
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [dropdownClosing, setDropdownClosing] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 1024;
       setIsMobileView(mobile);
-      if (!mobile) {
-        setMobileMenuOpen(false);
-      }
+      if (!mobile) setMobileMenuOpen(false);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (activeDropdown) {
+        closeDropdown();
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeDropdown]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const handleDropdownEnter = (category: string) => {
+    if (!isMobileView) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      setDropdownClosing(false);
+      setActiveDropdown(category);
+    }
+  };
+
+  const handleDropdownLeave = () => {
+    if (!isMobileView && activeDropdown) {
+      timeoutRef.current = setTimeout(() => {
+        if (!dropdownRef.current?.matches(":hover")) {
+          closeDropdown();
+        }
+      }, 150);
+    }
+  };
+
+  const closeDropdown = () => {
+    setDropdownClosing(true);
+    setTimeout(() => {
+      setActiveDropdown(null);
+      setDropdownClosing(false);
+    }, 200);
+  };
+
+  const handleDropdownClick = (category: string) => {
+    if (isMobileView) {
+      setActiveDropdown(activeDropdown === category ? null : category);
+    } else {
+      setActiveDropdown(category);
+    }
+  };
+
+  const getArrayNames = (category: keyof typeof helpers) => {
+    return Object.keys(helpers[category]);
+  };
+
+  const handleDropdownItemClick = (category: string, itemName: string) => {
+    const subcategoryParam = itemName.toLowerCase().replace(/\s+/g, "-");
+
+    navigate(`/${category}?subcategories=${subcategoryParam}`);
+
+    closeMobileMenu();
+    closeDropdown();
   };
 
   const navLinks = [
-    { name: "home", link: "/" },
-    { name: "promotion", link: "/Promotion" },
-    { name: "printing", link: "/Printing" },
-    { name: "uniform", link: "/Uniform" },
-    { name: "packaging", link: "/Packaging" },
-    { name: "sign", link: "/Sign" },
-    { name: "cup", link: "/Cup" },
-    { name: "gallary", link: "/Gallary" },
+    { name: "home", link: "/", hasDropdown: false },
+    {
+      name: "promotion",
+      link: "/Promotion",
+      hasDropdown: true,
+      category: "Promotion" as keyof typeof helpers,
+    },
+    {
+      name: "printing",
+      link: "/Printing",
+      hasDropdown: true,
+      category: "Printing" as keyof typeof helpers,
+    },
+    {
+      name: "uniform",
+      link: "/Uniform",
+      hasDropdown: true,
+      category: "Uniform" as keyof typeof helpers,
+    },
+    {
+      name: "packaging",
+      link: "/Packaging",
+      hasDropdown: true,
+      category: "Packaging" as keyof typeof helpers,
+    },
+    {
+      name: "sign",
+      link: "/Sign",
+      hasDropdown: true,
+      category: "Sign" as keyof typeof helpers,
+    },
+    {
+      name: "cup",
+      link: "/Cup",
+      hasDropdown: true,
+      category: "Cup" as keyof typeof helpers,
+    },
+    {
+      name: "gallary",
+      link: "/Gallary",
+      hasDropdown: false,
+    },
   ];
 
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;
 
+  const renderDropdown = (category: keyof typeof helpers) => {
+    const arrayNames = getArrayNames(category);
+
+    return (
+      <div
+        ref={dropdownRef}
+        className={`fixed top-19 left-1/2 transform -translate-x-1/2 min-w-7xl bg-white shadow-md rounded-b-2xl z-50 mt-0 overflow-hidden transition-all duration-300 ${
+          dropdownClosing ? "opacity-0 scale-95" : "opacity-100 scale-100"
+        }`}
+        onMouseEnter={() => handleDropdownEnter(category)}
+        onMouseLeave={handleDropdownLeave}
+      >
+        <div className="flex p-8 gap-10 ">
+          {/* Left column */}
+          <div className="w-1/3 border-r border-gray-100">
+            <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">
+              {t("allProducts")}
+            </h3>
+            <div className="grid grid-cols-1 gap-2">
+              {arrayNames.map((name, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDropdownItemClick(category, name)}
+                  className="block text-left text-primary transition-all duration-300 text-sm my-1 rounded-lg cursor-pointer hover:text-secondary"
+                >
+                  {t(name)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right column */}
+          <div className="w-2/3">
+            <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
+              {t("featuredProducts")}
+            </h3>
+            <div className="flex gap-3">
+              {arrayNames.slice(0, 2).map((name, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-all duration-300  mb-6 cursor-pointer"
+                  onClick={() => handleDropdownItemClick(category, name)}
+                >
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                    <div className="text-gray-400 text-sm">{t(name)} Image</div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="font-bold text-primary text-lg">
+                        {t(name)}
+                      </h4>
+                      <span className="text-xs bg-primary text-white px-3 py-1 rounded-full">
+                        NEW
+                      </span>
+                    </div>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      Premium quality {t(name)} with excellent finish and
+                      durability.
+                    </p>
+                    <span className="inline-flex items-center text-primary font-semibold text-sm hover:gap-2 transition-all duration-300">
+                      {t("shopNow")}
+                      <span className="ml-1">→</span>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const NavLink = ({ link, name, hasDropdown, category }: any) => {
+    const isActive = isLinkActive(link);
+
+    return (
+      <div
+        className="relative group"
+        onMouseEnter={() => hasDropdown && handleDropdownEnter(category!)}
+        onMouseLeave={handleDropdownLeave}
+      >
+        <Link
+          to={link}
+          className={`relative mx-4 py-2 font-semibold text-primary
+            before:content-[''] before:absolute before:left-1/2 before:bottom-0
+            before:h-[2px] before:bg-primary before:w-0 before:-translate-x-1/2
+            before:transition-all before:duration-300
+            hover:before:w-full
+            ${isActive ? "text-secondary" : ""}`}
+        >
+          {t(name)}
+        </Link>
+
+        {hasDropdown &&
+          activeDropdown === category &&
+          renderDropdown(category!)}
+      </div>
+    );
+  };
+
   return (
-    <header>
-      <div className={`py-4 text-light-text bg-white`}>
-        <div className="container mx-auto flex justify-between items-center ">
-          <div className="flex items-center gap-5">
+    <header className="relative bg-white top-0 z-40">
+      <div className="py-4">
+        <div className="container mx-auto flex justify-between items-center px-2">
+          <div className="flex items-center gap-12">
             <Link to="/" className="flex items-center">
               <img
                 src={LightMode}
-                className="w-auto h-7 md:h-8 lg:h-7 xl:h-10  object-contain"
+                className="w-auto h-6 md:h-9 object-contain"
               />
             </Link>
 
             {!isMobileView && (
-              <nav className="flex items-center text-base xl:text-base lg:text-sm">
+              <nav className="flex items-center text-base space-x-1">
                 {navLinks.map((link, index) => (
-                  <div key={index} className="relative group ">
-                    <Link
-                      to={link.link}
-                      className={`relative px-4 py-2 font-semibold rounded-xl overflow-hidden transition-all duration-300 flex items-center gap-1 ${
-                        isLinkActive(link.link)
-                          ? "text-secondary"
-                          : "text-primary"
-                      } `}
-                    >
-                      <span className="relative z-10">{t(link.name)}</span>
-                    </Link>
-                  </div>
+                  <NavLink
+                    key={index}
+                    link={link.link}
+                    name={link.name}
+                    hasDropdown={link.hasDropdown}
+                    category={link.category}
+                  />
                 ))}
               </nav>
             )}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             {!isMobileView && (
               <Link
                 to="/Catalog"
-                className={`relative px-4 py-2 font-semibold rounded-xl overflow-hidden transition-all duration-300 flex items-center gap-1 ${
-                  isLinkActive("/Catalog") ? "text-secondary" : "text-primary"
+                className={`px-6 py-2.5 font-semibold rounded-md transition-all duration-300 ${
+                  isLinkActive("/Catalog")
+                    ? "text-primary bg-gray-100"
+                    : "text-primary hover:text-secondary"
                 }`}
               >
-                <span className="relative z-10">{t("Catalog")}</span>
+                {t("Catalog")}
               </Link>
             )}
-
             <LanguageSwitcher />
 
             {isMobileView && (
               <button
                 onClick={toggleMobileMenu}
-                className={`p-2 focus:outline-none transition-transform duration-300 x_wd_red_highlight_bold_05 text-primary ${
-                  mobileMenuOpen ? "rotate-90" : ""
+                className={`p-3 focus:outline-none text-primary transition-all duration-300 rounded-lg hover:bg-gray-100 ${
+                  mobileMenuOpen ? "bg-gray-100" : ""
                 }`}
               >
-                {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                {mobileMenuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
               </button>
             )}
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMobileView && mobileMenuOpen && (
-          <div className="lg:hidden">
-            <div
-              className="fixed inset-0 bg-black/30 bg-opacity-50 z-40"
-              onClick={closeMobileMenu}
-            />
+          <div className="lg:hidden fixed top-0 left-0 h-full w-full bg-white z-50 overflow-y-auto shadow-xl">
+            <div className="flex justify-between items-center p-6 border-b border-gray-200 bg-white">
+              <div className="flex items-center gap-3">
+                <img src={LightMode} className="w-auto h-6" alt="EyePrint" />
+              </div>
+              <button
+                onClick={closeMobileMenu}
+                className=" hover:bg-gray-100 rounded-lg transition-all duration-300 text-primary"
+              >
+                <FaTimes size={20} />
+              </button>
+            </div>
 
-            <div className="fixed top-0 left-0 h-full w-3/4 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out text-primary">
-              <div className="flex flex-col h-full">
-                <div className="flex justify-between items-center mx-4 py-2 border-b border-primary/50">
-                  <span className="text-lg font-semibold">EyePrint</span>
-                  <button
-                    onClick={closeMobileMenu}
-                    className="p-2 transition-colors"
-                  >
-                    <FaTimes size={20} />
-                  </button>
-                </div>
-
-                <nav className="flex-1 overflow-y-auto px-4 py-2">
-                  {navLinks.map((link, index) => (
+            <nav className="p-6 space-y-1">
+              {navLinks.map((link, index) => (
+                <div key={index}>
+                  {link.hasDropdown ? (
+                    <>
+                      <button
+                        onClick={() => handleDropdownClick(link.category!)}
+                        className="flex justify-between items-center w-full py-2 px-3 text-left text-primary font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300"
+                      >
+                        {t(link.name)}
+                        <span>
+                          {activeDropdown === link.category ? (
+                            <MdOutlineKeyboardArrowUp />
+                          ) : (
+                            <MdOutlineKeyboardArrowDown />
+                          )}
+                        </span>
+                      </button>
+                      {activeDropdown === link.category && (
+                        <div className="pl-1 ">
+                          {getArrayNames(link.category!).map((name, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() =>
+                                handleDropdownItemClick(link.category!, name)
+                              }
+                              className="block w-full text-left py-2 px-3 text-primary rounded-lg transition-all duration-300 hover:bg-gray-50"
+                            >
+                              {t(name)}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
                     <Link
-                      key={index}
                       to={link.link}
-                      className={`block font-medium px-3 py-2 rounded-lg transition-all duration-200 mb-2 ${
-                        isLinkActive(link.link)
-                          ? "text-secondary"
-                          : "text-primary"
-                      }`}
                       onClick={closeMobileMenu}
+                      className="block py-2 px-3 text-primary font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300"
                     >
                       {t(link.name)}
                     </Link>
-                  ))}
-                  {/* Catalog link in mobile menu */}
-                  <Link
-                    to="/Catalog"
-                    className={`block font-medium px-3 py-2 rounded-lg transition-all duration-200 mb-2 ${
-                      isLinkActive("/Catalog")
-                        ? "text-secondary"
-                        : "text-primary"
-                    }`}
-                    onClick={closeMobileMenu}
-                  >
-                    Catalog
-                  </Link>
-                </nav>
-              </div>
-            </div>
+                  )}
+                </div>
+              ))}
+            </nav>
           </div>
         )}
       </div>

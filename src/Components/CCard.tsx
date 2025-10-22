@@ -36,17 +36,15 @@ const CCard: React.FC<CCardProps> = ({
         )}
       </div>
 
-      <div className="p-1 px-4 flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <h5 className="text-white font-medium line-clamp-2 flex-1 mr-2">
-            {label}
-          </h5>
-          {count !== undefined && (
+      <div className="p-1 px-4 gap-2 text-center">
+        <h5 className="text-white font-medium line-clamp-2 flex-1 mr-2">
+          {label}
+        </h5>
+        {/* {count !== undefined && (
             <span className="text-white font-medium px-2 py-1 rounded-full text-sm min-w-8 text-center">
               {count}
             </span>
-          )}
-        </div>
+          )} */}
       </div>
     </Link>
   );

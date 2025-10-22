@@ -82,17 +82,12 @@ const HeroSection = () => {
           >
             {t("heroSubTitle")}
           </p>
-
-          <div
-            data-aos="fade-up"
-            data-aos-delay="600"
-            className="flex flex-col xs:flex-row mt-6 sm:mt-8 lg:mt-10 w-fit"
-          >
+          <div className="flex flex-col xs:flex-row items-start mt-6 sm:mt-8 lg:mt-10">
             <CButton
               variant={isLarge ? "primary" : "secondary"}
               link="/Promotion"
             >
-              {t("shopNow")}
+              {t("seeAll")}
             </CButton>
           </div>
         </div>
