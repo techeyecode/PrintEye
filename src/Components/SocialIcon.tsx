@@ -18,7 +18,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative w-10 h-10 flex items-center justify-center rounded-full overflow-hidden bg-primary/30  "
+      className="relative w-10 h-10 flex items-center justify-center rounded-full overflow-hidden bg-primary"
     >
       {/* sliding background */}
       <span

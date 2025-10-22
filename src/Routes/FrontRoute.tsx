@@ -40,8 +40,9 @@ import Cup from "../Pages/Cup";
 import About from "../Pages/About";
 import Gallary from "../Pages/Gallary";
 import Contact from "../Pages/Contact";
-import GallaryDetailies from "../FrontSectionts/Gallary/GallaryDetailies";
+import CompaniesGallary from "../FrontSectionts/Gallary/CompaniesGallary";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import ImageGallary from "../FrontSectionts/Gallary/ImageGallary";
 
 export const FrontRoute = (
   <Route path="/" element={<FrontLayout />}>
@@ -102,8 +103,8 @@ export const FrontRoute = (
     </Route>
     {/* Gallary Routes */}
     <Route path="Gallary">
-      <Route index element={<Gallary />} />
-      <Route path=":id" element={<GallaryDetailies />} />
+      <Route index element={<CompaniesGallary />} />
+      <Route path="company/:id" element={<ImageGallary />} />
     </Route>
   </Route>
 );

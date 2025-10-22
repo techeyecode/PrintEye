@@ -16,6 +16,9 @@ const Navbar: React.FC = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [dropdownClosing, setDropdownClosing] = useState(false);
+  const [activeSubcategory, setActiveSubcategory] = useState<string | null>(
+    null
+  );
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -35,11 +38,8 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (activeDropdown) {
-        closeDropdown();
-      }
+      if (activeDropdown) closeDropdown();
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeDropdown]);
@@ -53,25 +53,20 @@ const Navbar: React.FC = () => {
         closeDropdown();
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
+    setActiveSubcategory(null);
   };
 
   const handleDropdownEnter = (category: string) => {
     if (!isMobileView) {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
       setDropdownClosing(false);
       setActiveDropdown(category);
     }
@@ -80,9 +75,7 @@ const Navbar: React.FC = () => {
   const handleDropdownLeave = () => {
     if (!isMobileView && activeDropdown) {
       timeoutRef.current = setTimeout(() => {
-        if (!dropdownRef.current?.matches(":hover")) {
-          closeDropdown();
-        }
+        if (!dropdownRef.current?.matches(":hover")) closeDropdown();
       }, 150);
     }
   };
@@ -92,6 +85,7 @@ const Navbar: React.FC = () => {
     setTimeout(() => {
       setActiveDropdown(null);
       setDropdownClosing(false);
+      setActiveSubcategory(null);
     }, 200);
   };
 
@@ -109,11 +103,8 @@ const Navbar: React.FC = () => {
 
   const handleDropdownItemClick = (category: string, itemName: string) => {
     const subcategoryParam = itemName.toLowerCase().replace(/\s+/g, "-");
-
     navigate(`/${category}?subcategories=${subcategoryParam}`);
-
     closeMobileMenu();
-    closeDropdown();
   };
 
   const navLinks = [
@@ -154,112 +145,153 @@ const Navbar: React.FC = () => {
       hasDropdown: true,
       category: "Cup" as keyof typeof helpers,
     },
-    {
-      name: "gallary",
-      link: "/Gallary",
-      hasDropdown: false,
-    },
+    { name: "gallary", link: "/Gallary", hasDropdown: false },
   ];
 
   const isLinkActive = (linkPath: string) => location.pathname === linkPath;
 
+  // --- DROPDOWN RENDER ---
   const renderDropdown = (category: keyof typeof helpers) => {
     const arrayNames = getArrayNames(category);
+    const isPromotion = category === "Promotion";
 
     return (
       <div
         ref={dropdownRef}
-        className={`fixed top-19 left-1/2 transform -translate-x-1/2 min-w-7xl bg-white shadow-md rounded-b-2xl z-50 mt-0 overflow-hidden transition-all duration-300 ${
+        className={`absolute left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-b-2xl z-50 mt-4 overflow-hidden transition-all duration-300 ${
           dropdownClosing ? "opacity-0 scale-95" : "opacity-100 scale-100"
         }`}
         onMouseEnter={() => handleDropdownEnter(category)}
         onMouseLeave={handleDropdownLeave}
       >
-        <div className="flex p-8 gap-10 ">
-          {/* Left column */}
-          <div className="w-1/3 border-r border-gray-100">
-            <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">
-              {t("allProducts")}
-            </h3>
-            <div className="grid grid-cols-1 gap-2">
-              {arrayNames.map((name, index) => (
+        {isPromotion ? (
+          <div className="flex p-8 gap-10 min-w-5xl">
+            {/* Left Column: Subcategories */}
+            <div className="w-1/3 border-r border-gray-100">
+              <div className="grid grid-cols-1 gap-2">
                 <button
-                  key={index}
-                  onClick={() => handleDropdownItemClick(category, name)}
-                  className="block text-left text-primary transition-all duration-300 text-sm my-1 rounded-lg cursor-pointer hover:text-secondary"
+                  onClick={() => navigate(`/${category}`)}
+                  className="block text-left text-primary font-semibold hover:text-secondary transition-all duration-300 text-sm mb-2"
                 >
-                  {t(name)}
+                  {t("all")}
                 </button>
-              ))}
+                {arrayNames.map((name) => (
+                  <button
+                    key={name}
+                    onMouseEnter={() => setActiveSubcategory(name)}
+                    className="block text-left text-primary transition-all duration-300 text-sm my-1 rounded-lg cursor-pointer hover:text-secondary"
+                  >
+                    {t(name)}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right column */}
-          <div className="w-2/3">
-            <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-              {t("featuredProducts")}
-            </h3>
-            <div className="flex gap-3">
-              {arrayNames.slice(0, 2).map((name, index) => (
-                <div
-                  key={index}
-                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-all duration-300  mb-6 cursor-pointer"
-                  onClick={() => handleDropdownItemClick(category, name)}
-                >
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
-                    <div className="text-gray-400 text-sm">{t(name)} Image</div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-3">
-                      <h4 className="font-bold text-primary text-lg">
-                        {t(name)}
-                      </h4>
-                      <span className="text-xs bg-primary text-white px-3 py-1 rounded-full">
-                        NEW
-                      </span>
-                    </div>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                      Premium quality {t(name)} with excellent finish and
-                      durability.
-                    </p>
-                    <span className="inline-flex items-center text-primary font-semibold text-sm hover:gap-2 transition-all duration-300">
-                      {t("shopNow")}
-                      <span className="ml-1">→</span>
-                    </span>
-                  </div>
-                </div>
-              ))}
+            {/* Right Column: Show 2 items of hovered subcategory */}
+            <div className="w-2/3">
+              <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
+                {t("featuredProducts")}
+              </h3>
+              <div className="flex gap-3 flex-wrap">
+                {activeSubcategory &&
+                  helpers[category][activeSubcategory]
+                    .slice(0, 2)
+                    .map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-all duration-300 mb-6 cursor-pointer"
+                        onClick={() =>
+                          handleDropdownItemClick(category, activeSubcategory)
+                        }
+                      >
+                        <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                          <div className="text-gray-400 text-sm">
+                            {t(item)} Image
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <div className="flex justify-between items-center mb-3">
+                            <h4 className="font-bold text-primary text-lg">
+                              {t(item)}
+                            </h4>
+                            <span className="text-xs bg-primary text-white px-3 py-1 rounded-full">
+                              NEW
+                            </span>
+                          </div>
+                          <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                            Premium quality {t(item)} with excellent finish and
+                            durability.
+                          </p>
+                          <span className="inline-flex items-center text-primary font-semibold text-sm hover:gap-2 transition-all duration-300">
+                            {t("shopNow")} <span className="ml-1">→</span>
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          // Simple dropdown for other categories
+          <div className="grid grid-cols-1 p-4 text-left min-w-[150px]">
+            <button
+              onClick={() => navigate(`/${category}`)}
+              className="block text-left text-primary font-semibold hover:text-secondary transition-all duration-300 text-sm mb-2"
+            >
+              {t("all")}
+            </button>
+            {arrayNames.map((name, index) => (
+              <button
+                key={index}
+                onClick={() => handleDropdownItemClick(category, name)}
+                className="block text-left text-primary text-sm my-1 hover:text-secondary transition-all duration-300"
+              >
+                {t(name)}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     );
   };
 
+  // --- NAV LINK ---
   const NavLink = ({ link, name, hasDropdown, category }: any) => {
     const isActive = isLinkActive(link);
 
-    return (
-      <div
-        className="relative group"
-        onMouseEnter={() => hasDropdown && handleDropdownEnter(category!)}
-        onMouseLeave={handleDropdownLeave}
-      >
+    if (!hasDropdown) {
+      // Direct links like Home and Gallary
+      return (
         <Link
           to={link}
-          className={`relative mx-4 py-2 font-semibold text-primary
+          className={`relative mx-4 py-2 font-semibold text-primary cursor-pointer
             before:content-[''] before:absolute before:left-1/2 before:bottom-0
             before:h-[2px] before:bg-primary before:w-0 before:-translate-x-1/2
-            before:transition-all before:duration-300
-            hover:before:w-full
+            before:transition-all before:duration-300 hover:before:w-full
             ${isActive ? "text-secondary" : ""}`}
         >
           {t(name)}
         </Link>
+      );
+    }
 
-        {hasDropdown &&
-          activeDropdown === category &&
-          renderDropdown(category!)}
+    // Dropdown links
+    return (
+      <div
+        className="relative group"
+        onMouseEnter={() => handleDropdownEnter(category!)}
+        onMouseLeave={handleDropdownLeave}
+      >
+        <span
+          className={`relative mx-4 py-2 font-semibold text-primary cursor-pointer
+            before:content-[''] before:absolute before:left-1/2 before:bottom-0
+            before:h-[2px] before:bg-primary before:w-0 before:-translate-x-1/2
+            before:transition-all before:duration-300 hover:before:w-full
+            ${isActive ? "text-secondary" : ""}`}
+        >
+          {t(name)}
+        </span>
+        {activeDropdown === category && renderDropdown(category!)}
       </div>
     );
   };
@@ -277,7 +309,7 @@ const Navbar: React.FC = () => {
             </Link>
 
             {!isMobileView && (
-              <nav className="flex items-center text-base space-x-1">
+              <nav className="flex items-center text-base space-x-1 cursor-pointer">
                 {navLinks.map((link, index) => (
                   <NavLink
                     key={index}
@@ -328,7 +360,7 @@ const Navbar: React.FC = () => {
               </div>
               <button
                 onClick={closeMobileMenu}
-                className=" hover:bg-gray-100 rounded-lg transition-all duration-300 text-primary"
+                className="hover:bg-gray-100 rounded-lg transition-all duration-300 text-primary"
               >
                 <FaTimes size={20} />
               </button>
@@ -353,14 +385,20 @@ const Navbar: React.FC = () => {
                         </span>
                       </button>
                       {activeDropdown === link.category && (
-                        <div className="pl-1 ">
+                        <div className="pl-1">
+                          <button
+                            onClick={() => navigate(`/${link.category}`)}
+                            className="block w-full text-left py-2 px-3 text-primary font-semibold hover:bg-gray-50"
+                          >
+                            {t("all")}
+                          </button>
                           {getArrayNames(link.category!).map((name, idx) => (
                             <button
                               key={idx}
                               onClick={() =>
                                 handleDropdownItemClick(link.category!, name)
                               }
-                              className="block w-full text-left py-2 px-3 text-primary rounded-lg transition-all duration-300 hover:bg-gray-50"
+                              className="block w-full text-left py-2 px-3 text-primary rounded-lg transition-all duration-300 hover:bg-gray-50 "
                             >
                               {t(name)}
                             </button>

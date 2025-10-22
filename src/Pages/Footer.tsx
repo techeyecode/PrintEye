@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaFacebookF,
   FaInstagram,
+  FaTiktok,
   FaHome,
   FaShoppingCart,
   FaPrint,
@@ -17,10 +18,7 @@ import {
   FaInfoCircle,
   FaUser,
   FaFileContract,
-  FaTiktok,
 } from "react-icons/fa";
-import footerBg from "../assets/footer.jpg";
-
 import Logo from "../assets/EyePrintLogoDarkMode.png";
 import SocialIcon from "../Components/SocialIcon";
 
@@ -88,23 +86,19 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-primary to-dark-background text-white border-t border-gray-200 mt-14 m-6 rounded-3xl bg-contain bg-center bg-no-repeat"
-      // style={{
-      //   backgroundImage: `url(${footerBg})`,
-      //   backgroundSize: "100% 100%",
-      // }}
-      data-aos="fade-dowm"
+      className="relative bg-gradient-to-br from-primary to-dark-background text-white border-t border-gray-200 mt-14 mx-6 rounded-3xl"
+      data-aos="fade-down"
       data-aos-duration="1000"
       data-aos-delay="100"
     >
-      <div className="py-8 px-4 md:px-14 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Left Column */}
-          <div className="lg:col-span-1">
+      <div className="py-10 px-4 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div>
             <div className="mb-4">
               <img
                 src={Logo}
-                className="w-auto h-7 md:h-8 lg:h-9 xl:h-10 object-contain"
+                className="w-auto h-8 lg:h-10 object-contain"
+                alt="EyePrint Logo"
               />
             </div>
             <p className="text-white mb-6 font-medium leading-relaxed hover:text-gray-200 transition-colors duration-500">
@@ -129,68 +123,66 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
-              {t("ourServices")}
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.slice(1).map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.link}
-                    className={`group ${hoverEffects.link.base} text-white`}
-                    onMouseEnter={() => setHoveredItem(`service-${index}`)}
-                    onMouseLeave={() => setHoveredItem(null)}
-                  >
-                    <span
-                      className={`${
-                        hoveredItem === `service-${index}`
-                          ? hoverEffects.link.hover
-                          : ""
-                      }`}
+          <div className="grid grid-cols-2 gap-10">
+            <div>
+              <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
+                {t("ourServices")}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.slice(1).map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.link}
+                      className={`group ${hoverEffects.link.base} text-white`}
+                      onMouseEnter={() => setHoveredItem(`service-${index}`)}
+                      onMouseLeave={() => setHoveredItem(null)}
                     >
-                      {link.icon} {t(link.name)}
-                    </span>
-                    <div className={hoverEffects.link.underline} />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                      <span
+                        className={`${
+                          hoveredItem === `service-${index}`
+                            ? hoverEffects.link.hover
+                            : ""
+                        }`}
+                      >
+                        {link.icon} {t(link.name)}
+                      </span>
+                      <div className={hoverEffects.link.underline} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
+                {t("company")}
+              </h3>
+              <ul className="space-y-3">
+                {companyLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.link}
+                      className={`group ${hoverEffects.link.base} text-white`}
+                      onMouseEnter={() => setHoveredItem(`company-${index}`)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                    >
+                      <span
+                        className={`${
+                          hoveredItem === `company-${index}`
+                            ? hoverEffects.link.hover
+                            : ""
+                        }`}
+                      >
+                        {link.icon} {t(link.name, link.name)}
+                      </span>
+                      <div className={hoverEffects.link.underline} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
-              {t("company")}
-            </h3>
-            <ul className="space-y-3">
-              {companyLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.link}
-                    className={`group ${hoverEffects.link.base} text-white`}
-                    onMouseEnter={() => setHoveredItem(`company-${index}`)}
-                    onMouseLeave={() => setHoveredItem(null)}
-                  >
-                    <span
-                      className={`${
-                        hoveredItem === `company-${index}`
-                          ? hoverEffects.link.hover
-                          : ""
-                      }`}
-                    >
-                      {link.icon} {t(link.name, link.name)}
-                    </span>
-                    <div className={hoverEffects.link.underline} />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-white hover:text-secondary transition-colors duration-500">
               {t("contactUs")}
@@ -202,7 +194,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaPhone
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
+                  className={`w-4 h-4 mt-0.5 ${hoverEffects.contact.icon}`}
                 />
                 <a
                   href="https://wa.me/9647507177656"
@@ -222,7 +214,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaEnvelope
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
+                  className={`w-4 h-4 mt-0.5 ${hoverEffects.contact.icon}`}
                 />
                 <a
                   href="mailto:info@eyeprint.com"
@@ -241,10 +233,10 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <FaMapMarkerAlt
-                  className={`w-4 h-4 mt-0.5 transition-all duration-500 ${hoverEffects.contact.icon}`}
+                  className={`w-4 h-4 mt-0.5 ${hoverEffects.contact.icon}`}
                 />
                 <a
-                  href="https://www.google.com/maps/place/267,+1+Italian+Village+Rd,+Erbil,+Erbil+Governorate/@36.186402,43.9685383,16.5z/data=!4m5!3m4!1s0x400722bff537d893:0x6ce0485b72caba3f!8m2!3d36.1871608!4d43.96997?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/place/267,+1+Italian+Village+Rd,+Erbil,+Erbil+Governorate"
                   target="_blank"
                   className={`${
                     hoveredItem === "contact-address"

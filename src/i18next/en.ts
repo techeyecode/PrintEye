@@ -251,7 +251,7 @@ const en = {
     enterEmailAddress: "Enter email address",
     enterSubject: "Enter Subject",
     enterYourMessage: "Enter Your Message ...",
-    address: "Italian Village 1 number 267",
+    address: "italian Village 1, Villa No: 262, Erbil, Iraq",
     footerDescription:
       "Your trusted partner for high-quality printing solutions. We bring creativity and precision to every project with exceptional service and results.",
     ourServices: "Our Services",
@@ -482,8 +482,14 @@ const en = {
     pleaseEnterMessage: "Please Enter Message",
     facebook: "Facebook",
     instagram: "Instagram",
+    // today
     allProducts: "All Products",
     featuredProducts: "Feature Products",
+    eyePrint: "EyePrint",
+    eyePrintSubtext: "Online • Usually replies instantly",
+    startChat: "Start Chat",
+    whatsUpHello:
+      "Hello! Get in touch with us on WhatsApp. We're here to help you with any questions about Hana Charity.",
   },
 };
 
