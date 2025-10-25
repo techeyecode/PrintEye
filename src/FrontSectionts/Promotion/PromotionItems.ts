@@ -1,5 +1,3 @@
-
-
 export interface PromotionItems {
   id: number;
   value: string;
@@ -343,7 +341,7 @@ export const productCategories: ProductCategory[] = [
         value: "spiral",
         label: "Spiral Notebooks",
         code: "NTB-SPL-001",
-      count: 29,
+        count: 29,
         description: "Easy-to-use spiral notebooks",
         popularItems: ["Spiral Classic"],
         images: [

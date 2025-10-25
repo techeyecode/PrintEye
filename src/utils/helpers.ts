@@ -15,6 +15,7 @@ const helpers = {
       { value: "lable-card", label: "lableCard" },
       { value: "smart-card", label: "smartCard" },
       { value: "special-cut-card", label: "specialCutCard" },
+      { value: "transparent-card", label: "transparentCard" },
     ] as Item[],
 
     Brochure: [
@@ -22,6 +23,10 @@ const helpers = {
       { value: "standard-brochure", label: "standardBrochure" },
       { value: "fold-brochure", label: "foldBrochure" },
       { value: "door-brochure", label: "doorBrochure" },
+    ] as Item[],
+    Folder: [
+      { value: "standard-folder", label: "standardForlder" },
+      { value: "special-folder", label: "specialForlder" },
     ] as Item[],
 
     Notepad: [
@@ -43,6 +48,10 @@ const helpers = {
       { value: "laser-invoice", label: "fantasyPaper" },
       { value: "normal-invoice", label: "artPaper" },
       { value: "turkey-invoice", label: "hamurPaper" },
+      { value: "standard-logo", label: "standardLogo" },
+      { value: "invoice-logo", label: "invoiceLogo" },
+      { value: "foil-logo", label: "foilLogo" },
+      { value: "invoice-logo-foil-logo", label: "invoiceLogoAndFoilLogo" },
     ] as Item[],
 
     Invoice: [
@@ -60,6 +69,7 @@ const helpers = {
     Calendar: [
       { value: "table-calendar", label: "tableCalendar" },
       { value: "wall-calendar", label: "wallCalendar" },
+      { value: "ramadan-calendar", label: "ramadanCalendar" },
     ] as Item[],
 
     Bag: [
@@ -70,70 +80,27 @@ const helpers = {
     ] as Item[],
 
     Tissue: [
-      { value: "all", label: "all" },
       { value: "rectangle-tissue", label: "rectangleTissue" },
       { value: "square-tissue", label: "squareTissue" },
       { value: "pyramid-tissue", label: "pyramidTissue" },
-    ] as Item[],
-    Folder: [
-      { value: "all", label: "all" },
-      { value: "standard-tissue", label: "standardTissue" },
-      { value: "special-tissue", label: "specialTissue" },
+      { value: "wet-tissue", label: "wetTissue" },
     ] as Item[],
 
     CarPerfum: [{ value: "car-perfum", label: "CarPerfum" }] as Item[],
   },
 
   Sign: {
-    harfBarz: [
-      { value: "harf-barz", label: "harfBarz" },
-      // { value: "metal-harfbarz", label: "metalHarfbarz" },
-      // { value: "acrylic-harfbarz", label: "acrylicHarfbarz" },
-      // { value: "led-harfbarz", label: "ledHarfbarz" },
-      // { value: "outdoor-harfbarz", label: "outdoorHarfbarz" },
-    ] as Item[],
+    harfBarz: [{ value: "harf-barz", label: "harfBarz" }] as Item[],
 
-    neon: [
-      { value: "neon", label: "neon" },
-      // { value: "glass-neon", label: "glassNeon" },
-      // { value: "led-neon", label: "ledNeon" },
-      // { value: "custom-neon", label: "customNeon" },
-      // { value: "rgb-neon", label: "rgbNeon" },
-    ] as Item[],
+    neon: [{ value: "neon", label: "neon" }] as Item[],
 
-    lightbox: [
-      { value: "lightbox", label: "lightbox" },
-      // { value: "acrylic-lightbox", label: "acrylicLightbox" },
-      // { value: "aluminum-lightbox", label: "aluminumLightbox" },
-      // { value: "ultra-thin-lightbox", label: "ultraThinLightbox" },
-      // { value: "custom-lightbox", label: "customLightbox" },
-    ] as Item[],
+    lightbox: [{ value: "lightbox", label: "lightbox" }] as Item[],
 
-    flex: [
-      { value: "flex", label: "flex" },
-      // { value: "frontlit-flex", label: "frontlitFlex" },
-      // { value: "backlit-flex", label: "backlitFlex" },
-      // { value: "mesh-flex", label: "meshFlex" },
-      // { value: "blockout-flex", label: "blockoutFlex" },
-    ] as Item[],
+    flex: [{ value: "flex", label: "flex" }] as Item[],
 
-    stickers: [
-      { value: "stickers", label: "stickers" },
-      // { value: "vinyl-stickers", label: "vinylStickers" },
-      // { value: "bumper-stickers", label: "bumperStickers" },
-      // { value: "clear-stickers", label: "clearStickers" },
-      // { value: "die-cut-stickers", label: "dieCutStickers" },
-      // { value: "kiss-cut-stickers", label: "kissCutStickers" },
-    ] as Item[],
+    stickers: [{ value: "stickers", label: "stickers" }] as Item[],
 
-    flags: [
-      { value: "flags", label: "flags" },
-      // { value: "feather-flags", label: "featherFlags" },
-      // { value: "teardrop-flags", label: "teardropFlags" },
-      // { value: "rectangle-flags", label: "rectangleFlags" },
-      // { value: "custom-flags", label: "customFlags" },
-      // { value: "event-flags", label: "eventFlags" },
-    ] as Item[],
+    flags: [{ value: "flags", label: "flags" }] as Item[],
     electronicScreen: [
       { value: "electronic-screen", label: "electronicScreen" },
     ] as Item[],
@@ -141,6 +108,12 @@ const helpers = {
       { value: "exhibition-booth", label: "exhibitionBooth" },
     ] as Item[],
     Stand: [{ value: "Stand", label: "Stand" }] as Item[],
+    RollUp: [{ value: "roll-up", label: "RollUp" }] as Item[],
+    stamp: [{ value: "stamp", label: "stamp" }] as Item[],
+    pallet: [{ value: "pallet", label: "pallet" }] as Item[],
+    dangler: [{ value: "dangler", label: "dangler" }] as Item[],
+    lanyard: [{ value: "lanyard", label: "lanyard" }] as Item[],
+    wristband: [{ value: "wristband", label: "wristband" }] as Item[],
   },
 
   Promotion: {
@@ -180,14 +153,14 @@ const helpers = {
       { value: "adhesive-note-holders", label: "adhesiveNoteHolders" },
     ] as Item[],
     Keychains: [{ value: "keychains", label: "keychains" }] as Item[],
-    Watches: [{ value: "watches", label: "watches" }] as Item[],
+    Hours: [{ value: "hours", label: "hours" }] as Item[],
     DesktopProducts: [
       { value: "desktop-products", label: "desktopProducts" },
     ] as Item[],
-    BriefcasesAndSecretariats: [
+    documentBagAndSecretariats: [
       {
-        value: "briefcases-and-Secretariats",
-        label: "briefcasesAndSecretariats",
+        value: "documentbag-and-Secretariats",
+        label: "documentBagAndSecretariats",
       },
     ] as Item[],
     BusinessCardHoldersAndMirrors: [
@@ -196,12 +169,17 @@ const helpers = {
         label: "businessCardHoldersAndMirrors",
       },
     ] as Item[],
-    PocketKnivesAndLanterns: [
-      { value: "pocketKnives-and-lanterns", label: "PocketKnivesAndLanterns" },
+    flashlightAndPocketknives: [
+      {
+        value: "flashlight-and-pocketknives",
+        label: "flashlightAndPocketknives",
+      },
     ] as Item[],
     Lighters: [{ value: "lighters", label: "lighters" }] as Item[],
 
-    Umbrellas: [{ value: "umbrellas", label: "umbrellas" }] as Item[],
+    UmbrellaAndSunshine: [
+      { value: "umbrella-and-sunshine", label: "UmbrellaAndSunshine" },
+    ] as Item[],
     MiscellaneousAndPlasticProducts: [
       {
         value: "miscellaneous-and-plastic-products",
@@ -210,6 +188,12 @@ const helpers = {
     ] as Item[],
 
     Plaques: [{ value: "plaques", label: "plaques" }] as Item[],
+    Bag: [
+      { value: "ninon-bag", label: "ninonBag" },
+      { value: "row-cloth-bag", label: "rowClothBag" },
+      { value: "fiber-bag", label: "fiberBag" },
+      { value: "craft-bag", label: "craftBag" },
+    ] as Item[],
   },
 
   Uniform: {
@@ -220,6 +204,7 @@ const helpers = {
       { value: "shirt-circle", label: "shirtCircle" },
       { value: "polyester", label: "polyester" },
       { value: "cotton", label: "cotton" },
+      { value: "cap", label: "cap" },
     ] as Item[],
 
     hood: [{ value: "hood", label: "hood" }] as Item[],
@@ -248,26 +233,21 @@ const helpers = {
       { value: "sugar-salt-spices", label: "sugarSaltSpices" },
     ] as Item[],
 
-    CardboardBoxes: [
+    PackagingBox: [
       { value: "thin-box", label: "thinBox" },
       { value: "thick-box", label: "thickBox" },
+      { value: "cake-box", label: "cakeBox" },
+      { value: "sweet-box", label: "sweetBox" },
+      { value: "chocolate-box", label: "chocolateBox" },
+      { value: "spice-box", label: "spiceBox" },
       { value: "pizza-box", label: "pizzaBox" },
       { value: "burger-box", label: "burgerBox" },
-      { value: "cake-box", label: "cakeBox" },
-      { value: "cookies-box", label: "cookiesBox" },
+      { value: "gelory-box", label: "geloryBox" },
+      { value: "perfum-box", label: "perfumBox" },
     ] as Item[],
 
     fingerBowl: [{ value: "finger-bowl", label: "fingerBowl" }] as Item[],
-
-    craftEnvelope: [
-      { value: "craft-envelope", label: "craftEnvelope" },
-    ] as Item[],
-
-    nenoEnvelope: [{ value: "neno-envelope", label: "nenoEnvelope" }] as Item[],
-    clothEnvelope: [
-      { value: "cloth-envelope", label: "clothEnvelope" },
-    ] as Item[],
-    clenx: [{ value: "clenx", label: "clenx" }] as Item[],
+    rezoBowl: [{ value: "rezo-bowl", label: "rezoBowl" }] as Item[],
   },
 
   Cup: {

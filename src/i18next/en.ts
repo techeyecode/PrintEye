@@ -14,9 +14,9 @@ const en = {
     Keychains: "Key chains",
     Watches: "Watches",
     DesktopProducts: "Desktop Products",
-    BriefcasesAndSecretariats: "Briefcases & Secretariats",
+    documentBagAndSecretariats: "Document Bag & Secretariats",
     BusinessCardHoldersAndMirrors: "Business Card Holders & Mirrors",
-    PocketKnivesAndLanterns: "Pocket Knives & Lanterns",
+    flashlightAndPocketknives: "Flashlight & Pocket knives",
     Lighters: "Lighters",
     TextileProducts: "Textile Products",
     Umbrellas: "Umbrellas",
@@ -86,12 +86,15 @@ const en = {
     laserInvoice: "Laser Invoice",
     normalInvoice: "Normal Invoice",
     turkeyInvoice: "Turkey Invoice",
+    invoiceLogo: "Invoice Logo",
+    foilLogo: "Foil Logo",
 
     craftPaperUnderfoot: "Craft Paper Underfoot",
     artPaperUnderfoot: "Art Paper Underfoot",
 
     tableCalendar: "Table Calendar",
     wallCalendar: "Wall Calendar",
+    ramadanCalendar: "Ramadan Calendar",
 
     cartonBag: "Carton Bag",
     craftBag: "Craft Bag",
@@ -101,8 +104,8 @@ const en = {
     squareTissue: "Square Tissue",
     pyramidTissue: "Pyramid Tissue",
 
-    standardTissue: "Standard Tissue",
-    specialTissue: "Special Tissue",
+    standardForlder: "Standard Forlder",
+    specialForlder: "Special Forlder",
 
     metalHarfbarz: "Metal HarfBarz",
     acrylicHarfbarz: "Acrylic HarfBarz",
@@ -143,13 +146,13 @@ const en = {
     thermoses: "Thermoses",
     penSets: "Pen Sets",
     keychains: "Keychains",
-    watches: "Watches",
+    hours: "Hours",
     desktopProducts: "Desktop Products",
     briefcasesAndSecretariats: "Briefcases & Secretariats",
     businessCardHoldersAndMirrors: "Business Card Holders & Mirrors",
     lighters: "Lighters",
     textileProducts: "Textile Products",
-    umbrellas: "Umbrellas",
+    UmbrellaAndSunshine: "Umbrella & Sunshine",
     miscellaneousAndPlasticProducts: "Miscellaneous & Plastic Products",
     cardboardAndToteBags: "Cardboard & Tote Bags",
     calendars: "Calendars",
@@ -334,11 +337,6 @@ const en = {
 
     contactUsSubtext:
       "If you have questions or concerns about this Privacy Policy, please contact us:",
-    contactUsList: [
-      "Email: eyeprint.info@gmail.com",
-      "Address: Erbil - Sultan Muzaffar - Asad Mall",
-      "Phone: 07507177656",
-    ],
 
     updatesToPrivacyPolicy: "Updates to This Privacy Policy",
     updatesToPrivacyPolicySubtext:
@@ -489,7 +487,30 @@ const en = {
     eyePrintSubtext: "Online • Usually replies instantly",
     startChat: "Start Chat",
     whatsUpHello:
-      "Hello! Get in touch with us on WhatsApp. We're here to help you with any questions about Hana Charity.",
+      "Hello! Get in touch with us on WhatsApp. We're here to help you with any questions about PrintEye.",
+    transparentCard: "Transparent Card",
+    ninonBag: "Ninon Bag",
+    rowClothBag: "Row Cloth Bag",
+    fiberBag: "Fiber Bag",
+    wetTissue: "Wet Bag",
+    invoiceLogoAndFoilLogo: "Invoice Logo & Foil Logo",
+    standardLogo: "Standard Logo",
+    cap: "Cap",
+    spiceBox: "Spice Box",
+    sweetBox: "Sweet Box",
+    chocolateBox: "Chocolate Box",
+    geloryBox: "Gelory Box",
+    perfumBox: "Perfum Box",
+    PackagingBox: "Packaging Box",
+    rezoBowl: "Rezo Bowl",
+    RollUp: "Roll Up",
+    stamp: "Stamp",
+    pallet: "Pallet",
+    dangler: "Dangler",
+    lanyard: "Lanyard",
+    wristband: "Wristband",
+    chatWithUs: "CHAT WITH US",
+    phone: "+964 750 717 7656",
   },
 };
 

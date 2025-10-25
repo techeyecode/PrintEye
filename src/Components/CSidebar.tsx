@@ -202,10 +202,14 @@ const CSidebar: React.FC<CSidebarProps> = ({
     });
   }
 
+  // const toggleExpand = (value: string) => {
+  //   setExpanded((prev) =>
+  //     prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+  //   );
+  // };
+
   const toggleExpand = (value: string) => {
-    setExpanded((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-    );
+    setExpanded((prev) => (prev.includes(value) ? [] : [value]));
   };
 
   const handleCategoryChange = (value: string, checked: boolean) => {
@@ -323,7 +327,9 @@ const CSidebar: React.FC<CSidebarProps> = ({
                 {cat.subcategories.length > 0 && (
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      isExpanded
+                        ? "max-h-[600px] opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
                     <div className="ml-8 mt-2 space-y-2 pl-2 border-l-2 border-secondary font-semibold">

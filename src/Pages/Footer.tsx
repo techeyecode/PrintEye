@@ -205,7 +205,7 @@ const Footer: React.FC = () => {
                       : ""
                   }`}
                 >
-                  +964 750 717 7656
+                  {t("phone")}
                 </a>
               </div>
               <div
@@ -217,14 +217,14 @@ const Footer: React.FC = () => {
                   className={`w-4 h-4 mt-0.5 ${hoverEffects.contact.icon}`}
                 />
                 <a
-                  href="mailto:info@eyeprint.com"
+                  href="mailto:Eyeprint9@gmail.com"
                   className={`${
                     hoveredItem === "contact-email"
                       ? hoverEffects.contact.hover
                       : ""
                   }`}
                 >
-                  info@eyeprint.com
+                  eyeprint9@gmail.com
                 </a>
               </div>
               <div

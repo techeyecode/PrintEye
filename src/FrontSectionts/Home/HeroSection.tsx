@@ -76,7 +76,7 @@ const HeroSection = () => {
             {t("heroTitle")}
           </h1>
           <p
-            className="text-white md:text-primary  text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6"
+            className="text-white lg:text-primary  text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6"
             data-aos="fade-up"
             data-aos-delay="400"
           >
