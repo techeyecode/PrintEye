@@ -468,6 +468,7 @@ const ku = {
     facebook: "فەیسبووك",
     instagram: "ئینستاگرام",
     phone: "+٩٦٤ ٧٥٠ ٧١٧ ٧٦٥٦",
+    categories: "Categories",
   },
 };
 

@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
+import { BsPostcardFill } from "react-icons/bs";
+import { CiCoffeeCup } from "react-icons/ci";
 import {
   FaTshirt,
   FaGift,
   FaClipboard,
   FaUtensils,
   FaGlassMartiniAlt,
-  FaFlag,
   FaStickyNote,
   FaBold,
 } from "react-icons/fa";
@@ -13,29 +14,36 @@ import {
 const services = [
   {
     icon: <FaGift className="text-primary w-6 h-6" />,
-    text: "Printing gift items",
+    text: "printingGiftItems",
   },
   {
     icon: <FaClipboard className="text-primary w-6 h-6" />,
-    text: "Paper items",
+    text: "paperItems",
   },
   {
     icon: <FaUtensils className="text-primary w-6 h-6" />,
-    text: "Restaurant items",
+    text: "restaurantItems",
   },
   {
     icon: <FaGlassMartiniAlt className="text-primary w-6 h-6" />,
-    text: "Travel glass items",
+    text: "travelGlassItems",
   },
   {
     icon: <FaTshirt className="text-primary w-6 h-6" />,
-    text: "Printing on clothes",
+    text: "printingOnClothes",
   },
-  { icon: <FaFlag className="text-primary w-6 h-6" />, text: "Printing flags" },
+  {
+    icon: <BsPostcardFill className="text-primary w-6 h-6" />,
+    text: "businessCard",
+  },
   { icon: <FaStickyNote className="text-primary w-6 h-6" />, text: "Stickers" },
   {
     icon: <FaBold className="text-primary w-6 h-6" />,
-    text: "Flexes and bold letters for trademarks",
+    text: "flexesAndBoldLettersForTrademarks",
+  },
+  {
+    icon: <CiCoffeeCup className="text-primary w-7 h-7" />,
+    text: "cup",
   },
 ];
 
@@ -58,7 +66,7 @@ const AboutEyePrint = () => {
             className="flex items-start space-x-4  rounded-lg transition"
           >
             <div className="mt-1">{service.icon}</div>
-            <p className="text-sm sm:text-base md:text-lg">{service.text}</p>
+            <p className="text-sm sm:text-base md:text-lg">{t(service.text)}</p>
           </div>
         ))}
       </div>

@@ -21,7 +21,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   backgroundImage,
   breadcrumbs = [{ label: "Home", path: "/" }, { label: "Current Page" }],
 }) => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const isVideo = backgroundImage && backgroundImage.endsWith(".mp4");
 
   return (
@@ -67,9 +67,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                 {crumb.path ? (
                   <Link
                     to={crumb.path}
-                    className="transition-colors duration-300 flex items-center hover:text-primary"
+                    className="transition-colors duration-300 flex items-center hover:text-secondary"
                   >
-                    {index === 0 && <TiHome className="mr-2" />}
+                    {index === 0 && <TiHome className="mx-2" />}
                     {t(crumb.label)}
                   </Link>
                 ) : (

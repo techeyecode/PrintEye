@@ -71,12 +71,12 @@ const HeroSection = () => {
       >
         <div className="max-w-2xl lg:max-w-none">
           <h1
-            className={`text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-white lg:text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4`}
+            className={`text-2xl md:text-4xl lg:text-3xl xl:text-5xl text-primary font-extrabold leading-tight lg:leading-tight w-full lg:w-3/4`}
           >
             {t("heroTitle")}
           </h1>
           <p
-            className="text-white lg:text-primary  text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6"
+            className="text-primary  text-sm md:text-lg xl:text-xl font-medium w-full xl:w-2/3 mt-3 sm:mt-4 lg:mt-6"
             data-aos="fade-up"
             data-aos-delay="400"
           >

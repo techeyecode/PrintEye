@@ -3,6 +3,7 @@ import { companies } from "../Gallary/GallaryItems";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../Components/PageHeader";
+import { t } from "i18next";
 
 const CompaniesGallary: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -27,10 +28,10 @@ const CompaniesGallary: React.FC = () => {
   return (
     <div>
       <PageHeader
-        title="All Companies"
-        subtitle="There's no such thing as too many options"
+        title="ourCompaniesGallery"
+        subtitle="showcasingCreativityAcrossEveryProject"
         backgroundImage="https://www.cloveandtwine.com/cdn/shop/collections/visa_card_1500x.jpg?v=1661966680"
-        breadcrumbs={[{ label: "Home", path: "/" }, { label: "Gallary" }]}
+        breadcrumbs={[{ label: "home", path: "/" }, { label: "gallary" }]}
       />
       <div className="container mx-auto p-6 mt-10">
         <div className="flex items-center justify-center gap-14 mb-6">
@@ -41,7 +42,7 @@ const CompaniesGallary: React.FC = () => {
             <FaArrowLeft />
           </button>
           <h2 className="text-3xl font-semibold text-center text-primary">
-            Companies Gallery
+            {t("companiesGallery")}
           </h2>
           <button
             onClick={nextPage}
@@ -51,10 +52,7 @@ const CompaniesGallary: React.FC = () => {
           </button>
         </div>
         <p className="text-center font-medium my-4 max-w-3xl mx-auto text-primary">
-          Lorem Ipsum is a dummy text commonly used in graphic design,
-          publishing, and web development. It originates from sections 1.10.32
-          and 1.10.33 of Cicero's "de Finibus Bonorum et Malorum", written in 45
-          BC, which discusses ethics.
+          {t("companiesGallerySubText")}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">

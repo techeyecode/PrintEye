@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -21,10 +21,15 @@ import {
 } from "react-icons/fa";
 import Logo from "../assets/EyePrintLogoDarkMode.png";
 import SocialIcon from "../Components/SocialIcon";
+import { PiBookOpenTextFill } from "react-icons/pi";
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const isRTL = i18n.language === "ar" || i18n.language === "ku";
+  useEffect(() => {
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
+  }, [isRTL]);
 
   const footerLinks = [
     { name: "home", link: "/", icon: <FaHome className="inline mr-2" /> },
@@ -59,6 +64,11 @@ const Footer: React.FC = () => {
       icon: <FaInfoCircle className="inline mr-2" />,
     },
     {
+      name: "Catalog",
+      link: "/Catalog",
+      icon: <PiBookOpenTextFill className="inline mr-2" />,
+    },
+    {
       name: "contact",
       link: "/Contact",
       icon: <FaUser className="inline mr-2" />,
@@ -69,27 +79,24 @@ const Footer: React.FC = () => {
       icon: <FaFileContract className="inline mr-2" />,
     },
   ];
-
   const hoverEffects = {
     link: {
-      base: "transition-all duration-500 transform hover:translate-x-2 relative",
-      hover: "text-secondary font-semibold",
-      underline:
-        "absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-500 group-hover:w-full",
+      base: "transition-all duration-700 ease-in-out transform hover:translate-x-1",
+      hover: "text-secondary",
     },
     contact: {
-      base: "transition-all duration-500 transform hover:translate-x-1",
+      base: "transition-all duration-700 ease-in-out transform hover:translate-x-1",
       hover: "text-secondary",
-      icon: "transition-all duration-500 transform hover:scale-125",
+      icon: "transition-all duration-700 ease-in-out transform hover:scale-125",
     },
   };
 
   return (
     <footer
       className="relative bg-gradient-to-br from-primary to-dark-background text-white border-t border-gray-200 mt-14 mx-6 rounded-3xl"
-      data-aos="fade-down"
-      data-aos-duration="1000"
-      data-aos-delay="100"
+      // data-aos="fade-down"
+      // data-aos-duration="1000"
+      // data-aos-delay="100"
     >
       <div className="py-10 px-4 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -204,10 +211,12 @@ const Footer: React.FC = () => {
                       ? hoverEffects.contact.hover
                       : ""
                   }`}
+                  dir="ltr"
                 >
-                  {t("phone")}
+                  +964 750 717 7656
                 </a>
               </div>
+
               <div
                 className={`flex items-start gap-3 text-white ${hoverEffects.contact.base}`}
                 onMouseEnter={() => setHoveredItem("contact-email")}

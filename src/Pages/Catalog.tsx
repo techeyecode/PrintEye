@@ -59,7 +59,7 @@ const Catalog = () => {
         title="EyePrintCatalog"
         subtitle="AllItemsSubtitle"
         backgroundImage="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&auto=format&fit=crop&q=80"
-        breadcrumbs={[{ label: "Home", path: "/" }, { label: "Catalog" }]}
+        breadcrumbs={[{ label: "home", path: "/" }, { label: "Catalog" }]}
       />
       <div className="max-w-7xl mx-auto my-6 md:my-10  ">
         {/* Catalog Grid */}

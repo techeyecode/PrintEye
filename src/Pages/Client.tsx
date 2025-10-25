@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const Client = () => {
   const clients = [
     {
@@ -33,6 +35,7 @@ const Client = () => {
   ];
 
   const duplicatedClients = [...clients, ...clients];
+  const { t } = useTranslation();
 
   return (
     <div
@@ -41,6 +44,9 @@ const Client = () => {
       data-aos-duration="1000"
       data-aos-delay="100"
     >
+      <p className="font-bold text-2xl md:text-4xl text-primary text-center mb-6">
+        {t("ourClients")}
+      </p>
       <div className="flex animate-scroll space-x-10 whitespace-nowrap">
         {duplicatedClients.map((client, index) => (
           <div
